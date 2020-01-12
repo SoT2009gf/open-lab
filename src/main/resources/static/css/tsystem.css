@@ -1,0 +1,201 @@
+body {
+	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
+	background-attachment: auto background-repeat: no-repeat;
+	background-position: right top;
+	background-size: 1920px 1150px;
+/* 	overflow: hidden; */
+	
+	}
+	
+	body.time{
+	color: #EC0075;
+	text-align: right;	
+	padding-right:0.3em;
+	font-size: 2.5em;
+	font-family:Times New Roman;
+	}
+	div.mess{
+	font-size: 3.125em;
+	color:	#7FFF00;}
+	div.footer{
+	font-family:Times New Roman;
+	color:white;
+	margin:6.5em 1.25em;
+	}
+	div{
+	color:white;
+	font-size: 0.8em;}
+	span.footer1{
+	font-family:Times New Roman;
+	color:#EC0075;
+	}
+	h4{
+	font-size: 0.5em;
+	color:#EC0075;
+	font-family:Times New Roman;
+	text-align: left;
+	padding-left: 5em;
+	}
+	h4.info{
+	font-size: 0.5em;
+	color:#EC0075;
+	font-family:Times New Roman;
+	}
+	span.t{
+	font-size:1em;
+	color:#EC0075;
+	font-weight: bold;
+	font-family:Times New Roman;
+	}
+	span.stvorcek{
+	font-size:0.7em;
+	color:white;
+	font-family:Times New Roman;
+	
+	}
+	dt.pozadie1 {
+	 font-family:Times New Roman;
+	font-size: 0.5em;
+	color: #EC0075;
+	text-align: left;
+	padding-left: 5em;
+}
+dt.pozadie2 {
+	 font-family:Times New Roman;
+	font-size: 0.5em;
+	color: #EC0075;
+	margin:-11em 50em;
+	margin-right: 2em;
+}
+dt.pozadie3 {
+	 font-family:Times New Roman;
+	font-size: 0.5em;
+	color: #EC0075;
+	text-align: left;
+	padding-left: 5em;
+}
+dt.pozadie4 {
+	 font-family:Times New Roman;
+	font-size: 0.5em;
+	color: #EC0075;
+	margin:-13em 50em;
+	margin-right: 2em;
+}
+
+
+	.deconstructed {
+  position: relative;
+  margin: auto;
+  height: 0.9em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 10vw;
+  font-weight: 1200;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
+}
+
+.deconstructed > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  pointer-events: none;
+  font-size: 0.6em;
+ font-family:Times New Roman;
+ text-align: left;
+}
+
+.deconstructed > div:nth-child(1) {
+  -webkit-mask-image: linear-gradient(black 0%, transparent 0%,black 25%, transparent 25%);
+  mask-image: linear-gradient(transparent 0%, black 0%, black 50%, transparent 50%);
+  animation: deconstructed1 4s infinite;
+  color: 		white;
+} 
+
+.deconstructed > div:nth-child(2) {
+  -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+  animation: deconstructed2 4s infinite;
+  color: 		white;
+}
+
+.deconstructed > div:nth-child(3) {
+   -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+  animation: deconstructed3 4s infinite;
+  color: 		white;
+}
+
+.deconstructed > div:nth-child(4) {
+   -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+  mask-image: linear-gradient(transparent 75%, black 75%);
+  animation: deconstructed4 4s infinite;
+  color: 		white;
+}
+
+
+@keyframes deconstructed1 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+
+@keyframes deconstructed2 {
+  0% {
+    transform: translateX(100%);
+  }
+  24% {
+    transform: translateX(0%);
+  }
+  82% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-115%);
+  }
+}
+
+@keyframes deconstructed3 {
+  0% {
+    transform: translateX(100%);
+  }
+  22% {
+    transform: translateX(0%);
+  }
+  81% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+
+@keyframes deconstructed4 {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-155%);
+  }
+
+
+  
+  

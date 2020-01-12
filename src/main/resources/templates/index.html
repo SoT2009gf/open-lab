@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Open Lab T-Systems presentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/tsystem.css" type="text/css">
+	<script src="/js/time.js"></script>
+	
+	
+	
+	
+	<body>
+	<body class="time" onload="startTime()">
+	<div class="time" id="txt"></div>
+	<div class="deconstructed">
+  <div><span class="stvorcek">▪</span><span class="t">T</span><span class="stvorcek">▪ ▪ ▪</span>Systems<span class="stvorcek">▪</span></div>
+  <div><span class="stvorcek">▪</span><span class="t">T</span><span class="stvorcek">▪ ▪ ▪</span>Systems<span class="stvorcek">▪</span></div>
+ <div><span class="stvorcek">▪</span><span class="t">T</span><span class="stvorcek">▪ ▪ ▪</span>Systems<span class="stvorcek">▪</span></div>
+  <div><span class="stvorcek">▪</span><span class="t">T</span><span class="stvorcek">▪ ▪ ▪</span>Systems<span class="stvorcek">▪</span></div>
+  </div>
+<!--   <span> -->
+<!--   <h4>Job</h4> -->
+<!-- 					<dt class="pozadie1"> -->
+<!-- 						<div>FINANCE AND CONTROLLING BSC - FINANCIAL CONTROLLER I</div> -->
+<!-- 							<div>12/31/2020 </div> -->
+<!-- 							<div> Full Time - Regular</div></dt> -->
+<!-- 				</span> -->
+<!-- 					<br><br> -->
+<!-- 					<dt class="pozadie2"> -->
+<!-- 						 <div>Requirements</div> -->
+
+<!-- <div>Education</div>            -->
+
+<!-- <div>Secondary school or University education (Bachelor’s degree) in Business Administration / Economics (ideally with focus on subject matter) -->
+<!-- Experience</div>    -->
+
+<!-- <div>First experience of relevant work experience in subject matter or work experience in a Shared Service Center is  a benefit -->
+<!-- Languages</div>    -->
+
+<!-- <div>Good knowledge of English language (B2) and German (B2)          -->
+<!-- Others </div>    -->
+
+<!-- <div>Knowledge of Finance and Controlling processes and procedures is a benefit -->
+<!-- SAP user skills are an advantage -->
+<!-- MS Office (Excel, Word, Outlook, Powerpoint) -  intermediate -->
+<!-- Strong sense of responsibility -->
+<!-- Ability to work in team and willingness to work in an international environment / intercultural sensitivity</div>    -->
+ 
+
+<!--  <div>Salary -->
+
+<!-- <div>Minimum monthly salary is 815 € brutto + variable part of salary + other financial benefits.</div>    -->
+
+<!-- <div>The final basic wage component can be adjusted accordingly to individual skills and experience of selected candidate.</div><div> -->
+<!-- 							General description/ Purpose -->
+<!-- </div> -->
+<!-- 							</dt></span> -->
+							
+							
+<!-- 							<br><br><br><br><br> -->
+<!-- 							 <span> -->
+<!--   <h4>Job</h4> -->
+<!-- 					<dt class="pozadie3"> -->
+<!-- 						<div>FINANCE AND CONTROLLING BSC - FINANCIAL CONTROLLER I</div> -->
+<!-- 							<div>12/31/2020 </div> -->
+<!-- 							<div> Full Time - Regular</div></dt> -->
+<!-- 				</span> -->
+<!-- 					<br><br> -->
+<!-- 					<dt class="pozadie4"> -->
+<!-- 						 <div>Requirements</div> -->
+
+<!-- <div>Education</div>            -->
+
+<!-- <div>Secondary school or University education (Bachelor’s degree) in Business Administration / Economics (ideally with focus on subject matter) -->
+<!-- Experience</div>    -->
+
+<!-- <div>First experience of relevant work experience in subject matter or work experience in a Shared Service Center is  a benefit -->
+<!-- Languages</div>    -->
+
+<!-- <div>Good knowledge of English language (B2) and German (B2)          -->
+<!-- Others </div>    -->
+
+<!-- <div>Knowledge of Finance and Controlling processes and procedures is a benefit -->
+<!-- SAP user skills are an advantage -->
+<!-- MS Office (Excel, Word, Outlook, Powerpoint) -  intermediate -->
+<!-- Strong sense of responsibility -->
+<!-- Ability to work in team and willingness to work in an international environment / intercultural sensitivity</div>    -->
+ 
+
+<!--  <div>Salary -->
+
+<!-- <div>Minimum monthly salary is 815 € brutto + variable part of salary + other financial benefits.</div>    -->
+
+<!-- <div>The final basic wage component can be adjusted accordingly to individual skills and experience of selected candidate.</div><div> -->
+<!-- 							General description/ Purpose -->
+<!-- </div> -->
+<!-- 							</dt></span> -->
+							
+							
+					
+				
+<h4>Jobs</h4>
+					<dt class="pozadie1">
+						<dt th:text="${@mainController.getJob(0).position}"></dt>
+						<dt th:text="${@mainController.getJob(0).employmentType}"></dt>
+						<dt th:text="${@mainController.getJob(0).startDate}"></dt>
+						<dt th:text="${@mainController.getJob(0).endDate}"></dt>
+						<dt th:utext="${@mainController.getQrCode(0)}"></dt>
+					</dt>
+					
+					<dt class="pozadie1">
+						<dt th:text="${@mainController.getJob(1).position}"></dt>
+						<dt th:text="${@mainController.getJob(1).employmentType}"></dt>
+						<dt th:text="${@mainController.getJob(1).startDate}"></dt>
+						<dt th:text="${@mainController.getJob(1).endDate}"></dt>
+						<dt th:utext="${@mainController.getQrCode(1)}"></dt>
+					</dt>
+					
+<!-- 					<h4>Jobs</h4> -->
+<!-- 					<dt class="pozadie2"> -->
+<!-- 						<dt th:each="job: ${@mainController.HtmlField}"><span -->
+<!-- 							th:text="${job.position}" /><span th:text="${job.endDate}" /> -->
+<!-- 							<span th:text="${job.employmentType}" /></dt> -->
+<!-- 					</dt> -->
+					
+<h4>Information</h4>
+					<dt class="pozadie3">
+						<dt th:utext="${@mainController.getJob(0).requirements}"></dt>
+					</dt>
+					
+					<dt class="pozadie3">
+						<dt th:utext="${@mainController.getJob(1).requirements}"></dt>
+					</dt>
+					
+<!-- 					<h4>Information</h4> -->
+<!-- 					<dt class="pozadie4"> -->
+<!-- 						<dt th:each="job: ${@mainController.HtmlField}"><span -->
+<!-- 							th:text="${job.requirements}" /> -->
+<!-- 							</dt> -->
+<!-- 					</dt> -->
+						
+						
+
+</body>
+<footer>
+  <div class="footer"> Created by:
+    <img src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png'
+						width="250" height="170"><span class="footer1">Academy</span>
+</footer>
+</html>
