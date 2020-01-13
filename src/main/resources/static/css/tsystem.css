@@ -1,7 +1,7 @@
 body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
-	background-size: 1920px 1150px;
+	background-size: 1920px 1260px;
 		overflow: hidden;   
 	}
 	
@@ -41,7 +41,7 @@ body {
 	font-family:  'Roboto',sans-serif;;
 	color:white;
 	text-align:right;
-	margin: -1.0em -2em;
+	margin: 35em -2em;
 	padding-right: 2em;
 	}
 	
@@ -101,6 +101,42 @@ div.pozadie2 {
 	text-align: left;	
 }
 
+.container-fluid{
+	 position: relative;
+  margin: auto;
+  height: 2.8em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
+	
+}
+.container-fluid{
+	 position: relative;
+  margin: auto;
+  height: 2.8em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
+	
+}
+/* .container-fluid > div { */
+/*   position: absolute; */
+/*   top: 0; */
+/*   left: 0; */
+/*   right: 0; */
+/*   bottom: 0; */
+/*   color: white; */
+/*   pointer-events: none; */
+/*   font-size: 0.4em; */
+/*  font-family: "Times New Roman"; */
+/*  text-align: left; */
+/* } */
 
 
 	.deconstructed {
@@ -127,33 +163,73 @@ div.pozadie2 {
  font-family: "Times New Roman";
  text-align: left;
 }
+.container-fluid > div:nth-child(5) {
+  -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
+  mask-image: linear-gradient(transparent 100%, black 100%);
+  animation: container-fluid1 5s 1;
+} 
+.container-fluid > div:nth-child(1) {
+  -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
+  mask-image: linear-gradient(transparent 100%, black 100%);
+  animation: container-fluid2 5s 1;
+} 
+
 
 .deconstructed > div:nth-child(1) {
   -webkit-mask-image: linear-gradient(black 0%, transparent 0%,black 25%, transparent 25%);
   mask-image: linear-gradient(transparent 0%, black 0%, black 50%, transparent 50%);
-  animation: deconstructed1 4s infinite;
+  animation: deconstructed1 6s infinite;
   color: 		white;
 } 
 
 .deconstructed > div:nth-child(2) {
   -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
   mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
-  animation: deconstructed2 4s infinite;
+  animation: deconstructed2 6s infinite;
   color: 		white;
 }
 
 .deconstructed > div:nth-child(3) {
    -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
   mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
-  animation: deconstructed3 4s infinite;
+  animation: deconstructed3 6s infinite;
   color: 		white;
 }
 
 .deconstructed > div:nth-child(4) {
    -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
   mask-image: linear-gradient(transparent 75%, black 75%);
-  animation: deconstructed4 4s infinite;
+  animation: deconstructed4 6s infinite;
   color: 		white;
+}
+
+@keyframes container-fluid1 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes container-fluid2 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 
