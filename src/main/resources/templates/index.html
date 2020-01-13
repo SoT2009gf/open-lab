@@ -104,8 +104,8 @@
 <!-- 							</dt></span> -->
 							
 							
-					
-				
+					<div class="row">
+				<section class="col-6">
 <h4>Jobs</h4>
 					<dt class="pozadie1">
 						<div th:text="${@mainController.getJob(0).position}"></div>
@@ -114,7 +114,7 @@
 						<div th:text="${@mainController.getJob(0).endDate}"></div>
 						<div th:utext="${@mainController.getQrCode(0)}"></div>
 					</dt>
-					<br><br><br><br><br>
+					<br><br>
 					<dt class="pozadie3">
 						<div th:text="${@mainController.getJob(1).position}"></div>
 						<div th:text="${@mainController.getJob(1).employmentType}"></div>
@@ -122,6 +122,7 @@
 						<div th:text="${@mainController.getJob(1).endDate}"></div>
 						<div th:utext="${@mainController.getQrCode(1)}"></div>
 					</dt>
+					</section>
 					
 <!-- 					<h4>Jobs</h4> -->
 <!-- 					<dt class="pozadie2"> -->
@@ -129,14 +130,16 @@
 <!-- 							th:text="${job.position}" /><span th:text="${job.endDate}" /> -->
 <!-- 							<span th:text="${job.employmentType}" /></dt> -->
 <!-- 					</dt> -->
-					
-				<span>
-					<h4 class= "Caption">Information</h4>
-					<dt class="pozadie2">
+					<section class="col-6">
+					<span>
+					<h4>Information</h4>
+					<div class="pozadie2">
 						<div th:utext="${@mainController.getJob(0).requirements}"></div>
-					</dt>
+					</div>
 					</span>
-					
+					</section>
+					</div>
+				
 					<!-- <dt class="pozadie4">
 						<div th:utext="${@mainController.getJob(1).requirements}"></div>
 					</dt> -->

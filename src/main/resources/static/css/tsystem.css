@@ -17,10 +17,11 @@ body {
 	div.mess{
 	font-size: 3.125em;
 	color:	#7FFF00;}
+	
 	div.footer{
 	font-family:Times New Roman;
 	color:white;
-	margin:6.5em 1.25em;
+
 	}
 	div{
 	color:white;
@@ -35,14 +36,6 @@ body {
 	font-family:Times New Roman;
 	text-align: left;
 	padding-left: 5em;
-	}
-	h4.Caption{
-	font-size: 0.5em;
-	color:#EC0075;
-	font-family:Times New Roman;
-	text-align: right;
-	padding-left: 5em;
-	margin:-29em 50em;	
 	}
 	h4.info{
 	font-size: 0.5em;
@@ -65,20 +58,20 @@ body {
 
 	
 	
-	dt.pozadie1 {
+	 dt.pozadie1 {
 	 font-family:Times New Roman;
 	font-size: 0.5em;
 	color: #EC0075;
 	text-align: left;
 	padding-left: 5em;
 }
-dt.pozadie2 {
+
+div.pozadie2 {
 	 font-family:Times New Roman;
 	font-size: 0.4em;
 	color: #EC0075;
-	margin: 37em 50em;
-	margin-right: 2em;
 	text-align: left;
+
 }
 dt.pozadie3 {
 	 font-family:Times New Roman;
@@ -92,10 +85,9 @@ dt.pozadie4 {
 	 font-family:Times New Roman;
 	font-size: 0.4em;
 	color: #EC0075;
-	margin:-13em 50em;
-	margin-right: 2em;
-}
 
+}
+ 
 
 	.deconstructed {
   position: relative;
