@@ -108,19 +108,19 @@
 				
 <h4>Jobs</h4>
 					<dt class="pozadie1">
-						<dt th:text="${@mainController.getJob(0).position}"></dt>
-						<dt th:text="${@mainController.getJob(0).employmentType}"></dt>
-						<dt th:text="${@mainController.getJob(0).startDate}"></dt>
-						<dt th:text="${@mainController.getJob(0).endDate}"></dt>
-						<dt th:utext="${@mainController.getQrCode(0)}"></dt>
+						<div th:text="${@mainController.getJob(0).position}"></div>
+						<div th:text="${@mainController.getJob(0).employmentType}"></div>
+						<div th:text="${@mainController.getJob(0).startDate}"></div>
+						<div th:text="${@mainController.getJob(0).endDate}"></div>
+						<div th:utext="${@mainController.getQrCode(0)}"></div>
 					</dt>
-					
-					<dt class="pozadie1">
-						<dt th:text="${@mainController.getJob(1).position}"></dt>
-						<dt th:text="${@mainController.getJob(1).employmentType}"></dt>
-						<dt th:text="${@mainController.getJob(1).startDate}"></dt>
-						<dt th:text="${@mainController.getJob(1).endDate}"></dt>
-						<dt th:utext="${@mainController.getQrCode(1)}"></dt>
+					<br><br><br><br><br>
+					<dt class="pozadie3">
+						<div th:text="${@mainController.getJob(1).position}"></div>
+						<div th:text="${@mainController.getJob(1).employmentType}"></div>
+						<div th:text="${@mainController.getJob(1).startDate}"></div>
+						<div th:text="${@mainController.getJob(1).endDate}"></div>
+						<div th:utext="${@mainController.getQrCode(1)}"></div>
 					</dt>
 					
 <!-- 					<h4>Jobs</h4> -->
@@ -130,14 +130,16 @@
 <!-- 							<span th:text="${job.employmentType}" /></dt> -->
 <!-- 					</dt> -->
 					
-<h4>Information</h4>
-					<dt class="pozadie3">
-						<dt th:utext="${@mainController.getJob(0).requirements}"></dt>
+				<span>
+					<h4 class= "Caption">Information</h4>
+					<dt class="pozadie2">
+						<div th:utext="${@mainController.getJob(0).requirements}"></div>
 					</dt>
+					</span>
 					
-					<dt class="pozadie3">
-						<dt th:utext="${@mainController.getJob(1).requirements}"></dt>
-					</dt>
+					<!-- <dt class="pozadie4">
+						<div th:utext="${@mainController.getJob(1).requirements}"></div>
+					</dt> -->
 					
 <!-- 					<h4>Information</h4> -->
 <!-- 					<dt class="pozadie4"> -->

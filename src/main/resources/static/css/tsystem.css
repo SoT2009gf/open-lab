@@ -3,7 +3,7 @@ body {
 	background-attachment: auto background-repeat: no-repeat;
 	background-position: right top;
 	background-size: 1920px 1150px;
-/* 	overflow: hidden; */
+/*   	overflow: hidden;   */
 	
 	}
 	
@@ -36,6 +36,14 @@ body {
 	text-align: left;
 	padding-left: 5em;
 	}
+	h4.Caption{
+	font-size: 0.5em;
+	color:#EC0075;
+	font-family:Times New Roman;
+	text-align: right;
+	padding-left: 5em;
+	margin:-29em 50em;	
+	}
 	h4.info{
 	font-size: 0.5em;
 	color:#EC0075;
@@ -53,6 +61,10 @@ body {
 	font-family:Times New Roman;
 	
 	}
+	
+
+	
+	
 	dt.pozadie1 {
 	 font-family:Times New Roman;
 	font-size: 0.5em;
@@ -62,10 +74,11 @@ body {
 }
 dt.pozadie2 {
 	 font-family:Times New Roman;
-	font-size: 0.5em;
+	font-size: 0.4em;
 	color: #EC0075;
-	margin:-11em 50em;
+	margin: 37em 50em;
 	margin-right: 2em;
+	text-align: left;
 }
 dt.pozadie3 {
 	 font-family:Times New Roman;
@@ -73,10 +86,11 @@ dt.pozadie3 {
 	color: #EC0075;
 	text-align: left;
 	padding-left: 5em;
+	
 }
 dt.pozadie4 {
 	 font-family:Times New Roman;
-	font-size: 0.5em;
+	font-size: 0.4em;
 	color: #EC0075;
 	margin:-13em 50em;
 	margin-right: 2em;

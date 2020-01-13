@@ -84,7 +84,7 @@ public class MainController {
 					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
 					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
 			try {
-				QrCode.generateQRCodeImage(url, 350, 350, QR_FOLDER + i + ".png");
+				QrCode.generateQRCodeImage(url, 150, 150, QR_FOLDER + i + ".png");
 			} catch (WriterException e) {
 				System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
 			} catch (IOException e) {
