@@ -1,12 +1,17 @@
 package sk.tsystems.openlab.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -16,12 +21,11 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.google.gson.JsonObject;
 
-import com.google.zxing.WriterException;
+import io.nayuki.qrcodegen.QrCode;
 
 import sk.tsystems.openlab.entity.Job;
 import sk.tsystems.openlab.json.JsonProcessor;
 import sk.tsystems.openlab.service.JobService;
-import sk.tsystems.openlab.util.QrCode;
 
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
@@ -57,6 +61,7 @@ public class MainController {
 
 	private void storeDataFromJSON() {
 		JsonProcessor jsonProcessor = new JsonProcessor();
+
 		JsonObject fetchedData = jsonProcessor.createtJSONObject();
 		jobCount = fetchedData.getAsJsonObject("SearchResult").getAsJsonPrimitive("SearchResultCount").getAsInt();
 		String position;
@@ -83,24 +88,24 @@ public class MainController {
 			url = "https://t-systems.jobs/careers-sk-en/" + fetchedData.getAsJsonObject("SearchResult")
 					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
 					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
-			try {
-				QrCode.generateQRCodeImage(url, 150, 150, QR_FOLDER + i + ".png");
-			} catch (WriterException e) {
-				System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
-			} catch (IOException e) {
-				System.out.println("Could not generate QR Code, IOException :: " + e.getMessage());
-			}
-
 			jobService.addJob(new Job(position, employmentType, startDate, endDate, requirements));
+
+			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
+			BufferedImage img = qrcode.toImage(4, 10);
+			try {
+				ImageIO.write(img, "png", new File(QR_FOLDER + i + ".png"));
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
 	private void clearSavedData() {
 		Path path = FileSystems.getDefault().getPath(QR_FOLDER + "0.png");
-		
-		if(Files.exists(path , LinkOption.NOFOLLOW_LINKS)) {
+
+		if (Files.exists(path, LinkOption.NOFOLLOW_LINKS)) {
 			try {
-				for(int i = 0; i < jobCount; i++) {
+				for (int i = 0; i < jobCount; i++) {
 					Path file = FileSystems.getDefault().getPath(QR_FOLDER + i + ".png");
 					Files.delete(file);
 				}
@@ -110,7 +115,7 @@ public class MainController {
 		}
 		jobService.clearJobs();
 	}
-	
+
 	public Job getJob(Integer positionInRow) {
 		if (this.positionInRow + positionInRow > jobCount - 1) {
 			this.positionInRow = 0;
