@@ -95,7 +95,7 @@ public class MainController {
 			jobService.addJob(new Job(position, employmentType, startDate, endDate, requirements));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
-			BufferedImage img = qrcode.toImage(4, 10);
+			BufferedImage img = qrcode.toImage(2, 8);
 			try {
 				ImageIO.write(img, "png", new File(QR_FOLDER + i + ".png"));
 			} catch (IOException ex) {

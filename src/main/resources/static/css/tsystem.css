@@ -1,6 +1,5 @@
 body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
-	background-attachment: auto background-repeat: no-repeat;
 	background-position: right top;
 	background-size: 1920px 1150px;
 /*   	overflow: hidden;   */
@@ -12,54 +11,67 @@ body {
 	text-align: right;	
 	padding-right:0.3em;
 	font-size: 2.5em;
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	}
 	div.mess{
 	font-size: 3.125em;
 	color:	#7FFF00;}
 	
 	div.footer{
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	color:white;
 
 	}
 	div{
 	color:white;
-	font-size: 0.8em;}
+	font-size: 0.8em;
+	text-align: left;
+	}
+	div.center{
+	max-width:80%;
+	}
+	div.qrcode{
+	max-width:50%;
+	padding-left: 15em;
+	}
+	
 	span.footer1{
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	color:#EC0075;
 	}
-	h4{
-	font-size: 0.5em;
+	h2{
+	font-size: 2em;
 	color:#EC0075;
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
+	text-align: center;
+	}
+	h3{
+	font-size: 1.5em;
+	color:#EC0075;
+	font-family: "Times New Roman";
 	text-align: left;
-	padding-left: 5em;
+	max-width: 20%;
 	}
 	h4.info{
-	font-size: 0.5em;
+	font-size: 1.0em;
 	color:#EC0075;
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	}
 	span.t{
 	font-size:1em;
 	color:#EC0075;
 	font-weight: bold;
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	}
 	span.stvorcek{
 	font-size:0.7em;
 	color:white;
-	font-family:Times New Roman;
+	font-family: "Times New Roman";
 	
 	}
-	
 
-	
-	
 	 dt.pozadie1 {
-	 font-family:Times New Roman;
+	 font-family: "Times New Roman";
 	font-size: 0.5em;
 	color: #EC0075;
 	text-align: left;
@@ -67,14 +79,15 @@ body {
 }
 
 div.pozadie2 {
-	 font-family:Times New Roman;
-	font-size: 0.4em;
+	 font-family: "Times New Roman";
+	font-size: 0.7em;
 	color: #EC0075;
-	text-align: left;
-
+	text-align: left;	
 }
+
+	
 dt.pozadie3 {
-	 font-family:Times New Roman;
+	 font-family: "Times New Roman";
 	font-size: 0.5em;
 	color: #EC0075;
 	text-align: left;
@@ -82,7 +95,7 @@ dt.pozadie3 {
 	
 }
 dt.pozadie4 {
-	 font-family:Times New Roman;
+	 font-family: "Times New Roman";
 	font-size: 0.4em;
 	color: #EC0075;
 
@@ -92,11 +105,11 @@ dt.pozadie4 {
 	.deconstructed {
   position: relative;
   margin: auto;
-  height: 0.9em;
+  height: 0.8em;
   color: transparent;
   font-family: 'Cambay', sans-serif;
   font-size: 10vw;
-  font-weight: 1200;
+  font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.03em;
 }
@@ -109,8 +122,8 @@ dt.pozadie4 {
   bottom: 0;
   color: white;
   pointer-events: none;
-  font-size: 0.6em;
- font-family:Times New Roman;
+  font-size: 0.4em;
+ font-family: "Times New Roman";
  text-align: left;
 }
 
@@ -201,7 +214,5 @@ dt.pozadie4 {
   100% {
     transform: translateX(-155%);
   }
-
-
-  
+ }
   
