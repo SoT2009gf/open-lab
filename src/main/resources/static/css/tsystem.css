@@ -2,64 +2,74 @@ body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
 	background-size: 1920px 1150px;
-/*   	overflow: hidden;   */
-	
+		overflow: hidden;   
 	}
 	
-	body.time{
-	color: #EC0075;
-	text-align: right;	
+	.time{
+	color: #ff178b;
+	text-align:right;
 	padding-right:0.3em;
-	font-size: 2.5em;
+	font-size: 1.8em;
 	font-family: "Times New Roman";
 	}
-	div.mess{
-	font-size: 3.125em;
-	color:	#7FFF00;}
 	
-	div.footer{
-	font-family: "Times New Roman";
-	color:white;
-
-	}
 	div{
 	color:white;
 	font-size: 0.8em;
 	text-align: left;
 	}
+	
+	div.text{
+	font-size: 2.5em;
+
+	color: white;
+	
+	}
+	
+	
 	div.center{
 	max-width:80%;
 	}
 	div.qrcode{
-	max-width:50%;
-	padding-left: 15em;
+	max-width:0.2em;
+	padding-left: 22em;
+	}
+	
+	div.footer{
+	font-family: "Times New Roman";
+	color:white;
+	text-align:right;
+	margin: -3em;
+	padding-right: 3em;
 	}
 	
 	span.footer1{
 	font-family: "Times New Roman";
-	color:#EC0075;
+	color:#ff178b;
+
+	
 	}
 	h2{
 	font-size: 2em;
-	color:#EC0075;
+	color:#ff178b;
 	font-family: "Times New Roman";
 	text-align: center;
 	}
 	h3{
 	font-size: 1.5em;
-	color:#EC0075;
+	color:#ff178b;
 	font-family: "Times New Roman";
 	text-align: left;
 	max-width: 20%;
 	}
 	h4.info{
 	font-size: 1.0em;
-	color:#EC0075;
+	color:#ff178b;
 	font-family: "Times New Roman";
 	}
 	span.t{
 	font-size:1em;
-	color:#EC0075;
+	color:#ff178b;
 	font-weight: bold;
 	font-family: "Times New Roman";
 	}
@@ -69,11 +79,14 @@ body {
 	font-family: "Times New Roman";
 	
 	}
+	span.system{
+	font-weight: normal;
+	}
 
 	 dt.pozadie1 {
 	 font-family: "Times New Roman";
 	font-size: 0.5em;
-	color: #EC0075;
+	color: #ff178b;
 	text-align: left;
 	padding-left: 5em;
 }
@@ -81,26 +94,11 @@ body {
 div.pozadie2 {
 	 font-family: "Times New Roman";
 	font-size: 0.7em;
-	color: #EC0075;
+	color: #ff178b;
 	text-align: left;	
 }
 
-	
-dt.pozadie3 {
-	 font-family: "Times New Roman";
-	font-size: 0.5em;
-	color: #EC0075;
-	text-align: left;
-	padding-left: 5em;
-	
-}
-dt.pozadie4 {
-	 font-family: "Times New Roman";
-	font-size: 0.4em;
-	color: #EC0075;
 
-}
- 
 
 	.deconstructed {
   position: relative;
