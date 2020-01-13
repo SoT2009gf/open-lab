@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.WebApplicationContext;
@@ -34,19 +35,22 @@ public class MainController {
 
 	private int jobCount;
 	private int positionInRow;
-	List<Job> jobs;
+	List<Job> jobs = new ArrayList<>();
 	private static final String QR_FOLDER = ".\\src\\main\\resources\\static\\images\\qr\\";
 
 	@Autowired
 	JobService jobService;
 
+	@Scheduled(cron="0 0 */1 * * *")
+	private void prepareData() {
+		clearSavedData();
+		storeDataFromJSON();
+		jobs = jobService.getAllJobs();
+		System.out.println("Data has been refreshed.");
+	}
+
 	@RequestMapping
 	public String index() {
-		if (jobs == null) {
-			jobs = new ArrayList<>();
-		} else {
-			jobs.clear();
-		}
 		clearSavedData();
 		storeDataFromJSON();
 		jobs = jobService.getAllJobs();
@@ -113,6 +117,7 @@ public class MainController {
 				ex.printStackTrace();
 			}
 		}
+		jobs.clear();
 		jobService.clearJobs();
 	}
 
