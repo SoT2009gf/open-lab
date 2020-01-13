@@ -1,6 +1,10 @@
 package sk.tsystems.openlab.controller;
 
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +31,7 @@ public class MainController {
 	private int jobCount;
 	private int positionInRow;
 	List<Job> jobs;
+	private static final String QR_FOLDER = ".\\src\\main\\resources\\static\\images\\qr\\";
 
 	@Autowired
 	JobService jobService;
@@ -38,7 +43,7 @@ public class MainController {
 		} else {
 			jobs.clear();
 		}
-		jobService.clearJobs();
+		clearSavedData();
 		storeDataFromJSON();
 		jobs = jobService.getAllJobs();
 		return "index";
@@ -79,7 +84,7 @@ public class MainController {
 					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
 					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
 			try {
-				QrCode.generateQRCodeImage(url, 350, 350, ".\\src\\main\\resources\\static\\images\\qr\\" + i + ".png");
+				QrCode.generateQRCodeImage(url, 350, 350, QR_FOLDER + i + ".png");
 			} catch (WriterException e) {
 				System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
 			} catch (IOException e) {
@@ -90,6 +95,22 @@ public class MainController {
 		}
 	}
 
+	private void clearSavedData() {
+		Path path = FileSystems.getDefault().getPath(QR_FOLDER + "0.png");
+		
+		if(Files.exists(path , LinkOption.NOFOLLOW_LINKS)) {
+			try {
+				for(int i = 0; i < jobCount; i++) {
+					Path file = FileSystems.getDefault().getPath(QR_FOLDER + i + ".png");
+					Files.delete(file);
+				}
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+		jobService.clearJobs();
+	}
+	
 	public Job getJob(Integer positionInRow) {
 		if (this.positionInRow + positionInRow > jobCount - 1) {
 			this.positionInRow = 0;
