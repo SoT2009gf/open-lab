@@ -38,6 +38,7 @@ public class MainController {
 		} else {
 			jobs.clear();
 		}
+		jobService.clearJobs();
 		storeDataFromJSON();
 		jobs = jobService.getAllJobs();
 		return "index";

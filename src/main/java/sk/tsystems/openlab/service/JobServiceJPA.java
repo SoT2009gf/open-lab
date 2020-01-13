@@ -32,4 +32,8 @@ public class JobServiceJPA implements JobService {
 		}		
 	}
 
+	@Override
+	public void clearJobs() {
+		entityManager.createQuery("delete from Job j").executeUpdate();
+	}
 }

@@ -9,4 +9,6 @@ public interface JobService {
 	void addJob(Job job);
 
 	List<Job> getAllJobs();
+	
+	void clearJobs();
 }
