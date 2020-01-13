@@ -1,106 +1,143 @@
 body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
-	background-size: 1920px 1150px;
-/*   	overflow: hidden;   */
-	
+	background-size: 1920px 1260px;
+		overflow: hidden;   
 	}
 	
-	body.time{
-	color: #EC0075;
-	text-align: right;	
-	padding-right:0.3em;
-	font-size: 2.5em;
-	font-family: "Times New Roman";
+	.time{
+	color: #ff178b;
+	text-align:right;
+	padding-right:1em;
+	font-size: 1.5em;
+	font-family: "Roboto";
 	}
-	div.mess{
-	font-size: 3.125em;
-	color:	#7FFF00;}
 	
-	div.footer{
-	font-family: "Times New Roman";
-	color:white;
-
-	}
 	div{
 	color:white;
 	font-size: 0.8em;
 	text-align: left;
 	}
-	div.center{
-	max-width:80%;
+	
+	div.text{
+	font-size: 3em;
+
+	color: white;
+	
 	}
-	div.qrcode{
-	max-width:50%;
-	padding-left: 15em;
+	img.qr-code-image{
+	width: 15em;
+	height: 15em;
+	margin: 0 auto;
+	}
+	
+	.qrcode{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center; 
+	}
+	
+	div.footer{
+	font-family:  'Roboto',sans-serif;;
+	color:white;
+	text-align:right;
+	margin: 35em -2em;
+	padding-right: 2em;
 	}
 	
 	span.footer1{
-	font-family: "Times New Roman";
-	color:#EC0075;
+	font-family:  'Roboto',sans-serif;;
+	color:#ff178b;
+
+	
 	}
 	h2{
-	font-size: 2em;
-	color:#EC0075;
-	font-family: "Times New Roman";
+	font-size: 2rem;
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;
 	text-align: center;
+	font-weight: bold;
 	}
 	h3{
-	font-size: 1.5em;
-	color:#EC0075;
-	font-family: "Times New Roman";
+	font-size: 2em;
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
 	}
 	h4.info{
 	font-size: 1.0em;
-	color:#EC0075;
-	font-family: "Times New Roman";
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;;
 	}
 	span.t{
 	font-size:1em;
-	color:#EC0075;
+	color:#ff178b;
 	font-weight: bold;
-	font-family: "Times New Roman";
+	font-family:  "Times New Roman";
 	}
 	span.stvorcek{
 	font-size:0.7em;
 	color:white;
-	font-family: "Times New Roman";
+	font-family:  "Times New Roman";
 	
+	}
+	span.system{
+	font-weight: normal;
+	font-family:  "Times New Roman";
 	}
 
 	 dt.pozadie1 {
-	 font-family: "Times New Roman";
+	 font-family:  'Roboto',sans-serif;;
 	font-size: 0.5em;
-	color: #EC0075;
+	color: #ff178b;
 	text-align: left;
 	padding-left: 5em;
 }
 
 div.pozadie2 {
-	 font-family: "Times New Roman";
-	font-size: 0.7em;
-	color: #EC0075;
+	 font-family: 'Roboto',sans-serif;
+	color: #ff178b;
 	text-align: left;	
 }
 
-	
-dt.pozadie3 {
-	 font-family: "Times New Roman";
-	font-size: 0.5em;
-	color: #EC0075;
-	text-align: left;
-	padding-left: 5em;
+.container-fluid{
+	 position: relative;
+  margin: auto;
+  height: 2.8em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
 	
 }
-dt.pozadie4 {
-	 font-family: "Times New Roman";
-	font-size: 0.4em;
-	color: #EC0075;
+.container-fluid{
+	 position: relative;
+  margin: auto;
+  height: 2.8em;
+  color: transparent;
+  font-family: 'Cambay', sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.03em;
+	
+}
+/* .container-fluid > div { */
+/*   position: absolute; */
+/*   top: 0; */
+/*   left: 0; */
+/*   right: 0; */
+/*   bottom: 0; */
+/*   color: white; */
+/*   pointer-events: none; */
+/*   font-size: 0.4em; */
+/*  font-family: "Times New Roman"; */
+/*  text-align: left; */
+/* } */
 
-}
- 
 
 	.deconstructed {
   position: relative;
@@ -126,33 +163,73 @@ dt.pozadie4 {
  font-family: "Times New Roman";
  text-align: left;
 }
+.container-fluid > div:nth-child(5) {
+  -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
+  mask-image: linear-gradient(transparent 100%, black 100%);
+  animation: container-fluid1 5s 1;
+} 
+.container-fluid > div:nth-child(1) {
+  -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
+  mask-image: linear-gradient(transparent 100%, black 100%);
+  animation: container-fluid2 5s 1;
+} 
+
 
 .deconstructed > div:nth-child(1) {
   -webkit-mask-image: linear-gradient(black 0%, transparent 0%,black 25%, transparent 25%);
   mask-image: linear-gradient(transparent 0%, black 0%, black 50%, transparent 50%);
-  animation: deconstructed1 4s infinite;
+  animation: deconstructed1 6s infinite;
   color: 		white;
 } 
 
 .deconstructed > div:nth-child(2) {
   -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
   mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
-  animation: deconstructed2 4s infinite;
+  animation: deconstructed2 6s infinite;
   color: 		white;
 }
 
 .deconstructed > div:nth-child(3) {
    -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
   mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
-  animation: deconstructed3 4s infinite;
+  animation: deconstructed3 6s infinite;
   color: 		white;
 }
 
 .deconstructed > div:nth-child(4) {
    -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
   mask-image: linear-gradient(transparent 75%, black 75%);
-  animation: deconstructed4 4s infinite;
+  animation: deconstructed4 6s infinite;
   color: 		white;
+}
+
+@keyframes container-fluid1 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes container-fluid2 {
+  0% {
+    transform: translateX(100%);
+  }
+  26% {
+    transform: translateX(0%);
+  }
+  83% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 

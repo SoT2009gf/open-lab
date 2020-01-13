@@ -129,7 +129,7 @@ public class MainController {
 	}
 
 	public String getQrCode(Integer positionInRow) {
-		return "<img src='/images/qr/" + (this.positionInRow + positionInRow)
+		return "<img class='qr-code-image' src='/images/qr/" + (this.positionInRow + positionInRow)
 				+ ".png' alt='Job url coded in qr image.'/>";
 	}
 }
