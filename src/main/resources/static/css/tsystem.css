@@ -8,9 +8,9 @@ body {
 	.time{
 	color: #ff178b;
 	text-align:right;
-	padding-right:0.3em;
-	font-size: 1.8em;
-	font-family: "Times New Roman";
+	padding-right:1em;
+	font-size: 1.5em;
+	font-family: "Roboto";
 	}
 	
 	div{
@@ -20,71 +20,75 @@ body {
 	}
 	
 	div.text{
-	font-size: 2.5em;
+	font-size: 3em;
 
 	color: white;
 	
 	}
-	
-	
-	div.center{
-	max-width:80%;
+	img.qr-code-image{
+	width: 15em;
+	height: 15em;
+	margin: 0 auto;
 	}
-	div.qrcode{
-	max-width:0.2em;
-	padding-left: 22em;
+	
+	.qrcode{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center; !important
 	}
 	
 	div.footer{
-	font-family: "Times New Roman";
+	font-family:  'Roboto',sans-serif;;
 	color:white;
 	text-align:right;
-	margin: -3em;
-	padding-right: 3em;
+	margin: -1.0em -2em;
+	padding-right: 2em;
 	}
 	
 	span.footer1{
-	font-family: "Times New Roman";
+	font-family:  'Roboto',sans-serif;;
 	color:#ff178b;
 
 	
 	}
 	h2{
-	font-size: 2em;
+	font-size: 2rem;
 	color:#ff178b;
-	font-family: "Times New Roman";
+	font-family:  'Roboto',sans-serif;
 	text-align: center;
+	font-weight: bold;
 	}
 	h3{
-	font-size: 1.5em;
+	font-size: 2em;
 	color:#ff178b;
-	font-family: "Times New Roman";
+	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
 	}
 	h4.info{
 	font-size: 1.0em;
 	color:#ff178b;
-	font-family: "Times New Roman";
+	font-family:  'Roboto',sans-serif;;
 	}
 	span.t{
 	font-size:1em;
 	color:#ff178b;
 	font-weight: bold;
-	font-family: "Times New Roman";
+	font-family:  "Times New Roman";
 	}
 	span.stvorcek{
 	font-size:0.7em;
 	color:white;
-	font-family: "Times New Roman";
+	font-family:  "Times New Roman";
 	
 	}
 	span.system{
 	font-weight: normal;
+	font-family:  "Times New Roman";
 	}
 
 	 dt.pozadie1 {
-	 font-family: "Times New Roman";
+	 font-family:  'Roboto',sans-serif;;
 	font-size: 0.5em;
 	color: #ff178b;
 	text-align: left;
@@ -92,8 +96,7 @@ body {
 }
 
 div.pozadie2 {
-	 font-family: "Times New Roman";
-	font-size: 0.7em;
+	 font-family: 'Roboto',sans-serif;
 	color: #ff178b;
 	text-align: left;	
 }
