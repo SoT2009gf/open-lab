@@ -1,14 +1,15 @@
 body {
+	background-color: black;
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
-	background-size: cover;
-		overflow: hidden;   
+	background-size: 1920px 1300px;
+	overflow: hidden;
 	}
 	
 	.time{
 	color: #ff178b;
 	text-align:right;
-	padding-right:1em;
+	padding-right: 0;
 	font-size: 1.5em;
 	font-family: "Roboto";
 	}
@@ -28,7 +29,7 @@ body {
 	img.qr-code-image{
 	width: 15em;
 	height: 15em;
-	margin: 0 auto;
+	margin: 2em auto;
 	}
 	
 	.qrcode{
@@ -41,15 +42,23 @@ body {
 	font-family:  'Roboto',sans-serif;;
 	color:white;
 	text-align:right;
-	margin: 35em -2em;
-	padding-right: 2em;
+	margin: 35em;
+	padding-right: 0;
+	margin-right: 0;
 	}
 	
 	span.footer1{
 	font-family:  'Roboto',sans-serif;;
 	color:#ff178b;
-
+	}
+	.contact{
+	color: white;
+	float: left;
+	margin-top: 65px;
+	}
 	
+	.contact div{
+		display: inline-block;
 	}
 	h2{
 	font-size: 2rem;
@@ -292,4 +301,3 @@ div.pozadie2 {
     transform: translateX(-155%);
   }
  }
-  

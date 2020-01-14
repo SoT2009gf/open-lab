@@ -15,26 +15,26 @@
 <script src="/js/timer.js"></script>
  <body class="time" onload="startTime()">
 	<div class="time" id="txt"></div>
-		<div class="deconstructed">
+	<div class="deconstructed">
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span
-				class="system">Systems</span><span class="stvorcek">▪</span>
+				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
+				class="stvorcek">▪</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span
-				class="system">Systems</span><span class="stvorcek">▪</span>
+				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
+				class="stvorcek">▪</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span
-				class="system">Systems</span><span class="stvorcek">▪</span>
+				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
+				class="stvorcek">▪</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span
-				class="system">Systems</span><span class="stvorcek">▪</span>
+				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
+				class="stvorcek">▪</span>
 		</div>
 	</div>
 
@@ -47,7 +47,8 @@
 					<h3>Position</h3>
 					<div class="text" th:text="${@mainController.getJob(0).position}"></div>
 					<h3>Employment type</h3>
-					<div class="text" th:text="${@mainController.getJob(0).employmentType}"></div>
+					<div class="text"
+						th:text="${@mainController.getJob(0).employmentType}"></div>
 					<h3>Publication date</h3>
 					<div class="text" th:text="${@mainController.getJob(0).startDate}"></div>
 					<h3>End date</h3>
@@ -55,19 +56,13 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-					<h2>For more information</h2>
-				
-					<div class="qrcode" th:utext="${@mainController.getQrCode(0)}"></div>
-					<span><img
-				src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
-				width="40" height="40" alt=""> tsystems_slovakia</span>
-			
-			<span><img
-				src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
-				width="35" height="35" alt=""> tsystems_slovakia</span>
+				<h2>For more information</h2>
+
+				<div class="qrcode" th:utext="${@mainController.getQrCode(0)}"></div>
+
+			</div>
 		</div>
-		</div>
-	<br><br><br>
+		<br> <br> <br>
 		<div class="row screen2">
 			<div class="col-md-6">
 				<div class="pozadie2">
@@ -75,7 +70,8 @@
 					<h3>Position</h3>
 					<div class="text" th:text="${@mainController.getJob(1).position}"></div>
 					<h3>Employment type</h3>
-					<div class="text" th:text="${@mainController.getJob(1).employmentType}"></div>
+					<div class="text"
+						th:text="${@mainController.getJob(1).employmentType}"></div>
 					<h3>Publication date</h3>
 					<div class="text" th:text="${@mainController.getJob(1).startDate}"></div>
 					<h3>End date</h3>
@@ -84,16 +80,30 @@
 			</div>
 			<div class="col-md-6">
 				<h2>For more information</h2>
-					<div class="qrcode" th:utext="${@mainController.getQrCode(1)}" ></div>
+				<div class="qrcode" th:utext="${@mainController.getQrCode(1)}"></div>
 			</div>
 		</div>
 	</div>
 	<footer>
+		<div class="contact">
+			<div>
+				<img
+					src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
+					width="40" height="40" alt=""> tsystems_slovakia
+			</div>
+			<div>
+				<img
+					src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
+					width="35" height="35" alt=""> tsystems_slovakia
+			</div>
+		</div>
 		<div class="footer">
+
 			Created by <span class="footer1">Academy</span> <img
 				src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png'
 				width="250" height="170" alt="">
 		</div>
+
 	</footer>
 </body>
 </html>
