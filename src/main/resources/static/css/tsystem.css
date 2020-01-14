@@ -1,7 +1,7 @@
 body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
-	background-size: 1920px 1260px;
+	background-size: cover;
 		overflow: hidden;   
 	}
 	

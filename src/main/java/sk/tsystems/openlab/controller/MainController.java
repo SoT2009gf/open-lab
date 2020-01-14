@@ -41,7 +41,7 @@ public class MainController {
 	@Autowired
 	JobService jobService;
 
-	@Scheduled(cron="1 0 */1 * * *")
+	@Scheduled(cron="0 0 */1 * * *")
 	private void prepareData() {
 		clearSavedData();
 		storeDataFromJSON();
