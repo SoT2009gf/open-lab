@@ -1,1 +1,1 @@
-Don't delete this file. It's required for project structure integrity.
+Don't delete this file. It's required for application functionality.

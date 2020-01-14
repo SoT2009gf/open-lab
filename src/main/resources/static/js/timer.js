@@ -1,1 +1,0 @@
-setTimeout("location.href = '/slide'", 20000);

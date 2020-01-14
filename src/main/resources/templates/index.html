@@ -10,16 +10,20 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/tsystem.css" type="text/css">
-<script src="/js/time.js"></script>
-<script src="/js/timer.js"></script>
- <script src="/js/snow.js"></script>
- </head>
- <body class="time" onload="startTime()">
+<link rel="stylesheet" th:href="@{/css/tsystem.css}" type="text/css">
+<script th:src="@{/js/time.js}"></script>
+
+<script>
+	setTimeout("location.href = '/slide'", 20000);
+</script>
+
+</head>
+<body class="time" onload="startTime()">
+
 	<div class="time" id="txt"></div>
-	
-	
-	 
+
+
+
 
 	<div class="deconstructed">
 		<div>
@@ -104,75 +108,34 @@
 			</div>
 		</div>
 		<div class="footer">
-
 			Created by <span class="footer1">Academy</span> <img
 				src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png'
 				width="250" height="170" alt="">
 		</div>
-	
+
 	</footer>
-	
+
 	<div class="snowflakes" aria-hidden="true">
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-  ❅
-  </div>
-  <div class="snowflake">
-  ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
-  <div class="snowflake">
-    ❅
-  </div>
-  <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-    <div class="snowflake">
-    ❆
-  </div>
-</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❅</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+		<div class="snowflake">❆</div>
+	</div>
 </body>
 </html>
