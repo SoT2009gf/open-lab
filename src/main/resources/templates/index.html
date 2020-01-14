@@ -12,10 +12,12 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/css/tsystem.css}" type="text/css">
 <script th:src="@{/js/time.js}"></script>
+<script th:src="@{/js/bar.js}"></script>
 
 <script>
-	setTimeout("location.href = '/slide'", 20000);
+	setTimeout("location.href = '/slide'", 30000);
 </script>
+
 
 </head>
 <body class="time" onload="startTime()">
@@ -67,8 +69,16 @@
 			</div>
 			<div class="col-md-6">
 				<h2>For more information</h2>
-
 				<div class="qrcode" th:utext="${@mainController.getQrCode(0)}"></div>
+				<h4>COMPENSATIONS & BENEFITS</h4>
+				<div class="benefits">Money might not bring happiness, but it
+					does make life easier. Because we want you to be able to focus
+					fully on the projects at hand, we support you with an attractive
+					salary and numerous benefits. Because money can't get you
+					everything, we offer a number of benefits to make life easier on
+					top of that. You can further benefit from individual
+					location-specific offers and support services.</div>
+
 
 			</div>
 		</div>
@@ -91,6 +101,18 @@
 			<div class="col-md-6">
 				<h2>For more information</h2>
 				<div class="qrcode" th:utext="${@mainController.getQrCode(1)}"></div>
+
+				<h4>HOW TO APPLY</h4>
+				<div class="benefits">Found your new job? For the first scan QR CODE with your phone. Then simply click on
+					'apply now' to get to the form for your personal details. Any
+					questions? Looking for tips for your application? Then take a look
+					at the section called Application Tips on our career site. Here you
+					will find all manner of tips on 'The Right Way to Apply' and all
+					the answers to the technical application process of our Jobworld.
+
+					By the way, once you have set up your digital application, you can
+					use it to apply for any position at Deutsche Telekom - quickly and
+					easily and with just one click.</div>
 			</div>
 		</div>
 	</div>
@@ -104,38 +126,66 @@
 			<div>
 				<img
 					src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
-					width="35" height="35" alt=""> tsystems_slovakia
+					width="35" height="35" alt=""> t.systems.slovakia
 			</div>
 		</div>
 		<div class="footer">
 			Created by <span class="footer1">Academy</span> <img
 				src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png'
-				width="250" height="170" alt="">
+				width="250" height="170" alt=""><div class="bar">
+  <div class="in"></div>
+</div> 
 		</div>
 
 	</footer>
 
+
 	<div class="snowflakes" aria-hidden="true">
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❅</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
-		<div class="snowflake">❆</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
+		<div class="snowflake">T</div>
 	</div>
+	<div class="flakes" aria-hidden="true">
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+		<div class="flake">❅</div>
+		<div class="flake">❅</div>
+		<div class="flake">❆</div>
+	</div>
+	
+	
+	
 </body>
 </html>
