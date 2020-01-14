@@ -1,1 +1,0 @@
-setTimeout("location.href = '/team1/slide'", 20000);
