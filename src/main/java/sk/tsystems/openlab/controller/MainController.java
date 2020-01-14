@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -40,6 +41,9 @@ public class MainController {
 
 	@Autowired
 	JobService jobService;
+	
+	@Autowired
+	private ServletContext servletContext;
 
 	@Scheduled(cron="0 0 */1 * * *")
 	private void prepareData() {
@@ -128,6 +132,11 @@ public class MainController {
 		return jobs.get(this.positionInRow + positionInRow);
 	}
 
+//	public String getQrCode(Integer positionInRow) {
+//		return "<img class='qr-code-image' th:src='/" + servletContext.getContextPath() + "/images/qr/" + (this.positionInRow + positionInRow)
+//				+ ".png' alt='Job url coded in qr image.'/>";
+//	}
+	
 	public String getQrCode(Integer positionInRow) {
 		return "<img class='qr-code-image' src='/images/qr/" + (this.positionInRow + positionInRow)
 				+ ".png' alt='Job url coded in qr image.'/>";
