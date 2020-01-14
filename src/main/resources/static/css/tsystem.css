@@ -1,8 +1,13 @@
 body {
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
+<<<<<<< HEAD
 	background-size: 1920px 1300px;
 	overflow: hidden;
+=======
+	background-size: cover;
+		overflow: hidden;   
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 	
 	.time{
