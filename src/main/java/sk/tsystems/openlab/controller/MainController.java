@@ -65,7 +65,7 @@ public class MainController {
 
 	@RequestMapping("/slide")
 	public String slide() {
-		this.positionInRow++;
+		this.positionInRow+=2;
 		return "index";
 	}
 
