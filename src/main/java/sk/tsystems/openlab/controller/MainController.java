@@ -2,8 +2,10 @@ package sk.tsystems.openlab.controller;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -12,13 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.google.gson.JsonObject;
@@ -37,15 +42,12 @@ public class MainController {
 	private int jobCount;
 	private int positionInRow;
 	List<Job> jobs = new ArrayList<>();
-	private static final String QR_FOLDER = ".\\src\\main\\resources\\static\\images\\qr\\";
+	private static final String QR_FOLDER = System.getProperty("java.io.tmpdir");
 
 	@Autowired
 	JobService jobService;
-	
-	@Autowired
-	private ServletContext servletContext;
 
-	@Scheduled(cron="0 0 */1 * * *")
+	@Scheduled(cron = "0 0 */1 * * *")
 	private void prepareData() {
 		clearSavedData();
 		storeDataFromJSON();
@@ -63,7 +65,7 @@ public class MainController {
 
 	@RequestMapping("/slide")
 	public String slide() {
-		this.positionInRow++;
+		this.positionInRow+=2;
 		return "index";
 	}
 
@@ -76,7 +78,6 @@ public class MainController {
 		String employmentType;
 		String startDate;
 		String endDate;
-		String requirements;
 		String url;
 		for (int i = 0; i < jobCount; i++) {
 			position = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
@@ -90,13 +91,10 @@ public class MainController {
 			endDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
 					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationEndDate")
 					.getAsString();
-			requirements = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonObject("UserArea")
-					.get("TextRequirementDescription").getAsString();
 			url = "https://t-systems.jobs/careers-sk-en/" + fetchedData.getAsJsonObject("SearchResult")
 					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
 					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
-			jobService.addJob(new Job(position, employmentType, startDate, endDate, requirements));
+			jobService.addJob(new Job(position, employmentType, startDate, endDate));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
@@ -125,20 +123,20 @@ public class MainController {
 		jobService.clearJobs();
 	}
 
-	public Job getJob(Integer positionInRow) {
-		if (this.positionInRow + positionInRow > jobCount - 1) {
-			this.positionInRow = 0;
+	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
+	public void getQrCode(HttpServletResponse response, int number) throws IOException {
+		if (number + positionInRow <= jobCount - 1) {
+			InputStream in = new FileInputStream(QR_FOLDER + (positionInRow + number) + ".png");
+			response.setContentType(MediaType.IMAGE_PNG_VALUE);
+			OutputStream os = response.getOutputStream();
+			IOUtils.copy(in, os);
 		}
-		return jobs.get(this.positionInRow + positionInRow);
 	}
 
-//	public String getQrCode(Integer positionInRow) {
-//		return "<img class='qr-code-image' th:src='/" + servletContext.getContextPath() + "/images/qr/" + (this.positionInRow + positionInRow)
-//				+ ".png' alt='Job url coded in qr image.'/>";
-//	}
-	
-	public String getQrCode(Integer positionInRow) {
-		return "<img class='qr-code-image' src='/images/qr/" + (this.positionInRow + positionInRow)
-				+ ".png' alt='Job url coded in qr image.'/>";
+	public Job getJob(Integer positionInRow) {
+		if (positionInRow + this.positionInRow <= jobCount - 1) {
+			return jobs.get(positionInRow + this.positionInRow);
+		}
+		return null;
 	}
 }

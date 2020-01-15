@@ -1,6 +1,5 @@
 package sk.tsystems.openlab.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,15 +14,12 @@ public class Job {
 	private String employmentType;
 	private String startDate;
 	private String endDate;
-	@Column(length = 10000)
-	private String requirements;
 
-	public Job(String position, String employmentType, String startDate, String endDate, String requirements) {
+	public Job(String position, String employmentType, String startDate, String endDate) {
 		this.position = position;
 		this.employmentType = employmentType;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.requirements = requirements;
 	}
 
 	public Job() {
@@ -68,13 +64,5 @@ public class Job {
 
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
-	}
-
-	public String getRequirements() {
-		return requirements;
-	}
-
-	public void setRequirements(String requirements) {
-		this.requirements = requirements;
 	}
 }
