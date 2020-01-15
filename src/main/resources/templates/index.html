@@ -11,12 +11,7 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/css/tsystem.css}" type="text/css">
-<script th:src="@{/js/time.js}"></script>
-<script th:src="@{/js/bar.js}"></script>
 
-<script>
-	setTimeout("location.href = '/team1/slide'", 30000);
-</script>
 
 </head>
 <body class="time" onload="startTime()">
@@ -62,7 +57,8 @@
 			<div class="col-md-6">
 				<h2>For more information</h2>
 				<div class="qrcode">
-					<img class="qr-code-image" th:src="@{/qrcode?number=0}" alt="Qr code image.">
+					<img class="qr-code-image" th:src="@{/qrcode?number=0}"
+						alt="Qr code image.">
 				</div>
 				<h4>COMPENSATIONS &amp; BENEFITS</h4>
 				<div class="benefits">Money might not bring happiness, but it
@@ -93,7 +89,8 @@
 			<div class="col-md-6">
 				<h2>For more information</h2>
 				<div class="qrcode">
-					<img class="qr-code-image" th:src="@{/qrcode?number=1}" alt="Qr code image.">
+					<img class="qr-code-image" th:src="@{/qrcode?number=1}"
+						alt="Qr code image.">
 				</div>
 
 				<h4>HOW TO APPLY</h4>
@@ -157,32 +154,11 @@
 		<div class="snowflake">T</div>
 		<div class="snowflake">T</div>
 	</div>
-<<<<<<< HEAD
-	
-	
-=======
-	<div class="flakes" aria-hidden="true">
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-		<div class="flake">❅</div>
-		<div class="flake">❅</div>
-		<div class="flake">❆</div>
-	</div>
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
+	<script th:src="@{/js/time.js}"></script>
+	<script th:src="@{/js/bar.js}"></script>
+
+	<script>
+		setTimeout("location.href = '/slide'", 30000);
+	</script>
 </body>
 </html>

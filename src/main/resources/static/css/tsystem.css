@@ -2,8 +2,8 @@ body {
 	background-color: black;
 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg);
 	background-position: right top;
-	background-size: 1950px 1400px;
-	 overflow: hidden; 
+	background-size: 2850px 1800px;
+	overflow: hidden; 
 	background-repeat: no-repeat;
 	}
 	
@@ -112,17 +112,17 @@ body {
 	font-weight: bold;
 	}
 	h3{
-	font-size: 2em;
+	font-size: 3em;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
 	}
 	h4{
-	font-size: 1.5em;
+	font-size: 2em;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;;
-	padding-left: 1.2em;
+	padding-left: 2em;
 	}
 	span.t{
 	font-size:1em;
@@ -222,7 +222,7 @@ div.benefits{
  font-family: "Times New Roman";
  text-align: left;
 }
-.container-fluid > div:nth-child(5) {
+.container-fluid > div:nth-child(6) {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid1 5s 1;
