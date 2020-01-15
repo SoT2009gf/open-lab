@@ -57,6 +57,7 @@ public class MainController {
 
 	@RequestMapping
 	public String index() {
+		positionInRow = 0;
 		clearSavedData();
 		storeDataFromJSON();
 		jobs = jobService.getAllJobs();
