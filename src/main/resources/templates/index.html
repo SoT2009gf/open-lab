@@ -13,6 +13,7 @@
 <link rel="stylesheet" th:href="@{/css/tsystem.css}" type="text/css">
 
 
+
 </head>
 <body class="time" onload="startTime()">
 	<div class="time" id="txt"></div>
@@ -52,26 +53,34 @@
 					<div class="text" th:text="${@mainController.getJob(0).startDate}"></div>
 					<h3>End date</h3>
 					<div class="text" th:text="${@mainController.getJob(0).endDate}"></div>
+					<div class="qrcode">
+						<img class="qr-code-image" th:src="@{/qrcode?number=0}"
+							alt="Qr code image.">
+					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<h2>For more information</h2>
-				<div class="qrcode">
-					<img class="qr-code-image" th:src="@{/qrcode?number=0}"
-						alt="Qr code image.">
+				<h2>Job description</h2>
+				<div class="row description">
+					<div id="ecran"
+						style='overflow: auto; width: 900px; height: 250px; font-size: 3em; overflow: hidden;'>
+						<div th:utext="${@mainController.getJob(0).description}"></div>
+					</div>
+					<div class="row">
+						<h3>COMPENSATIONS &amp; BENEFITS</h3>
+						<div class="benefits">Money might not bring happiness, but
+							it does make life easier. Because we want you to be able to focus
+							fully on the projects at hand, we support you with an attractive
+							salary and numerous benefits. Because money can't get you
+							everything, we offer a number of benefits to make life easier on
+							top of that. You can further benefit from individual
+							location-specific offers and support services.</div>
+					</div>
 				</div>
-				<h4>COMPENSATIONS &amp; BENEFITS</h4>
-				<div class="benefits">Money might not bring happiness, but it
-					does make life easier. Because we want you to be able to focus
-					fully on the projects at hand, we support you with an attractive
-					salary and numerous benefits. Because money can't get you
-					everything, we offer a number of benefits to make life easier on
-					top of that. You can further benefit from individual
-					location-specific offers and support services.</div>
 			</div>
 		</div>
 		<br> <br> <br> <br>
-		<div class="row screen2">
+		<div class="row">
 			<div class="col-md-6">
 				<div class="pozadie2">
 					<h2>Available position</h2>
@@ -84,52 +93,84 @@
 					<div class="text" th:text="${@mainController.getJob(1).startDate}"></div>
 					<h3>End date</h3>
 					<div class="text" th:text="${@mainController.getJob(1).endDate}"></div>
+
+					<div class="qrcode">
+						<img class="qr-code-image" th:src="@{/qrcode?number=1}"
+							alt="Qr code image.">
+					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<h2>For more information</h2>
-				<div class="qrcode">
-					<img class="qr-code-image" th:src="@{/qrcode?number=1}"
-						alt="Qr code image.">
+				<h2>Job description</h2>
+				<div class="row description">
+					<div id="ecran1"
+						style='overflow: auto; width: 900px; height: 250px; font-size: 3.5em; overflow: hidden;'>
+						<div th:utext="${@mainController.getJob(1).description}"></div>
+					</div>
+					<div class="row">
+						<h3>HOW TO APPLY</h3>
+						<div class="benefits">Found your new job? For the first scan
+							QR CODE with your phone. Then simply click on 'apply now' to get
+							to the form for your personal details. Any questions? Looking for
+							tips for your application? Then take a look at the section called
+							Application Tips on our career site. Here you will find all
+							manner of tips on 'The Right Way to Apply' and all the answers to
+							the technical application process of our Jobworld. By the way,
+							once you have set up your digital application, you can use it to
+							apply for any position at Deutsche Telekom - quickly and easily
+							and with just one click.</div>
+					</div>
 				</div>
+			</div>
+		</div>
 
-				<h4>HOW TO APPLY</h4>
-				<div class="benefits">Found your new job? For the first scan
-					QR CODE with your phone. Then simply click on 'apply now' to get to
-					the form for your personal details. Any questions? Looking for tips
-					for your application? Then take a look at the section called
-					Application Tips on our career site. Here you will find all manner
-					of tips on 'The Right Way to Apply' and all the answers to the
-					technical application process of our Jobworld. By the way, once you
-					have set up your digital application, you can use it to apply for
-					any position at Deutsche Telekom - quickly and easily and with just
-					one click.</div>
-			</div>
-		</div>
-	</div>
-	<footer>
-		<div class="contact">
+
+<!-- 		<div class="row"> -->
+			
+<!-- 				<div class="col-6 pull-left"> -->
+<!-- 					<span class="contacts"> <img -->
+<!-- 						src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png' -->
+<!-- 						width="50" height="50" alt=""> tsystems_slovakia <img -->
+<!-- 						src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png' -->
+<!-- 						width="45" height="45" alt=""> t.systems.slovakia -->
+<!-- 					</span> -->
+
+<!-- 				</div> -->
+<!-- 				<div class="col-6 pull-right"> -->
+<!-- 					<span class="logoBottom"> Created by Academy <img -->
+<!-- 						src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png' -->
+<!-- 						width="250" height="170" alt=""> -->
+<!-- 					</span> -->
+<!-- 				</div> -->
+			
+<!-- 			<div class="bar"> -->
+<!-- 				<div class="in"></div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<div class="row">
+		<div class="col-6">
+	
+					<span class="contacts"> <img
+						src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
+						width="70" height="70" alt=""> tsystems_slovakia &nbsp;&nbsp; <img
+						src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
+						width="50" height="50" alt=""> t.systems.slovakia
+					</span>
+					</div>
+<div class="col-6">
+					<span class="logoBottom"> Created by Academy <img
+						src='https://girlsday.sk/wp-content/uploads/2019/03/TSY_Logo_3c_p.png'
+						width="250" height="50" alt="">
+					</span>
+					
+				</div>
+				</div>
 			<div>
-				<img
-					src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
-					width="40" height="40" alt=""> tsystems_slovakia
-			</div>
-			<div>
-				<img
-					src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
-					width="35" height="35" alt=""> t.systems.slovakia
-			</div>
-		</div>
-		<div class="footer">
-			Created by <span class="footer1">Academy</span> <img
-				src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png'
-				width="250" height="170" alt="">
 			<div class="bar">
 				<div class="in"></div>
 			</div>
 		</div>
-
-	</footer>
+	</div>
 
 
 	<div class="snowflakes" aria-hidden="true">
@@ -155,10 +196,12 @@
 		<div class="snowflake">T</div>
 	</div>
 	<script th:src="@{/js/time.js}"></script>
-	<script th:src="@{/js/bar.js}"></script>
+	<script th:src="@{/js/box.js}"></script>
+	<script th:src="@{/js/box1.js}"></script>
+
 
 	<script>
-		setTimeout("location.href = '/slide'", 30000);
+		setTimeout("location.href = '/slide'", 6000000);
 	</script>
 </body>
 </html>

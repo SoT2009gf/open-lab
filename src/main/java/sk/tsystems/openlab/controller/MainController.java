@@ -79,7 +79,9 @@ public class MainController {
 		String employmentType;
 		String startDate;
 		String endDate;
+		String description;
 		String url;
+		
 		for (int i = 0; i < jobCount; i++) {
 			position = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
 					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PositionTitle").getAsString();
@@ -92,10 +94,13 @@ public class MainController {
 			endDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
 					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationEndDate")
 					.getAsString();
+			description = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
+					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonObject("UserArea").get("TextJobDescription")
+					.getAsString();
 			url = "https://t-systems.jobs/careers-sk-en/" + fetchedData.getAsJsonObject("SearchResult")
 					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
 					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
-			jobService.addJob(new Job(position, employmentType, startDate, endDate));
+			jobService.addJob(new Job(position, employmentType, startDate, endDate, description));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
