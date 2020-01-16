@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,33 +40,19 @@ import sk.tsystems.openlab.service.JobService;
 public class MainController {
 
 	private int jobCount;
-	private int positionInRow;
-	List<Job> jobs = new ArrayList<>();
+	private List<String> qrCodes = new ArrayList<>();
 	private static final String QR_FOLDER = System.getProperty("java.io.tmpdir");
 
 	@Autowired
 	JobService jobService;
-
-	@Scheduled(cron = "0 0 */1 * * *")
-	private void prepareData() {
-		clearSavedData();
-		storeDataFromJSON();
-		jobs = jobService.getAllJobs();
-		System.out.println("Data has been refreshed.");
-	}
+	
+	@Autowired
+	ServletContext servletContext;
 
 	@RequestMapping
 	public String index() {
-		positionInRow = 0;
 		clearSavedData();
 		storeDataFromJSON();
-		jobs = jobService.getAllJobs();
-		return "index";
-	}
-
-	@RequestMapping("/slide")
-	public String slide() {
-		this.positionInRow+=2;
 		return "index";
 	}
 
@@ -109,6 +95,8 @@ public class MainController {
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
+			
+			qrCodes.add("<img class='qr-code-image' src='" + servletContext.getContextPath() + "/qrcode?number=" + i + "' alt='Qr code image.'>");
 		}
 	}
 
@@ -125,24 +113,25 @@ public class MainController {
 				ex.printStackTrace();
 			}
 		}
-		jobs.clear();
+		qrCodes.clear();
 		jobService.clearJobs();
 	}
 
 	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
 	public void getQrCode(HttpServletResponse response, int number) throws IOException {
-		if (number + positionInRow <= jobCount - 1) {
-			InputStream in = new FileInputStream(QR_FOLDER + (positionInRow + number) + ".png");
+		if (number <= jobCount - 1) {
+			InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
 			response.setContentType(MediaType.IMAGE_PNG_VALUE);
 			OutputStream os = response.getOutputStream();
 			IOUtils.copy(in, os);
 		}
 	}
 
-	public Job getJob(Integer positionInRow) {
-		if (positionInRow + this.positionInRow <= jobCount - 1) {
-			return jobs.get(positionInRow + this.positionInRow);
-		}
-		return null;
+	public List<Job> getJobs() {
+		return jobService.getAllJobs();
+	}
+	
+	public List<String> getQrCodes() {
+		return qrCodes;
 	}
 }

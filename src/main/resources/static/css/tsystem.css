@@ -18,17 +18,13 @@ body {
 	.bar {
 	border: 1px solid #ec9bec;
 	height: 20px;
-	width: 102%;
+	width: 103%;
 	background-color: white;
 	margin-left: -1.5em;
-	
-	
-	
-
   
 }
   .in {
-  	animation: fill 30s linear 1;
+  	animation: fill 60s linear 1;
     height: 100%;
     background-color: #ff178b;
       	
@@ -52,12 +48,7 @@ body {
   font: bold;
 }
 
-
-
-
-
 @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}0%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:5%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:10%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:15%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:20%;-webkit-animation-delay:3s,2s;animation-delay:3s,4s}.snowflake:nth-of-type(5){left:25%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:30%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:35%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:40%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:45%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:50%;-webkit-animation-delay:1s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:55%;-webkit-animation-delay:1s,0s;animation-delay:7s,0s}.snowflake:nth-of-type(12){left:60%;-webkit-animation-delay:1s,0s;animation-delay:6s,1s}.snowflake:nth-of-type(13){left:65%;-webkit-animation-delay:1s,0s;animation-delay:8s,1s}.snowflake:nth-of-type(14){left:70%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(15){left:75%;-webkit-animation-delay:1s,0s;animation-delay:4s,4s}.snowflake:nth-of-type(16){left:80%;-webkit-animation-delay:1s,0s;animation-delay:8s,1s}.snowflake:nth-of-type(17){left:85%;-webkit-animation-delay:1s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(18){left:90%;-webkit-animation-delay:1s,0s;animation-delay:7s,1s}.snowflake:nth-of-type(19){left:95%;-webkit-animation-delay:1s,0s;animation-delay:6s,2s}.snowflake:nth-of-type(20){left:100%;-webkit-animation-delay:1s,0s;animation-delay:5s,3s}	
-	
 	
 	div{
 	color:white;
@@ -73,7 +64,9 @@ body {
 	}
 	img.qr-code-image{
 	min-width: 114px;
-	min-eight: 114px;
+	min-hight: 114px;
+	max-width: 114px;
+	max-hight: 114px;
 	margin: 2em auto;
 	}
 	
@@ -86,13 +79,17 @@ body {
 	
 	span.logoBottom{
 	float:right;
+		font-size: 1.2em;
+	
 	}
 	
 	
 	.contacts{
-	padding-left:1em;
+	padding-left:0.1em;
 	font-family:  'Roboto',sans-serif;
-	color:#ff178b;
+	color:white;
+	font-size: 1.2em;
+	
 	
 	}
 
@@ -103,13 +100,46 @@ body {
 	text-align: center;
 	font-weight: bold;
 	}
+
+	
 	h3{
 	font-size: 3em;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
+
 	}
+	
+	h5{
+	font-size: 3em;
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;;
+	text-align: left;
+	max-width: 20%;
+	padding-top: 1em;
+	}
+	
+	#ecran1{
+	font-family: 'Roboto',sans-serif;
+	overflow: auto; 
+	width: 900px; 
+	height: 250px; 
+	font-size: 3em; 
+	overflow: hidden;
+	line-height: 1em; 
+	}
+	
+	#ecran{
+	font-family: 'Roboto',sans-serif;
+	overflow: auto; 
+	width: 900px; 
+	height: 250px; 
+	font-size: 3em; 
+	overflow: hidden;
+	line-height: 1em; 
+	}
+	
 	h4{
 	font-size: 2em;
 	color:#ff178b;
@@ -153,7 +183,7 @@ div.benefits{
 	 line-height: 1.2em;
 }
 
-.container-fluid{
+/*.container-fluid{
 	 position: relative;
   margin: auto;
   height: 2.8em;
@@ -164,7 +194,7 @@ div.benefits{
   letter-spacing: -0.02em;
   line-height: 1.03em;
 	
-}
+}*/
 .container-fluid{
 	 position: relative;
   margin: auto;
@@ -176,6 +206,14 @@ div.benefits{
   letter-spacing: -0.02em;
   line-height: 1.03em;
 	
+}
+
+.hidden {
+	display: none;
+}
+
+.displayed {
+	display: block;
 }
 /* .container-fluid > div { */
 /*   position: absolute; */
@@ -216,12 +254,12 @@ div.benefits{
  text-align: left;
  line-height: 1.1;
 }
-.container-fluid > div:nth-child(6) {
+body > div.container-fluid > div:nth-child(6) {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid1 5s 1;
 } 
-.container-fluid > div:nth-child(1) {
+body > div.container-fluid > div:nth-child(1) {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid2 5s 1;

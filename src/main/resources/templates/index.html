@@ -5,6 +5,7 @@
 <head>
 <title>Open Lab T-Systems presentation</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="refresh" content="3600"/>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -44,30 +45,35 @@
 			<div class="col-md-6">
 				<div class="pozadie2">
 					<h2>Available position</h2>
-					<h3>Position</h3>
-					<div class="text" th:text="${@mainController.getJob(0).position}"></div>
-					<h3>Employment type</h3>
-					<div class="text"
-						th:text="${@mainController.getJob(0).employmentType}"></div>
-					<h3>Publication date</h3>
-					<div class="text" th:text="${@mainController.getJob(0).startDate}"></div>
-					<h3>End date</h3>
-					<div class="text" th:text="${@mainController.getJob(0).endDate}"></div>
-					<div class="qrcode">
-						<img class="qr-code-image" th:src="@{/qrcode?number=0}"
-							alt="Qr code image.">
+					<div class="hidden loaded-jobs1"
+						th:each="job : ${@mainController.jobs}">
+						<h3>Position</h3>
+						<div class="text" th:text="${job.position}"></div>
+						<h3>Employment type</h3>
+						<div class="text" th:text="${job.employmentType}"></div>
+						<h3>Publication date</h3>
+						<div class="text" th:text="${job.startDate}"></div>
+						<h3>End date</h3>
+						<div class="text" th:text="${job.endDate}"></div>
+					</div>
+					<div class="qrcode hidden qr-codes1"
+						th:each="qrCode : ${@mainController.qrCodes}">
+						<div th:utext="${qrCode}"></div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<h2>Job description</h2>
 				<div class="row description">
-					<div id="ecran"
-						style='overflow: auto; width: 900px; height: 250px; font-size: 3em; overflow: hidden;'>
-						<div th:utext="${@mainController.getJob(0).description}"></div>
+					<div id="ecran">
+						<br>
+						<div class="hidden jobdesc1"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.description}"></div>
+						</div>
 					</div>
 					<div class="row">
-						<h3>COMPENSATIONS &amp; BENEFITS</h3>
+						<h5>COMPENSATIONS &amp; BENEFITS</h5>
 						<div class="benefits">Money might not bring happiness, but
 							it does make life easier. Because we want you to be able to focus
 							fully on the projects at hand, we support you with an attractive
@@ -84,31 +90,34 @@
 			<div class="col-md-6">
 				<div class="pozadie2">
 					<h2>Available position</h2>
-					<h3>Position</h3>
-					<div class="text" th:text="${@mainController.getJob(1).position}"></div>
-					<h3>Employment type</h3>
-					<div class="text"
-						th:text="${@mainController.getJob(1).employmentType}"></div>
-					<h3>Publication date</h3>
-					<div class="text" th:text="${@mainController.getJob(1).startDate}"></div>
-					<h3>End date</h3>
-					<div class="text" th:text="${@mainController.getJob(1).endDate}"></div>
-
-					<div class="qrcode">
-						<img class="qr-code-image" th:src="@{/qrcode?number=1}"
-							alt="Qr code image.">
+					<div class="hidden loaded-jobs2"
+						th:each="job : ${@mainController.jobs}">
+						<h3>Position</h3>
+						<div class="text" th:text="${job.position}"></div>
+						<h3>Employment type</h3>
+						<div class="text" th:text="${job.employmentType}"></div>
+						<h3>Publication date</h3>
+						<div class="text" th:text="${job.startDate}"></div>
+						<h3>End date</h3>
+						<div class="text" th:text="${job.endDate}"></div>
+					</div>
+					<div class="qrcode hidden qr-codes2"
+						th:each="qrCode : ${@mainController.qrCodes}">
+						<div th:utext="${qrCode}"></div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<h2>Job description</h2>
 				<div class="row description">
-					<div id="ecran1"
-						style='overflow: auto; width: 900px; height: 250px; font-size: 3.5em; overflow: hidden;'>
-						<div th:utext="${@mainController.getJob(1).description}"></div>
+					<div id="ecran1">
+						<div class="hidden jobdesc2"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.description}"></div>
+						</div>
 					</div>
 					<div class="row">
-						<h3>HOW TO APPLY</h3>
+						<h5>HOW TO APPLY</h5>
 						<div class="benefits">Found your new job? For the first scan
 							QR CODE with your phone. Then simply click on 'apply now' to get
 							to the form for your personal details. Any questions? Looking for
@@ -123,49 +132,25 @@
 				</div>
 			</div>
 		</div>
-
-
-<!-- 		<div class="row"> -->
-			
-<!-- 				<div class="col-6 pull-left"> -->
-<!-- 					<span class="contacts"> <img -->
-<!-- 						src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png' -->
-<!-- 						width="50" height="50" alt=""> tsystems_slovakia <img -->
-<!-- 						src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png' -->
-<!-- 						width="45" height="45" alt=""> t.systems.slovakia -->
-<!-- 					</span> -->
-
-<!-- 				</div> -->
-<!-- 				<div class="col-6 pull-right"> -->
-<!-- 					<span class="logoBottom"> Created by Academy <img -->
-<!-- 						src='https://www.chartadiverzity.sk/wp-content/uploads/2017/05/t-systems-logo-418x315.png' -->
-<!-- 						width="250" height="170" alt=""> -->
-<!-- 					</span> -->
-<!-- 				</div> -->
-			
-<!-- 			<div class="bar"> -->
-<!-- 				<div class="in"></div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
 		<div class="row">
-		<div class="col-6">
-	
-					<span class="contacts"> <img
-						src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
-						width="70" height="70" alt=""> tsystems_slovakia &nbsp;&nbsp; <img
-						src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
-						width="50" height="50" alt=""> t.systems.slovakia
-					</span>
-					</div>
-<div class="col-6">
-					<span class="logoBottom"> Created by Academy <img
-						src='https://girlsday.sk/wp-content/uploads/2019/03/TSY_Logo_3c_p.png'
-						width="250" height="50" alt="">
-					</span>
-					
-				</div>
-				</div>
-			<div>
+			<div class="col-6">
+
+				<span class="contacts"> <img
+					src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
+					width="60" height="60" alt=""> tsystems_slovakia &nbsp;&nbsp;
+					<img
+					src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
+					width="45" height="45" alt=""> t.systems.slovakia
+				</span>
+			</div>
+			<div class="col-6">
+				<span class="logoBottom"> Created by Academy <img
+					th:src="@{/images/logo.svg}" width="250" height="50" alt="">
+				</span>
+
+			</div>
+		</div>
+		<div>
 			<div class="bar">
 				<div class="in"></div>
 			</div>
@@ -198,10 +183,6 @@
 	<script th:src="@{/js/time.js}"></script>
 	<script th:src="@{/js/box.js}"></script>
 	<script th:src="@{/js/box1.js}"></script>
-
-
-	<script>
-		setTimeout("location.href = '/slide'", 6000000);
-	</script>
+	<script th:src="@{/js/jobs.js}"></script>
 </body>
 </html>
