@@ -70,9 +70,9 @@ public class MainController {
 			String startDate = jsonObject.get("PublicationStartDate").getAsString();
 			String endDate = jsonObject.get("PublicationEndDate").getAsString();
 			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
-			String salary = description.substring(description.indexOf("Minimum monthly salary is") + 25,
-					description.indexOf("€"));
-			System.out.println(salary);
+//			String salary = description.substring(description.indexOf("Minimum monthly salary is") + 25,
+//					description.indexOf("€"));
+//			System.out.println(salary);
 
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, startDate, endDate, description));

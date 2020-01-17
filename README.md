@@ -1,5 +1,8 @@
 # open-lab
+
 T-Systems Jobs presentation on big screen
+
+Authors:
 
 Katka Jesenská - JSON extraction, debugging, front-end
 
