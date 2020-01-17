@@ -3,7 +3,7 @@ body {
 /* 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg); */
 	background-position: right top;
 	background-size: 3150px 1650px;
-	/* overflow: hidden;*/  
+/* 	overflow: hidden;   */
 	background-repeat: no-repeat;
 	}
 	
@@ -78,7 +78,7 @@ body {
 	.qrcode{
 	width: 50%;
 	margin: 0 auto;
- margin-top: -53em;
+ margin-top: -59em;
  margin-right: -10em; 
 	}
 	
@@ -159,7 +159,7 @@ body {
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
 	width: 1000px; 
-	height: 470px; 
+	height: 465px; 
 	font-size: 3em; 
 	overflow: hidden;
 	line-height: 1em; 
@@ -192,6 +192,11 @@ body {
 	font-weight: normal;
 	font-family:"Times New Roman;
 	}
+	
+    span.job{
+	font-weight: normal;
+	font-family:"Times New Roman;
+}
 
 
 	 dt.pozadie1 {
