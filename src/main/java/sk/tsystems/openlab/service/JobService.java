@@ -5,10 +5,7 @@ import java.util.List;
 import sk.tsystems.openlab.entity.Job;
 
 public interface JobService {
-
-	void addJob(Job job);
-
 	List<Job> getAllJobs();
 	
-	void clearJobs();
+	void refreshJobs(List<Job> jobs);
 }

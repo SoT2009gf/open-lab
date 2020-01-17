@@ -85,5 +85,3 @@ buildNumber.properties
 .flattened-pom.xml
 
 # End of https://www.gitignore.io/api/maven,eclipse
-
-src/main/resources/static/images/qr/*.png

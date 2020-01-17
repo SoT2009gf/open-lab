@@ -44,6 +44,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="pozadie2">
+<<<<<<< HEAD
 				<div class="hidden loaded-jobs1"
 						th:each="job : ${@mainController.jobs}">
 					<div class="position" th:text="${job.position}"></div>
@@ -63,13 +64,37 @@
 								everything, we offer a number of benefits to make life easier on
 								top of that. You can further benefit from individual
 								location-specific offers and support services.</div>
+=======
+					<h2>Available position</h2>
+					<div th:each="job, iter : ${@mainController.jobs}">
+						<div class="hidden loaded-jobs1">
+							<h3>Position</h3>
+							<div class="text" th:text="${job.position}"></div>
+							<h3>Employment type</h3>
+							<div class="text" th:text="${job.employmentType}"></div>
+							<h3>Publication date</h3>
+							<div class="text" th:text="${job.startDate}"></div>
+							<h3>End date</h3>
+							<div class="text" th:text="${job.endDate}"></div>
+						</div>
+						<div class="qrcode hidden qr-codes1">
+							<div>
+								<img class='qr-code-image'
+									th:src='@{${"/qrcode?number=" + iter.index}}'
+									alt='Qr code image.'>
+							</div>
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 						</div>
 					</div>
+<<<<<<< HEAD
 					<div class="qrcode hidden qr-codes1"
 						th:each="qrCode : ${@mainController.qrCodes}">
 						<div th:utext="${qrCode}"></div>
 					</div>
 						
+=======
+
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -82,7 +107,20 @@
 							<div th:utext="${job.description}"></div>
 						</div>
 					</div>
+<<<<<<< HEAD
 					
+=======
+					<div class="row">
+						<h5>COMPENSATIONS &amp; BENEFITS</h5>
+						<div class="benefits">Money might not bring happiness, but
+							it does make life easier. Because we want you to be able to focus
+							fully on the projects at hand, we support you with an attractive
+							salary and numerous benefits. Because money can't get you
+							everything, we offer a number of benefits to make life easier on
+							top of that. You can further benefit from individual
+							location-specific offers and support services.</div>
+					</div>
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 				</div>
 			</div>
 		</div>
@@ -90,6 +128,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="pozadie2">
+<<<<<<< HEAD
 				<div class="hidden loaded-jobs2"
 						th:each="job : ${@mainController.jobs}">
 				<div class="position" th:text="${job.position}"></div>
@@ -102,6 +141,42 @@
 						<div class="pozadie2">
 						<h3>HOW TO APPLY</h3>
 						<div class="text">Found your new job? For the first scan
+=======
+					<h2>Available position</h2>
+					<div th:each="job, iter : ${@mainController.jobs}">
+						<div class="hidden loaded-jobs2">
+							<h3>Position</h3>
+							<div class="text" th:text="${job.position}"></div>
+							<h3>Employment type</h3>
+							<div class="text" th:text="${job.employmentType}"></div>
+							<h3>Publication date</h3>
+							<div class="text" th:text="${job.startDate}"></div>
+							<h3>End date</h3>
+							<div class="text" th:text="${job.endDate}"></div>
+						</div>
+						<div class="qrcode hidden qr-codes2">
+							<div>
+								<img class='qr-code-image'
+									th:src='@{${"/qrcode?number=" + iter.index}}'
+									alt='Qr code image.'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h2>Job description</h2>
+				<div class="row description">
+					<div id="ecran1">
+						<div class="hidden jobdesc2"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.description}"></div>
+						</div>
+					</div>
+					<div class="row">
+						<h5>HOW TO APPLY</h5>
+						<div class="benefits">Found your new job? For the first scan
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 							QR CODE with your phone. Then simply click on 'apply now' to get
 							to the form for your personal details. Any questions? Looking for
 							tips for your application? Then take a look at the section called
@@ -131,6 +206,7 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<br>
 		<div class="row space">
 			<div class="col-6">
@@ -146,6 +222,29 @@
 						th:src="@{/images/logo.svg}" width="250" height="40" alt=""></span>
 					<div class="in"></div>
 				</div>
+=======
+		<div class="row">
+			<div class="col-6">
+
+				<span class="contacts"> <img
+					src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
+					width="60" height="60" alt=""> tsystems_slovakia &nbsp;&nbsp;
+					<img
+					src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
+					width="45" height="45" alt=""> t.systems.slovakia
+				</span>
+			</div>
+			<div class="col-6">
+				<span class="logoBottom"> Created by Academy <img
+					th:src="@{/images/logo.svg}" width="250" height="50" alt="">
+				</span>
+
+			</div>
+		</div>
+		<div>
+			<div class="bar">
+				<div class="in"></div>
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 			</div>
 
 		</div>

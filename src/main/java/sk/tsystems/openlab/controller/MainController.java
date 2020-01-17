@@ -6,10 +6,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,54 +35,65 @@ import sk.tsystems.openlab.service.JobService;
 @RequestMapping("/")
 public class MainController {
 
+<<<<<<< HEAD
 	private int jobCount;
 	private List<String> qrCodes = new ArrayList<>();
+=======
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	private static final String QR_FOLDER = System.getProperty("java.io.tmpdir");
 
 	@Autowired
 	JobService jobService;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	@Autowired
 	ServletContext servletContext;
 
 	@RequestMapping
 	public String index() {
+<<<<<<< HEAD
 		clearSavedData();
 		storeDataFromJSON();
 		return "index";
 	}
 
 	private void storeDataFromJSON() {
+=======
+		try {
+			refreshData();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "index";
+	}
+
+	private void refreshData() {
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 		JsonProcessor jsonProcessor = new JsonProcessor();
 
 		JsonObject fetchedData = jsonProcessor.createtJSONObject();
-		jobCount = fetchedData.getAsJsonObject("SearchResult").getAsJsonPrimitive("SearchResultCount").getAsInt();
-		String position;
-		String employmentType;
-		String startDate;
-		String endDate;
-		String description;
-		String url;
-		
+		int jobCount = fetchedData.getAsJsonObject("SearchResult").getAsJsonPrimitive("SearchResultCount").getAsInt();
+
+		List<Job> jobs = new ArrayList<Job>();
 		for (int i = 0; i < jobCount; i++) {
-			position = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PositionTitle").getAsString();
-			employmentType = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonArray("PositionSchedule")
-					.get(0).getAsJsonObject().get("Name").getAsString();
-			startDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationStartDate")
+			JsonObject jsonObject = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems")
+					.get(i).getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor");
+
+			String position = jsonObject.get("PositionTitle").getAsString();
+			String employmentType = jsonObject.getAsJsonArray("PositionSchedule").get(0).getAsJsonObject().get("Name")
 					.getAsString();
-			endDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationEndDate")
-					.getAsString();
-			description = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonObject("UserArea").get("TextJobDescription")
-					.getAsString();
-			url = "https://t-systems.jobs/careers-sk-en/" + fetchedData.getAsJsonObject("SearchResult")
-					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
-					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
-			jobService.addJob(new Job(position, employmentType, startDate, endDate, description));
+			String startDate = jsonObject.get("PublicationStartDate").getAsString();
+			String endDate = jsonObject.get("PublicationEndDate").getAsString();
+			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
+//			String salary = description.substring(description.indexOf("Minimum monthly salary is") + 25,
+//					description.indexOf("€"));
+//			System.out.println(salary);
+
+			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
+			jobs.add(new Job(position, employmentType, startDate, endDate, description));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
@@ -98,8 +105,8 @@ public class MainController {
 			
 			qrCodes.add("<img class='qr-code-image' src='" + servletContext.getContextPath() + "/qrcode?number=" + i + "' alt='Qr code image.'>");
 		}
-	}
 
+<<<<<<< HEAD
 	private void clearSavedData() {
 		Path path = FileSystems.getDefault().getPath(QR_FOLDER + "0.png");
 
@@ -115,23 +122,31 @@ public class MainController {
 		}
 		qrCodes.clear();
 		jobService.clearJobs();
+=======
+		jobService.refreshJobs(jobs);
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 
 	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
 	public void getQrCode(HttpServletResponse response, int number) throws IOException {
+<<<<<<< HEAD
 		if (number <= jobCount - 1) {
+=======
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 			InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
 			response.setContentType(MediaType.IMAGE_PNG_VALUE);
 			OutputStream os = response.getOutputStream();
 			IOUtils.copy(in, os);
-		}
 	}
 
 	public List<Job> getJobs() {
 		return jobService.getAllJobs();
+<<<<<<< HEAD
 	}
 	
 	public List<String> getQrCodes() {
 		return qrCodes;
+=======
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 }

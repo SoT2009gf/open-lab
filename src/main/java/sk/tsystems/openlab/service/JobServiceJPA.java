@@ -17,11 +17,6 @@ public class JobServiceJPA implements JobService {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	@Override
-	public void addJob(Job job) {
-		entityManager.persist(job);
-	}
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Job> getAllJobs() {
@@ -31,9 +26,10 @@ public class JobServiceJPA implements JobService {
 			return null;	
 		}		
 	}
-
-	@Override
-	public void clearJobs() {
+	
+	public void refreshJobs(List<Job> jobs) {
 		entityManager.createQuery("delete from Job j").executeUpdate();
+		for(Job job : jobs)
+			entityManager.persist(job);
 	}
 }

@@ -16,6 +16,7 @@ body {
 	
 	}
 	
+<<<<<<< HEAD
 	div.bar {
 	height: 4em;
 	width: 205%;
@@ -23,14 +24,29 @@ body {
 	margin-left: -1.7em;
 	padding-right: 0em;
 	margin-top: 0em;
+=======
+	.bar {
+	border: 1px solid #ec9bec;
+	height: 20px;
+	width: 103%;
+	background-color: white;
+	margin-left: -1.5em;
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
   
 }
   .in {
+<<<<<<< HEAD
   	animation: fill 10s linear 1;
     height: 115%;
     background-color: white;
     margin-top: -5.7em;
     border-radius: 5px;
+=======
+  	animation: fill 60s linear 1;
+    height: 100%;
+    background-color: #ff178b;
+      	
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 }
 
 @keyframes fill {
@@ -84,6 +100,7 @@ body {
 	
 	span.logoBottom{
 	float:right;
+<<<<<<< HEAD
 		font-size: 1.8em;
 		color: #ff178b;
 		padding-right: 1em;
@@ -91,14 +108,23 @@ body {
 		
 		
 		
+=======
+		font-size: 1.2em;
+	
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 	
 	
 	.contacts{
 	padding-left:0.1em;
 	font-family:  'Roboto',sans-serif;
+<<<<<<< HEAD
 	font-size: 1.8em;
 	color: #ff178b;
+=======
+	color:white;
+	font-size: 1.2em;
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	
 	
 	}
@@ -120,7 +146,10 @@ body {
 	font-weight: bold;
 	margin-top: 0.2em;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 
 	
 	h3{
@@ -138,9 +167,14 @@ body {
 	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
+<<<<<<< HEAD
 	padding-top: 1em;
+=======
+
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 	
+<<<<<<< HEAD
 	#ecran1{
 	background-color:rgba(255, 26, 140, 0.40);
 	font-family: 'Roboto',sans-serif;
@@ -168,6 +202,36 @@ body {
 	}
 	.span{
 	background: transparent;}
+=======
+	h5{
+	font-size: 3em;
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;;
+	text-align: left;
+	max-width: 20%;
+	padding-top: 1em;
+	}
+	
+	#ecran1{
+	font-family: 'Roboto',sans-serif;
+	overflow: auto; 
+	width: 900px; 
+	height: 250px; 
+	font-size: 3em; 
+	overflow: hidden;
+	line-height: 1em; 
+	}
+	
+	#ecran{
+	font-family: 'Roboto',sans-serif;
+	overflow: auto; 
+	width: 900px; 
+	height: 250px; 
+	font-size: 3em; 
+	overflow: hidden;
+	line-height: 1em; 
+	}
+>>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	
 	h4{
 	font-size: 2em;
