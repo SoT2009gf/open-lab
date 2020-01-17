@@ -3,7 +3,7 @@ body {
 /* 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg); */
 	background-position: right top;
 	background-size: 3150px 1650px;
-	/* overflow: hidden; */
+	 overflow: hidden;  
 	background-repeat: no-repeat;
 	}
 	
@@ -13,22 +13,24 @@ body {
 	padding-right: 0;
 	font-size: 1.5em;
 	font-family: 'Roboto',sans-serif;
+	
 	}
 	
 	div.bar {
-	border: 1px solid #ff178b;
-	height: 4.6em;
-	width: 207%;
+	height: 4em;
+	width: 205%;
 	background-color: transparent;
 	margin-left: -1.7em;
 	padding-right: 0em;
+	margin-top: 0em;
   
 }
   .in {
-  	animation: fill 60s linear 1;
-    height: 100%;
+  	animation: fill 10s linear 1;
+    height: 115%;
     background-color: white;
-      	
+    margin-top: -5.7em;
+    border-radius: 5px;
 }
 
 @keyframes fill {
@@ -55,13 +57,14 @@ body {
 	color:white;
 	font-size: 0.8em;
 	text-align: left;
+	
 	}
 	
 	div.text{
-	font-size: 3em;
+	font-size: 3.8em;
 	margin-bottom: 0.5em;
 	color: white;
-	
+	line-height: 1em;
 	}
 	img.qr-code-image{
 	min-width: 114px;
@@ -69,43 +72,59 @@ body {
 	max-width: 114px;
 	max-hight: 114px;
 	margin: 2em auto;
+	border-radius: 10%;
 	}
 	
 	.qrcode{
 	width: 50%;
 	margin: 0 auto;
- margin-top: -25em;
+ margin-top: -53em;
  margin-right: -10em; 
 	}
 	
 	span.logoBottom{
 	float:right;
-		font-size: 1.3em;
+		font-size: 1.8em;
 		color: #ff178b;
 		padding-right: 1em;
-	
+		margin-top: 0.5em;
+		
+		
+		
 	}
 	
 	
 	.contacts{
 	padding-left:0.1em;
 	font-family:  'Roboto',sans-serif;
-	font-size: 1.2em;
+	font-size: 1.8em;
+	color: #ff178b;
 	
 	
 	}
 
+	.position{
+	font-size: 3rem;
+	color:#ff178b;
+	font-family:  'Roboto',sans-serif;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0.2em;
+	line-height: 1em;
+	}
 	h2{
 	font-size: 3rem;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;
 	text-align: center;
 	font-weight: bold;
+	margin-top: 0.2em;
 	}
+	
 
 	
 	h3{
-	font-size: 3em;
+	font-size: 4.2em;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;;
 	text-align: left;
@@ -123,23 +142,29 @@ body {
 	}
 	
 	#ecran1{
+	background-color:rgba(255, 26, 140, 0.40);
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
-	width: 900px; 
-	height: 250px; 
+	width: 1000px; 
+	height: 500px; 
 	font-size: 3em; 
 	overflow: hidden;
-	line-height: 1em; 
+	line-height: 1em;
+	border-radius: 10px;
+	margin-left: 5em;
 	}
 	
 	#ecran{
+	background-color:rgba(255, 26, 140, 0.40);
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
-	width: 900px; 
-	height: 250px; 
+	width: 1000px; 
+	height: 470px; 
 	font-size: 3em; 
 	overflow: hidden;
 	line-height: 1em; 
+	border-radius: 10px;
+	margin-left: 5em;
 	}
 	.span{
 	background: transparent;}
@@ -160,12 +185,14 @@ body {
 	font-size:0.7em;
 	color:white;
 	font-family:  "Times New Roman";
+	font-weight: normal;
 	
 	}
 	span.system{
 	font-weight: normal;
 	font-family:"Times New Roman;
 	}
+
 
 	 dt.pozadie1 {
 	 font-family:  'Roboto',sans-serif;;
@@ -178,7 +205,8 @@ body {
 div.pozadie2 {
 	 font-family: 'Roboto',sans-serif;
 	color: #ff178b;
-	text-align: left;	
+	text-align: left;
+		
 }
 div.benefits{
 	font-size: 3em;
@@ -239,7 +267,7 @@ div.benefits{
   height: 0.8em;
   color: transparent;
   font-family: 'Cambay', sans-serif;
-  font-size: 10vw;
+  font-size: 6em;
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.03em;
