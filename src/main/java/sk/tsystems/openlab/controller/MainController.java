@@ -35,33 +35,16 @@ import sk.tsystems.openlab.service.JobService;
 @RequestMapping("/")
 public class MainController {
 
-<<<<<<< HEAD
-	private int jobCount;
-	private List<String> qrCodes = new ArrayList<>();
-=======
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	private static final String QR_FOLDER = System.getProperty("java.io.tmpdir");
 
 	@Autowired
 	JobService jobService;
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	@Autowired
 	ServletContext servletContext;
 
 	@RequestMapping
 	public String index() {
-<<<<<<< HEAD
-		clearSavedData();
-		storeDataFromJSON();
-		return "index";
-	}
-
-	private void storeDataFromJSON() {
-=======
 		try {
 			refreshData();
 		} catch (Exception e) {
@@ -71,7 +54,6 @@ public class MainController {
 	}
 
 	private void refreshData() {
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 		JsonProcessor jsonProcessor = new JsonProcessor();
 
 		JsonObject fetchedData = jsonProcessor.createtJSONObject();
@@ -102,37 +84,13 @@ public class MainController {
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
-			
-			qrCodes.add("<img class='qr-code-image' src='" + servletContext.getContextPath() + "/qrcode?number=" + i + "' alt='Qr code image.'>");
 		}
 
-<<<<<<< HEAD
-	private void clearSavedData() {
-		Path path = FileSystems.getDefault().getPath(QR_FOLDER + "0.png");
-
-		if (Files.exists(path, LinkOption.NOFOLLOW_LINKS)) {
-			try {
-				for (int i = 0; i < jobCount; i++) {
-					Path file = FileSystems.getDefault().getPath(QR_FOLDER + i + ".png");
-					Files.delete(file);
-				}
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-		}
-		qrCodes.clear();
-		jobService.clearJobs();
-=======
 		jobService.refreshJobs(jobs);
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 
 	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
 	public void getQrCode(HttpServletResponse response, int number) throws IOException {
-<<<<<<< HEAD
-		if (number <= jobCount - 1) {
-=======
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 			InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
 			response.setContentType(MediaType.IMAGE_PNG_VALUE);
 			OutputStream os = response.getOutputStream();
@@ -141,12 +99,5 @@ public class MainController {
 
 	public List<Job> getJobs() {
 		return jobService.getAllJobs();
-<<<<<<< HEAD
-	}
-	
-	public List<String> getQrCodes() {
-		return qrCodes;
-=======
->>>>>>> branch 'master' of https://github.com/SoT2009gf/open-lab.git
 	}
 }
