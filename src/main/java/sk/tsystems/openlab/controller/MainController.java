@@ -6,10 +6,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,54 +35,47 @@ import sk.tsystems.openlab.service.JobService;
 @RequestMapping("/")
 public class MainController {
 
-	private int jobCount;
-	private List<String> qrCodes = new ArrayList<>();
 	private static final String QR_FOLDER = System.getProperty("java.io.tmpdir");
 
 	@Autowired
 	JobService jobService;
-	
+
 	@Autowired
 	ServletContext servletContext;
 
 	@RequestMapping
 	public String index() {
-		clearSavedData();
-		storeDataFromJSON();
+		try {
+			refreshData();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "index";
 	}
 
-	private void storeDataFromJSON() {
+	private void refreshData() {
 		JsonProcessor jsonProcessor = new JsonProcessor();
 
 		JsonObject fetchedData = jsonProcessor.createtJSONObject();
-		jobCount = fetchedData.getAsJsonObject("SearchResult").getAsJsonPrimitive("SearchResultCount").getAsInt();
-		String position;
-		String employmentType;
-		String startDate;
-		String endDate;
-		String description;
-		String url;
-		
+		int jobCount = fetchedData.getAsJsonObject("SearchResult").getAsJsonPrimitive("SearchResultCount").getAsInt();
+
+		List<Job> jobs = new ArrayList<Job>();
 		for (int i = 0; i < jobCount; i++) {
-			position = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PositionTitle").getAsString();
-			employmentType = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonArray("PositionSchedule")
-					.get(0).getAsJsonObject().get("Name").getAsString();
-			startDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationStartDate")
+			JsonObject jsonObject = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems")
+					.get(i).getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor");
+
+			String position = jsonObject.get("PositionTitle").getAsString();
+			String employmentType = jsonObject.getAsJsonArray("PositionSchedule").get(0).getAsJsonObject().get("Name")
 					.getAsString();
-			endDate = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").get("PublicationEndDate")
-					.getAsString();
-			description = fetchedData.getAsJsonObject("SearchResult").getAsJsonArray("SearchResultItems").get(i)
-					.getAsJsonObject().getAsJsonObject("MatchedObjectDescriptor").getAsJsonObject("UserArea").get("TextJobDescription")
-					.getAsString();
-			url = "https://t-systems.jobs/careers-sk-en/" + fetchedData.getAsJsonObject("SearchResult")
-					.getAsJsonArray("SearchResultItems").get(i).getAsJsonObject()
-					.getAsJsonObject("MatchedObjectDescriptor").get("PositionURI").getAsString();
-			jobService.addJob(new Job(position, employmentType, startDate, endDate, description));
+			String startDate = jsonObject.get("PublicationStartDate").getAsString();
+			String endDate = jsonObject.get("PublicationEndDate").getAsString();
+			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
+			String salary = description.substring(description.indexOf("Minimum monthly salary is") + 25,
+					description.indexOf("€"));
+			System.out.println(salary);
+
+			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
+			jobs.add(new Job(position, employmentType, startDate, endDate, description));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
@@ -95,43 +84,20 @@ public class MainController {
 			} catch (IOException ex) {
 				ex.printStackTrace();
 			}
-			
-			qrCodes.add("<img class='qr-code-image' src='" + servletContext.getContextPath() + "/qrcode?number=" + i + "' alt='Qr code image.'>");
 		}
-	}
 
-	private void clearSavedData() {
-		Path path = FileSystems.getDefault().getPath(QR_FOLDER + "0.png");
-
-		if (Files.exists(path, LinkOption.NOFOLLOW_LINKS)) {
-			try {
-				for (int i = 0; i < jobCount; i++) {
-					Path file = FileSystems.getDefault().getPath(QR_FOLDER + i + ".png");
-					Files.delete(file);
-				}
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-		}
-		qrCodes.clear();
-		jobService.clearJobs();
+		jobService.refreshJobs(jobs);
 	}
 
 	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
 	public void getQrCode(HttpServletResponse response, int number) throws IOException {
-		if (number <= jobCount - 1) {
 			InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
 			response.setContentType(MediaType.IMAGE_PNG_VALUE);
 			OutputStream os = response.getOutputStream();
 			IOUtils.copy(in, os);
-		}
 	}
 
 	public List<Job> getJobs() {
 		return jobService.getAllJobs();
-	}
-	
-	public List<String> getQrCodes() {
-		return qrCodes;
 	}
 }

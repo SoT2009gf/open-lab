@@ -32,6 +32,7 @@ public class JsonProcessor {
 		BufferedReader reader = null;
 		try {
 			URL url = new URL("https://t-systems.jobs/globaljobboard_api/v3/search/");
+			//URL url = new URL("https://t-systems.jobs/globaljobboard_api/v3/sear/");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
 			connection.setRequestProperty("Content-Type", "application/json; utf-8");
