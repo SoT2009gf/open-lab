@@ -68,9 +68,9 @@ body {
 	}
 	img.qr-code-image{
 	min-width: 114px;
-	min-hight: 114px;
+	min-height: 114px;
 	max-width: 114px;
-	max-hight: 114px;
+	max-height: 114px;
 	margin: 2em auto;
 	border-radius: 10%;
 	}
@@ -190,12 +190,12 @@ body {
 	}
 	span.system{
 	font-weight: normal;
-	font-family:"Times New Roman;
+	font-family: "Times New Roman";
 	}
 	
     span.job{
 	font-weight: normal;
-	font-family:"Times New Roman;
+	font-family: "Times New Roman";
 }
 
 
