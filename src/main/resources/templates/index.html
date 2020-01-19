@@ -55,7 +55,7 @@
 						<h3>End date</h3>
 						<div class="text" th:text="${job.endDate}"></div>
 						<h3>Salary</h3>
-						<div class="text" th:text="${job.salary}"></div>
+						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes1">
 							<img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
@@ -91,7 +91,7 @@
 						<h3>End date</h3>
 						<div class="text" th:text="${job.endDate}"></div>
 						<h3>Salary</h3>
-						<div class="text" th:text="${job.salary}"></div>
+						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes2">
 							<img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'

@@ -126,7 +126,7 @@ public class MainController {
 				}
 			}
 			
-			salary.append(" ").append("€");
+			salary.append(" ").append("&euro;");
 			return salary.toString();
 		}
 		return "Not mentioned.";
