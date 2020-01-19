@@ -20,7 +20,7 @@ var jobdesctemp1;
 var jobdesctemp2;
 
 slide();
-setInterval(slide, 10000);
+setInterval(slide, 60000);
 
 function slide() {
 	if (job1) {

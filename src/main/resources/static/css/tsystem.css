@@ -26,7 +26,7 @@ body {
   
 }
   .in {
-  	animation: fill 10s linear 1;
+  	animation: fill 60s linear 1;
     height: 115%;
     background-color: white;
     margin-top: -5.7em;
@@ -78,7 +78,7 @@ body {
 	.qrcode{
 	width: 50%;
 	margin: 0 auto;
- margin-top: -59em;
+ margin-top: -45em;
  margin-right: -10em; 
 	}
 	

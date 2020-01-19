@@ -17,13 +17,15 @@ public class Job {
 	private String endDate;
 	@Column(length = 10000)
 	private String description;
+	private String salary;
 
-	public Job(String position, String employmentType, String startDate, String endDate, String description) {
+	public Job(String position, String employmentType, String startDate, String endDate, String description, String salary) {
 		this.position = position;
 		this.employmentType = employmentType;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.description = description;
+		this.salary = salary;
 		
 	}
 
@@ -77,5 +79,13 @@ public class Job {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
 	}
 }

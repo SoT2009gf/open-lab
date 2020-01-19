@@ -70,12 +70,15 @@ public class MainController {
 			String startDate = jsonObject.get("PublicationStartDate").getAsString();
 			String endDate = jsonObject.get("PublicationEndDate").getAsString();
 			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
-//			String salary = description.substring(description.indexOf("Minimum monthly salary is") + 25,
-//					description.indexOf("€"));
-//			System.out.println(salary);
+			String requirements = jsonObject.getAsJsonObject("UserArea").get("TextRequirementDescription").getAsString();
+			String salary = getSalary(description);
+			if(salary.equals("Not mentioned.")) {
+				salary = getSalary(requirements);
+			}
+			System.out.println(salary);
 
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
-			jobs.add(new Job(position, employmentType, startDate, endDate, description));
+			jobs.add(new Job(position, employmentType, startDate, endDate, description, salary));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
@@ -91,13 +94,41 @@ public class MainController {
 
 	@RequestMapping(value = "/qrcode", method = RequestMethod.GET)
 	public void getQrCode(HttpServletResponse response, int number) throws IOException {
-			InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
-			response.setContentType(MediaType.IMAGE_PNG_VALUE);
-			OutputStream os = response.getOutputStream();
-			IOUtils.copy(in, os);
+		InputStream in = new FileInputStream(QR_FOLDER + (number) + ".png");
+		response.setContentType(MediaType.IMAGE_PNG_VALUE);
+		OutputStream os = response.getOutputStream();
+		IOUtils.copy(in, os);
 	}
 
 	public List<Job> getJobs() {
 		return jobService.getAllJobs();
+	}
+
+	private String getSalary(String description) {
+		description = description.toLowerCase();
+		int salaryTextIndex = description.indexOf("salary");
+		if (salaryTextIndex > 0) {
+			StringBuilder salary = new StringBuilder();
+			String salaryText = description.substring(salaryTextIndex);
+			int positionOfFirstDigit = 0;
+			for (int index = 0; index < salaryText.length(); index++) {
+				if (Character.isDigit(salaryText.charAt(index))) {
+					positionOfFirstDigit = index;
+					break;
+				}
+			}
+			
+			for (int index = positionOfFirstDigit; index < salaryText.length(); index++) {
+				if (Character.isDigit(salaryText.charAt(index))) {
+					salary.append(salaryText.charAt(index));				
+				} else {
+					break;
+				}
+			}
+			
+			salary.append(" ").append("€");
+			return salary.toString();
+		}
+		return "Not mentioned.";
 	}
 }
