@@ -12,4 +12,4 @@ Maťo Gál - front-end
 
 Vilo Kotlár - JSON extraction, database entity, front-end
 
-Fero Kafka - back-end, front-end
+Fero Kafka - back-end
