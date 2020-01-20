@@ -70,12 +70,16 @@ public class MainController {
 			String startDate = jsonObject.get("PublicationStartDate").getAsString();
 			String endDate = jsonObject.get("PublicationEndDate").getAsString();
 			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
-			String requirements = jsonObject.getAsJsonObject("UserArea").get("TextRequirementDescription").getAsString();
+			String requirements = jsonObject.getAsJsonObject("UserArea").get("TextRequirementDescription")
+					.getAsString();
 			String salary = getSalary(description);
-			if(salary.equals("Not mentioned.")) {
+			if (salary.equals("Not mentioned.")) {
 				salary = getSalary(requirements);
 			}
 
+			salary = "Minimum monthly salary is " + salary + " brutto + variable part of salary + other financial benefits. "
+			+ "The final basic wage component can be adjusted accordingly to individual skills and experience of selected candidate.";
+			
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, startDate, endDate, description, salary));
 

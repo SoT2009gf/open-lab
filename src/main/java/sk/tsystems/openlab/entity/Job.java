@@ -17,8 +17,9 @@ public class Job {
 	private String endDate;
 	@Column(length = 10000)
 	private String description;
+	@Column(length = 5000)
 	private String salary;
-
+	
 	public Job(String position, String employmentType, String startDate, String endDate, String description, String salary) {
 		this.position = position;
 		this.employmentType = employmentType;
