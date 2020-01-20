@@ -75,7 +75,6 @@ public class MainController {
 			if(salary.equals("Not mentioned.")) {
 				salary = getSalary(requirements);
 			}
-			System.out.println(salary);
 
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, startDate, endDate, description, salary));
