@@ -19,22 +19,22 @@
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
+				class="stvorcek">▪ </span><span class="job">Job offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
+				class="stvorcek">▪ </span><span class="job">Job offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
+				class="stvorcek">▪ </span><span class="job">Job offers &nbsp;&nbsp;&nbsp;&nbsp;Let's power higher performance</span>
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
+				class="stvorcek">▪ </span><span class="job">Job offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
 		</div>
 	</div>
 	<div class="container-fluid">
@@ -67,7 +67,8 @@
 						<br>
 						<div class="hidden jobdesc1"
 							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+													<br><br><br>
+							<div class="padding" th:utext="${job.description}"></div>
 						</div>
 					</div>
 				</div>
@@ -102,7 +103,8 @@
 					<div id="ecran1">
 						<div class="hidden jobdesc2"
 							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+							<br><br><br>
+							<div class="padding" th:utext="${job.description}"></div>
 						</div>
 					</div>
 				</div>

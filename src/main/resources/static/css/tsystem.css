@@ -3,7 +3,7 @@ body {
 /* 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg); */
 	background-position: right top;
 	background-size: 3150px 1650px;
- 	overflow: hidden;
+ /*	overflow: hidden; */
 	background-repeat: no-repeat;
 	}
 	
@@ -118,7 +118,7 @@ body {
 	font-family:  'Roboto',sans-serif;
 	text-align: center;
 	font-weight: bold;
-	margin-top: 0.2em;
+	margin-top: 0.1em;
 	}
 	
 
@@ -131,6 +131,7 @@ body {
 	max-width: 20%;
 
 	}
+
 	
 	h5{
 	font-size: 3em;
@@ -142,32 +143,41 @@ body {
 	}
 	
 	#ecran1{
-	background-color:rgba(255, 26, 140, 0.40);
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
-	width: 1000px; 
+	width: 1300px; 
 	height: 500px; 
 	font-size: 3em; 
 	overflow: hidden;
 	line-height: 1em;
 	border-radius: 10px;
-	margin-left: 5em;
+	margin-left: 0.1em;
+	border-color: #ff178b;
+	border-width: 0.1em;
+	border-style: groove;
 	}
 	
 	#ecran{
-	background-color:rgba(255, 26, 140, 0.40);
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
-	width: 1000px; 
+	width: 1300px; 
 	height: 465px; 
 	font-size: 3em; 
 	overflow: hidden;
 	line-height: 1em; 
 	border-radius: 10px;
-	margin-left: 5em;
+	margin-left: 0.1 em;
+	border-color: #ff178b;
+	border-width: 0.1em;
+	border-style: groove;
 	}
 	.span{
 	background: transparent;}
+	
+	.padding{
+	padding-left: 1em;
+	}
+	
 	
 	h4{
 	font-size: 2em;
@@ -177,15 +187,17 @@ body {
 	}
 	span.t{
 	font-size:1em;
-	color:#ff178b;
+	color:white;
 	font-weight: bold;
 	font-family: "Times New Roman";
+
 	}
 	span.stvorcek{
 	font-size:0.7em;
 	color:white;
 	font-family:  "Times New Roman";
 	font-weight: normal;
+	
 	
 	}
 	span.system{
@@ -276,6 +288,7 @@ div.benefits{
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.03em;
+  	background-image: url("https://bitport.hu/images/content/201812/focus/tsystems_magyarorszag.jpg");
 }
 
 .deconstructed > div {
