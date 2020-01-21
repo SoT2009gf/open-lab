@@ -46,10 +46,8 @@
 						<div class="position" th:text="${job.position}"></div>
 						<h3>Employment type</h3>
 						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Publication date</h3>
-						<div class="text" th:text="${job.startDate}"></div>
 						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.endDate}"></div>
+						<div class="text" th:text="${job.applicationDeadline}"></div>
 						<h3>Minimum salary (brutto)</h3>
 						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes1">
@@ -67,7 +65,8 @@
 						<br>
 						<div class="hidden jobdesc1"
 							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
 						</div>
 					</div>
 				</div>
@@ -82,10 +81,8 @@
 						<div class="position" th:text="${job.position}"></div>
 						<h3>Employment type</h3>
 						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Publication date</h3>
-						<div class="text" th:text="${job.startDate}"></div>
 						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.endDate}"></div>
+						<div class="text" th:text="${job.applicationDeadline}"></div>
 						<h3>Minimum salary (brutto)</h3>
 						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes2">
@@ -102,7 +99,8 @@
 					<div id="ecran1">
 						<div class="hidden jobdesc2"
 							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
 						</div>
 					</div>
 				</div>

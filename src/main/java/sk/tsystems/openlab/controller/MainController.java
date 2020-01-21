@@ -67,19 +67,29 @@ public class MainController {
 			String position = jsonObject.get("PositionTitle").getAsString();
 			String employmentType = jsonObject.getAsJsonArray("PositionSchedule").get(0).getAsJsonObject().get("Name")
 					.getAsString();
-			String startDate = jsonObject.get("PublicationStartDate").getAsString();
-			String endDate = jsonObject.get("PublicationEndDate").getAsString();
+			String applicationDeadline = jsonObject.get("PublicationEndDate").getAsString();
 			String description = jsonObject.getAsJsonObject("UserArea").get("TextJobDescription").getAsString();
-			String requirements = jsonObject.getAsJsonObject("UserArea").get("TextRequirementDescription")
+			String allRequirements = jsonObject.getAsJsonObject("UserArea").get("TextRequirementDescription")
 					.getAsString();
 			String salary = getSalary(description);
 			if (salary.equals("Not mentioned.")) {
-				salary = getSalary(requirements);
+				salary = getSalary(allRequirements);
 			}
-			
-			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
-			jobs.add(new Job(position, employmentType, startDate, endDate, description, salary));
+			String accountabilities = getAccountabilities(description);
+			if (accountabilities == null) {
+				accountabilities = getAccountabilities(allRequirements);
+				if (accountabilities == null) {
+					accountabilities = description;
+				}
+			}
+			String requirements = getRequirements(allRequirements);
+			if (requirements == null) {
+				requirements = getRequirements(description);
+			}
 
+			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
+			jobs.add(new Job(position, employmentType, applicationDeadline, accountabilities, salary, requirements));
+			System.out.println(position);
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
 			try {
@@ -117,18 +127,82 @@ public class MainController {
 					break;
 				}
 			}
-			
+
 			for (int index = positionOfFirstDigit; index < salaryText.length(); index++) {
 				if (Character.isDigit(salaryText.charAt(index))) {
-					salary.append(salaryText.charAt(index));				
+					salary.append(salaryText.charAt(index));
 				} else {
 					break;
 				}
 			}
-			
+
 			salary.append(" ").append("&euro;");
 			return salary.toString();
 		}
 		return "Not mentioned.";
 	}
+
+	private String getAccountabilities(String description) {
+		String backup = description;
+		description = description.toLowerCase();
+		String accountabilitiesText = null;
+		int accountabilitiesTextIndex = description.indexOf("accountabilities");
+		if (accountabilitiesTextIndex == -1) {
+			accountabilitiesTextIndex = description.indexOf("responsibilities");
+		}
+		int salaryTextIndex = description.indexOf("salary");
+		int benefitsTextIndex = description.indexOf("other benefits");
+		if (benefitsTextIndex == -1) {
+			benefitsTextIndex = description.indexOf("benefits");
+		}
+		int requirementsTextIndex = description.indexOf("requirements");
+		if (accountabilitiesTextIndex > 0) {
+			if (requirementsTextIndex > 0 && requirementsTextIndex > accountabilitiesTextIndex) {
+				accountabilitiesText = backup.substring(accountabilitiesTextIndex, requirementsTextIndex);
+			}
+
+		}
+		if (accountabilitiesTextIndex > 0) {
+			if (benefitsTextIndex > 0 && benefitsTextIndex > accountabilitiesTextIndex) {
+				accountabilitiesText = backup.substring(accountabilitiesTextIndex, benefitsTextIndex);
+			}
+		}
+		if (accountabilitiesTextIndex > 0) {
+			if (salaryTextIndex > 0 && salaryTextIndex > accountabilitiesTextIndex) {
+				accountabilitiesText = backup.substring(accountabilitiesTextIndex, salaryTextIndex);
+			}
+			return accountabilitiesText;
+		}
+
+		return null;
+	}
+
+	private String getRequirements(String description) {
+		String backup = description;
+		description = description.toLowerCase();
+		int requirementsTextIndex = description.indexOf("requirements");
+		if (requirementsTextIndex == -1) {
+			requirementsTextIndex = description.indexOf("your skills");
+		}
+		if (requirementsTextIndex == -1) {
+			int salaryTextIndex = description.indexOf("salary");
+			if (salaryTextIndex > 0 && requirementsTextIndex > 0) {
+				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
+				return requirementsText;
+			} else {
+
+				return backup;
+			}
+		}
+		int salaryTextIndex = description.indexOf("salary");
+		if (requirementsTextIndex > 0) {
+			if (salaryTextIndex > 0) {
+				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
+				return requirementsText;
+			}
+		}
+
+		return null;
+	}
+
 }
