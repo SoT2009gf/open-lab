@@ -63,7 +63,7 @@
 				<div class="row description">
 					<div id="ecran">
 						<br>
-						<div class="hidden jobdesc1"
+						<div class="hidden jobdesc1 padding"
 							th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.accountabilities}"></div>
 							<div th:utext="${job.requirements}"></div>
@@ -97,7 +97,7 @@
 				<h2>Job description</h2>
 				<div class="row description">
 					<div id="ecran1">
-						<div class="hidden jobdesc2"
+						<div class="hidden jobdesc2 padding"
 							th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.accountabilities}"></div>
 							<div th:utext="${job.requirements}"></div>
