@@ -76,9 +76,6 @@ public class MainController {
 			if (salary.equals("Not mentioned.")) {
 				salary = getSalary(requirements);
 			}
-
-			salary = "Minimum monthly salary is " + salary + " brutto + variable part of salary + other financial benefits. "
-			+ "The final basic wage component can be adjusted accordingly to individual skills and experience of selected candidate.";
 			
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, startDate, endDate, description, salary));
