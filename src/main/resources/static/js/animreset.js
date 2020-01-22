@@ -1,5 +1,5 @@
-var animation1 = document.querySelector("body > div.container-fluid > div:nth-child(6)");
-var animation2 = document.querySelector("body > div.container-fluid > div:nth-child(1)");
+var animation1 = document.getElementsByClassName("row1");
+var animation2 = document.getElementsByClassName("row2");
 var barAnimation = document.getElementsByClassName("in");
 const jobs1 = document.getElementsByClassName("loaded-jobs1");
 const jobs2 = document.getElementsByClassName("loaded-jobs2");
@@ -41,14 +41,14 @@ function slide() {
 		qrCode2.classList.add("hidden");
 	}
 
-	animation1clone = animation1.cloneNode(true);
-	animation1.parentNode.replaceChild(animation1clone, animation1);
-	animation2clone = animation2.cloneNode(true);
-	animation2.parentNode.replaceChild(animation2clone, animation2);
+	animation1clone = animation1[0].cloneNode(true);
+	animation1[0].parentNode.replaceChild(animation1clone, animation1[0]);
+	animation2clone = animation2[0].cloneNode(true);
+	animation2[0].parentNode.replaceChild(animation2clone, animation2[0]);
 	barAnimClone = barAnimation[0].cloneNode(true);
 	barAnimation[0].parentNode.replaceChild(barAnimClone, barAnimation[0]);
-	animation1 = animation1clone;
-	animation2 = animation2clone;
+	animation1[0] = animation1clone;
+	animation2[0] = animation2clone;
 	barAnimation[0] = barAnimClone;	
 
 	if (index > (jobs1.length - 1)) {

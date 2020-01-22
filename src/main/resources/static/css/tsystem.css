@@ -306,12 +306,13 @@ background-color: #ff178b;
  text-align: left;
  line-height: 1.1;
 }
-body > div.container-fluid > div:nth-child(6) {
+
+.row1 {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid1 5s 1;
 } 
-body > div.container-fluid > div:nth-child(1) {
+.row2 {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid2 5s 1;

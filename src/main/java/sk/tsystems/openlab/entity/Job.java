@@ -16,9 +16,8 @@ public class Job {
 	private String applicationDeadline;
 	@Column(length = 10000)
 	private String accountabilities;
-	@Column(length = 5000)
 	private String salary;
-	@Column(length = 5000)
+	@Column(length = 8000)
 	private String requirements;
 	
 	public Job(String position, String employmentType, String applicationDeadline, String accountabilities, String salary, String requirements) {
