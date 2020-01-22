@@ -1,8 +1,8 @@
 function ScrollDiv(){
 
-   if(document.getElementById('ecran').scrollTop<(document.getElementById('ecran').scrollHeight-document.getElementById('ecran').offsetHeight)){-1
-         document.getElementById('ecran').scrollTop=document.getElementById('ecran').scrollTop+1
+   if(document.getElementById('scroll').scrollTop<(document.getElementById('scroll').scrollHeight-document.getElementById('scroll').offsetHeight)){-1
+         document.getElementById('scroll').scrollTop=document.getElementById('scroll').scrollTop+1
          }
-   else {document.getElementById('ecran').scrollTop=0;}
+   else {document.getElementById('scroll').scrollTop=0;}
 }
 setInterval(ScrollDiv,25)
