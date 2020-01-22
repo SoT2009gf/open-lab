@@ -193,6 +193,12 @@ public class MainController {
 				}
 			}
 		}
+		if(accountabilitiesText.length() < 200) {
+			if(indexes.get(2) > 0) {
+				accountabilitiesText = backup.substring(indexes.get(0), indexes.get(2));
+			}
+			
+		}
 		StringBuilder temp = new StringBuilder();
 		temp.append(Character.toUpperCase(accountabilitiesText.charAt(0)));		
 		temp.append(accountabilitiesText.substring(1));
