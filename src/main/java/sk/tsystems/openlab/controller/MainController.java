@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -78,9 +79,6 @@ public class MainController {
 			String accountabilities = getAccountabilities(description);
 			if (accountabilities == null) {
 				accountabilities = getAccountabilities(allRequirements);
-				if (accountabilities == null) {
-					accountabilities = description;
-				}
 			}
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
@@ -89,7 +87,7 @@ public class MainController {
 
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, applicationDeadline, accountabilities, salary, requirements));
-			System.out.println(position);
+
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
 			try {
@@ -145,7 +143,7 @@ public class MainController {
 	private String getAccountabilities(String description) {
 		String backup = description;
 		description = description.toLowerCase();
-		String accountabilitiesText = null;
+		String accountabilitiesText = backup;
 		int accountabilitiesTextIndex = description.indexOf("accountabilities");
 		if (accountabilitiesTextIndex == -1) {
 			accountabilitiesTextIndex = description.indexOf("responsibilities");
@@ -156,25 +154,52 @@ public class MainController {
 			benefitsTextIndex = description.indexOf("benefits");
 		}
 		int requirementsTextIndex = description.indexOf("requirements");
-		if (accountabilitiesTextIndex > 0) {
-			if (requirementsTextIndex > 0 && requirementsTextIndex > accountabilitiesTextIndex) {
-				accountabilitiesText = backup.substring(accountabilitiesTextIndex, requirementsTextIndex);
-			}
 
-		}
-		if (accountabilitiesTextIndex > 0) {
-			if (benefitsTextIndex > 0 && benefitsTextIndex > accountabilitiesTextIndex) {
-				accountabilitiesText = backup.substring(accountabilitiesTextIndex, benefitsTextIndex);
+		List<Integer> indexes = new ArrayList<>();
+
+		indexes.add(accountabilitiesTextIndex);
+		indexes.add(benefitsTextIndex);
+		indexes.add(requirementsTextIndex);
+		indexes.add(salaryTextIndex);
+		Collections.sort(indexes);
+
+		if (accountabilitiesTextIndex == -1) {
+			if (indexes.get(3) > 0) {
+				accountabilitiesText = backup.substring(0, indexes.get(3));
 			}
-		}
-		if (accountabilitiesTextIndex > 0) {
-			if (salaryTextIndex > 0 && salaryTextIndex > accountabilitiesTextIndex) {
-				accountabilitiesText = backup.substring(accountabilitiesTextIndex, salaryTextIndex);
+			if (indexes.get(2) > 0) {
+				accountabilitiesText = backup.substring(0, indexes.get(2));
 			}
-			return accountabilitiesText;
+			if (indexes.get(1) > 0) {
+				accountabilitiesText = backup.substring(0, indexes.get(1));
+			}
+		} else {
+			if (indexes.get(3) > 0) {
+				if (indexes.get(0) > 0) {
+					accountabilitiesText = backup.substring(indexes.get(0), indexes.get(3));
+				} else if (indexes.get(1) > 0) {
+					accountabilitiesText = backup.substring(indexes.get(1), indexes.get(3));
+				} else if (indexes.get(2) > 0) {
+					accountabilitiesText = backup.substring(indexes.get(2), indexes.get(3));
+				}
+			}
+			if (indexes.get(2) > 0) {
+				if (indexes.get(0) > 0) {
+					accountabilitiesText = backup.substring(indexes.get(0), indexes.get(2));
+				} else if (indexes.get(1) > 0) {
+					accountabilitiesText = backup.substring(indexes.get(1), indexes.get(2));
+				}
+			}
+			if (indexes.get(1) > 0) {
+				if (indexes.get(0) > 0) {
+					if (indexes.get(0) > 0) {
+						accountabilitiesText = backup.substring(indexes.get(0), indexes.get(1));
+					}
+				}
+			}
 		}
 
-		return null;
+		return accountabilitiesText;
 	}
 
 	private String getRequirements(String description) {
