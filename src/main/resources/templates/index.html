@@ -19,26 +19,29 @@
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job
-				offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
+				class="stvorcek">▪ </span><span class="job">Job offers</span><span
+				class="title"> Let's power higher performance</span>
+
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job
-				offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
+				class="stvorcek">▪ </span><span class="job">Job offers</span><span
+				class="title"> Let's power higher performance</span>
+
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers
-				&nbsp;&nbsp;&nbsp;&nbsp;Let's power higher performance</span>
+				class="stvorcek">▪ </span><span class="job">Job offers</span><span
+				class="title"> Let's power higher performance</span>
+
 		</div>
 		<div>
 			<span class="stvorcek">▪</span><span class="t">T</span><span
 				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job
-				offers&nbsp;&nbsp;&nbsp;&nbsp; Let's power higher performance</span>
+				class="stvorcek">▪ </span><span class="job">Job offers</span><span
+				class="title"> Let's power higher performance</span>
 		</div>
 	</div>
 	<div class="container-fluid">
@@ -65,7 +68,7 @@
 			<div class="col-md-6">
 				<h2>Job description</h2>
 				<div class="row description">
-					<div id="ecran">
+					<div id="scroll">
 						<br>
 						<div class="hidden jobdesc1 padding"
 							th:each="job : ${@mainController.jobs}">
@@ -99,7 +102,7 @@
 			<div class="col-md-6">
 				<h2>Job description</h2>
 				<div class="row description">
-					<div id="ecran1">
+					<div id="scroll1">
 						<div class="hidden jobdesc2 padding"
 							th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.accountabilities}"></div>
@@ -110,7 +113,7 @@
 			</div>
 		</div>
 		<br>
-		<div class="row space">
+		<footer>
 			<div class="col-6">
 				<div class="bar">
 					<span class="contacts"> <img
@@ -125,7 +128,7 @@
 					<div class="in"></div>
 				</div>
 			</div>
-		</div>
+		</footer>
 	</div>
 	<div class="snowflakes" aria-hidden="true">
 		<div class="snowflake">T</div>

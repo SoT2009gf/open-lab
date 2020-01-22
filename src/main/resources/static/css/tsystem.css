@@ -1,6 +1,5 @@
 body {
 	background-color: black;
-/* 	background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Pink-And-Black-Images.jpg); */
 	background-position: right top;
 	background-size: 3150px 1650px;
  	overflow: hidden;
@@ -18,7 +17,7 @@ body {
 	
 	div.bar {
 	height: 4em;
-	width: 205%;
+	width: 200%;
 	background-color: transparent;
 	margin-left: -1.7em;
 	padding-right: 0em;
@@ -26,7 +25,7 @@ body {
   
 }
   .in {
-  	animation: fill 60s linear 1;
+  	animation: fill 10s linear 1;
     height: 120%;
     background-color: white;
     margin-top: -5.5em;
@@ -68,10 +67,10 @@ body {
 	font-style: normal;
 	}
 	img.qr-code-image{
-	min-width: 114px;
-	min-height: 114px;
-	max-width: 114px;
-	max-height: 114px;
+	min-width: 194px;
+	min-height: 194px;
+	max-width: 194px;
+	max-height: 194px;
 	margin: 2em auto;
 	border-radius: 10%;
 	}
@@ -80,7 +79,7 @@ body {
 	width: 50%;
 	margin: 0 auto;
 	position: absolute;
-	left: 80em;
+	left: 110em;
     top: 30em;
 	}
 	
@@ -103,38 +102,42 @@ body {
 	font-size: 1.8em;
 	color: #ff178b;
 	font-weight: normal;
-	
-	
 	}
 
 	.position{
-	font-size: 3rem;
+	font-size: 3.1rem;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;
 	text-align: center;
-	margin-top: 0.2em;
-	line-height: 1em;
+	margin-top: 0.5em;
+	line-height:1em;
+	font-weight: bold;
 	}
 	h2{
-	font-size: 3rem;
+	font-size: 3.5rem;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;
 	text-align: center;
-	margin-top: 0.1em;
+	margin-top: 0.5em;
+	font-weight: bold;
 	}
 	
 
 	
 	h3{
-	font-size: 4.2em;
+	font-size: 4.4em;
 	color:#ff178b;
 	font-family:  'Roboto',sans-serif;;
 	text-align: left;
 	max-width: 20%;
+	margin-top: 0.5em;
 
 	}
 
+	.row2{
+	margin-top: 1em;
 	
+	}
 	h5{
 	font-size: 3em;
 	color:#ff178b;
@@ -144,46 +147,57 @@ body {
 	padding-top: 1em;
 	}
 	
-	#ecran1{
+	#scroll1{
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
 	width: 1300px; 
-	height: 500px; 
-	font-size: 3em; 
+	height: 510px; 
+	font-size: 3.5em; 
 	overflow: hidden;
 	line-height: 1em;
-	border-radius: 10px;
 	margin-left: 0.1em;
-	border-color: #ff178b;
-	border-width: 0.1em;
-	border-style: groove;
-	font-style: normal;
+	font-weight: normal;
+	animation: infinity;
+	
 	
 	}
 	
-	#ecran{
+	#scroll{
 	font-family: 'Roboto',sans-serif;
 	overflow: auto; 
 	width: 1300px; 
-	height: 465px; 
-	font-size: 3em; 
+	height: 440px; 
+	font-size: 3.5em; 
 	overflow: hidden;
-	line-height: 1em; 
-	border-radius: 10px;
+	line-height: 1em;
 	margin-left: 0.1 em;
-	border-color: #ff178b;
-	border-width: 0.1em;
-	border-style: groove;
-	font-style: normal;
+	font-weight: normal;
+	animation: infinity;
 	}
 	.span{
 	background: transparent;}
 	
-	.padding{
-	padding-left: 1em;
-	margin-top: 15em;
+	
+	span.title{
+	float:right;
+	font-weight: normal;
+	padding-right: 0.2em;
 	}
 	
+	
+	.padding{
+	padding-left: 1em;
+	margin-top: 12em;
+	font-weight: normal;
+	
+	}
+	
+	footer{
+	position: absolute;
+  	left: 0.5em;
+ 	top: 63em;
+ 	width: 103%;
+	}
 	
 	h4{
 	font-size: 2em;
@@ -203,6 +217,7 @@ body {
 	color:white;
 	font-family:  "Times New Roman";
 	font-weight: normal;
+	padding-left: 0.2em;
 	
 	
 	}
@@ -238,18 +253,7 @@ div.benefits{
 	 line-height: 1.2em;
 }
 
-/*.container-fluid{
-	 position: relative;
-  margin: auto;
-  height: 2.8em;
-  color: transparent;
-  font-family: 'Cambay', sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.03em;
-	
-}*/
+
 .container-fluid{
 	 position: relative;
   margin: auto;
@@ -270,18 +274,7 @@ div.benefits{
 .displayed {
 	display: block;
 }
-/* .container-fluid > div { */
-/*   position: absolute; */
-/*   top: 0; */
-/*   left: 0; */
-/*   right: 0; */
-/*   bottom: 0; */
-/*   color: white; */
-/*   pointer-events: none; */
-/*   font-size: 0.4em; */
-/*  font-family: "Times New Roman"; */
-/*  text-align: left; */
-/* } */
+
 
 
 	.deconstructed {
@@ -315,13 +308,13 @@ background-color: #ff178b;
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid1 5s 1;
-  font-style: normal;
+  font-weight: normal;
 } 
 .row2 {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid2 5s 1;
-  font-weight: normal;
+  font-weight: normal ;
 } 
 
 
