@@ -76,12 +76,13 @@ public class MainController {
 			if (salary.equals("Not mentioned.")) {
 				salary = getSalary(allRequirements);
 			}
+			System.out.println(position);
 			String accountabilities = getAccountabilities(description);
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
 				requirements = getRequirements(description);
 			}
-
+			
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
 			jobs.add(new Job(position, employmentType, applicationDeadline, accountabilities, salary, requirements));
 
@@ -193,7 +194,10 @@ public class MainController {
 				}
 			}
 		}
-		return accountabilitiesText;
+		StringBuilder temp = new StringBuilder();
+		temp.append(Character.toUpperCase(accountabilitiesText.charAt(0)));		
+		temp.append(accountabilitiesText.substring(1));
+		return temp.toString();
 	}
 
 	private String getRequirements(String description) {
