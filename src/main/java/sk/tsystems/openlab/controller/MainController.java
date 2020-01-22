@@ -200,6 +200,7 @@ public class MainController {
 	}
 
 	private String getRequirements(String description) {
+		StringBuilder temp = new StringBuilder();
 		String backup = description;
 		description = description.toLowerCase();
 		int requirementsTextIndex = description.indexOf("requirements");
@@ -210,7 +211,9 @@ public class MainController {
 			int salaryTextIndex = description.indexOf("salary");
 			if (salaryTextIndex > 0 && requirementsTextIndex > 0) {
 				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
-				return requirementsText;
+				temp.append(Character.toUpperCase(requirementsText.charAt(0)));		
+				temp.append(requirementsText.substring(1));
+				return temp.toString();
 			} else {
 
 				return backup;
@@ -220,7 +223,9 @@ public class MainController {
 		if (requirementsTextIndex > 0) {
 			if (salaryTextIndex > 0) {
 				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
-				return requirementsText;
+				temp.append(Character.toUpperCase(requirementsText.charAt(0)));		
+				temp.append(requirementsText.substring(1));
+				return temp.toString();
 			}
 		}
 
