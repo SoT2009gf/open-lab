@@ -77,9 +77,6 @@ public class MainController {
 				salary = getSalary(allRequirements);
 			}
 			String accountabilities = getAccountabilities(description);
-			if (accountabilities == null) {
-				accountabilities = getAccountabilities(allRequirements);
-			}
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
 				requirements = getRequirements(description);
@@ -185,20 +182,17 @@ public class MainController {
 			}
 			if (indexes.get(2) > 0) {
 				if (indexes.get(0) > 0) {
-					accountabilitiesText = backup.substring(indexes.get(0), indexes.get(2));
+					accountabilitiesText = backup.substring(accountabilitiesTextIndex, indexes.get(2));
 				} else if (indexes.get(1) > 0) {
 					accountabilitiesText = backup.substring(indexes.get(1), indexes.get(2));
 				}
 			}
 			if (indexes.get(1) > 0) {
-				if (indexes.get(0) > 0) {
-					if (indexes.get(0) > 0) {
-						accountabilitiesText = backup.substring(indexes.get(0), indexes.get(1));
-					}
+				if (indexes.get(0) > 0 && indexes.get(1) > accountabilitiesTextIndex) {
+					accountabilitiesText = backup.substring(accountabilitiesTextIndex, indexes.get(1));
 				}
 			}
 		}
-
 		return accountabilitiesText;
 	}
 
