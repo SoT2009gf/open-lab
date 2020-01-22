@@ -185,6 +185,7 @@ br {
 	line-height: 1.03em;
 	border-top: 0.2em solid white;
 	border-bottom: 0.2em solid white;
+
 }
 
 .hidden {
@@ -195,11 +196,13 @@ br {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid1 5s 1;
+  font-weight: normal;
 } 
 .row2 {
   -webkit-mask-image: linear-gradient(black 100%, transparent 100%);
   mask-image: linear-gradient(transparent 100%, black 100%);
   animation: container-fluid2 5s 1;
+  font-weight: normal ;
 } 
 
 

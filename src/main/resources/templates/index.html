@@ -29,19 +29,15 @@
 					<div class="position" th:text="${job.position}"></div>
 					<div class="pozadie2">
 						<h3>
-							Employment type &nbsp
+							Employment type &nbsp;
 							<div class="text" th:text="${job.employmentType}"></div>
 						</h3>
 						<h3>
-							Publication date &nbsp
-							<div class="text" th:text="${job.startDate}"></div>
+							Application deadline &nbsp;
+							<div class="text" th:text="${job.applicationDeadline}"></div>
 						</h3>
 						<h3>
-							Application deadline &nbsp
-							<div class="text" th:text="${job.endDate}"></div>
-						</h3>
-						<h3>
-							Minimum salary (brutto) &nbsp
+							Minimum salary (brutto) &nbsp;
 							<div class="text" th:utext="${job.salary}"></div>
 						</h3>
 					</div>
@@ -55,15 +51,14 @@
 			</div>
 			<div class="col-6">
 				<div class="position">Job description</div>
-
 				<div class="row description">
 					<div id="ecran">
 						<br>
-						<div class="hidden jobdesc1"
+						<div class="hidden jobdesc1 padding"
 							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -76,19 +71,15 @@
 						<div class="position" th:text="${job.position}"></div>
 						<div class="pozadie2">
 							<h3>
-								Employment type &nbsp
+								Employment type &nbsp;
 								<div class="text" th:text="${job.employmentType}"></div>
 							</h3>
 							<h3>
-								Publication date &nbsp
-								<div class="text" th:text="${job.startDate}"></div>
+								Application deadline &nbsp;
+								<div class="text" th:text="${job.applicationDeadline}"></div>
 							</h3>
 							<h3>
-								Application deadline &nbsp
-								<div class="text" th:text="${job.endDate}"></div>
-							</h3>
-							<h3>
-								Minimum salary (brutto) &nbsp
+								Minimum salary (brutto) &nbsp;
 								<div class="text" th:utext="${job.salary}"></div>
 							</h3>
 						</div>
@@ -104,8 +95,10 @@
 				<div class="position">Job description</div>
 				<div class="row description">
 					<div id="ecran1">
-						<div class="jobdesc2" th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.description}"></div>
+						<div class="hidden jobdesc2 padding"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
 						</div>
 					</div>
 				</div>
@@ -119,7 +112,6 @@
 			<div class="bar">
 				<div class="in"></div>
 			</div>
-
 		</div>
 	</div>
 	<div class="snowflakes" aria-hidden="true">
@@ -144,10 +136,9 @@
 		<div class="snowflake">T</div>
 		<div class="snowflake">T</div>
 	</div>
-
 	<script th:src="@{/js/time.js}"></script>
 	<script th:src="@{/js/box.js}"></script>
 	<script th:src="@{/js/box1.js}"></script>
-	<script th:src="@{/js/jobs.js}"></script>
+	<script th:src="@{/js/animreset.js}"></script>
 </body>
 </html>

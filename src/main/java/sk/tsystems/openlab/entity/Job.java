@@ -13,20 +13,20 @@ public class Job {
 	private int ident;
 	private String position;
 	private String employmentType;
-	private String startDate;
-	private String endDate;
+	private String applicationDeadline;
 	@Column(length = 10000)
-	private String description;
-	@Column(length = 5000)
+	private String accountabilities;
 	private String salary;
+	@Column(length = 8000)
+	private String requirements;
 	
-	public Job(String position, String employmentType, String startDate, String endDate, String description, String salary) {
+	public Job(String position, String employmentType, String applicationDeadline, String accountabilities, String salary, String requirements) {
 		this.position = position;
 		this.employmentType = employmentType;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.description = description;
+		this.applicationDeadline = applicationDeadline;
+		this.accountabilities = accountabilities;
 		this.salary = salary;
+		this.requirements = requirements;
 		
 	}
 
@@ -36,10 +36,6 @@ public class Job {
 
 	public int getIdent() {
 		return ident;
-	}
-
-	public void setIdent(int ident) {
-		this.ident = ident;
 	}
 
 	public String getPosition() {
@@ -58,28 +54,12 @@ public class Job {
 		this.employmentType = employmentType;
 	}
 
-	public String getStartDate() {
-		return startDate;
+	public String getApplicationDeadline() {
+		return applicationDeadline;
 	}
 
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-	}
-
-	public String getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setApplicationDeadline(String endDate) {
+		this.applicationDeadline = endDate;
 	}
 
 	public String getSalary() {
@@ -88,5 +68,20 @@ public class Job {
 
 	public void setSalary(String salary) {
 		this.salary = salary;
+	}
+	public String getAccountabilities() {
+		return accountabilities;
+	}
+
+	public void setAccountabilities(String accountabilities) {
+		this.accountabilities = accountabilities;
+	}
+
+	public String getRequirements() {
+		return requirements;
+	}
+
+	public void setRequirements(String requirements) {
+		this.requirements = requirements;
 	}
 }
