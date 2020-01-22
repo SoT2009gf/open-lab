@@ -14,54 +14,48 @@
 <link rel="stylesheet" th:href="@{/css/tsystem.css}" type="text/css">
 </head>
 <body class="time" onload="startTime()">
-	<div class="time" id="txt"></div>
-	<div class="deconstructed">
-		<div>
-			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
+	<div class="header">
+		<div class="logo">
+			<img alt="T-Sys"
+				src="https://t-systems.jobs/cust/telekom/images/t-systems-logo@2x.png">
 		</div>
-		<div>
-			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
-		</div>
-		<div>
-			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
-		</div>
-		<div>
-			<span class="stvorcek">▪</span><span class="t">T</span><span
-				class="stvorcek">▪ ▪ ▪</span><span class="system">Systems</span><span
-				class="stvorcek">▪ </span><span class="job">Job offers</span>
-		</div>
+		<div class="real-time" id="txt"></div>
 	</div>
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="pozadie2">
-					<div class="hidden loaded-jobs1"
-						th:each="job, iter : ${@mainController.jobs}">
-						<div class="position" th:text="${job.position}"></div>
-						<h3>Employment type</h3>
-						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Publication date</h3>
-						<div class="text" th:text="${job.startDate}"></div>
-						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.endDate}"></div>
-						<h3>Minimum salary (brutto)</h3>
-						<div class="text" th:utext="${job.salary}"></div>
-						<div class="qrcode hidden qr-codes1">
-							<img class='qr-code-image'
-								th:src='@{${"/qrcode?number=" + iter.index}}'
-								alt='Qr code image.' />
-						</div>
+		<div class="row row1">
+			<div class="col-6 job1">
+				<div class="hidden loaded-jobs1"
+					th:each="job, iter : ${@mainController.jobs}">
+					<div class="position" th:text="${job.position}"></div>
+					<div class="pozadie2">
+						<h3>
+							Employment type &nbsp
+							<div class="text" th:text="${job.employmentType}"></div>
+						</h3>
+						<h3>
+							Publication date &nbsp
+							<div class="text" th:text="${job.startDate}"></div>
+						</h3>
+						<h3>
+							Application deadline &nbsp
+							<div class="text" th:text="${job.endDate}"></div>
+						</h3>
+						<h3>
+							Minimum salary (brutto) &nbsp
+							<div class="text" th:utext="${job.salary}"></div>
+						</h3>
+					</div>
+					<div class="qrcode hidden qr-codes1">
+						<img class='qr-code-image'
+							th:src='@{${"/qrcode?number=" + iter.index}}'
+							alt='Qr code image.' />
 					</div>
 				</div>
+
 			</div>
-			<div class="col-md-6">
-				<h2>Job description</h2>
+			<div class="col-6">
+				<div class="position">Job description</div>
+
 				<div class="row description">
 					<div id="ecran">
 						<br>
@@ -69,25 +63,35 @@
 							th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.description}"></div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<br> <br> <br> <br>
-		<div class="row">
-			<div class="col-md-6">
+		<div class="row row2">
+			<div class="col-6 job2">
 				<div class="pozadie2">
 					<div class="hidden loaded-jobs2"
 						th:each="job, iter : ${@mainController.jobs}">
 						<div class="position" th:text="${job.position}"></div>
-						<h3>Employment type</h3>
-						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Publication date</h3>
-						<div class="text" th:text="${job.startDate}"></div>
-						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.endDate}"></div>
-						<h3>Minimum salary (brutto)</h3>
-						<div class="text" th:utext="${job.salary}"></div>
+						<div class="pozadie2">
+							<h3>
+								Employment type &nbsp
+								<div class="text" th:text="${job.employmentType}"></div>
+							</h3>
+							<h3>
+								Publication date &nbsp
+								<div class="text" th:text="${job.startDate}"></div>
+							</h3>
+							<h3>
+								Application deadline &nbsp
+								<div class="text" th:text="${job.endDate}"></div>
+							</h3>
+							<h3>
+								Minimum salary (brutto) &nbsp
+								<div class="text" th:utext="${job.salary}"></div>
+							</h3>
+						</div>
 						<div class="qrcode hidden qr-codes2">
 							<img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
@@ -96,34 +100,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<h2>Job description</h2>
+			<div class="col-6">
+				<div class="position">Job description</div>
 				<div class="row description">
 					<div id="ecran1">
-						<div class="hidden jobdesc2"
-							th:each="job : ${@mainController.jobs}">
+						<div class="jobdesc2" th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.description}"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<br>
-		<div class="row space">
-			<div class="col-6">
-				<div class="bar">
-					<span class="contacts"> <img
-						src='http://neobsedimdoma.sk/wp-content/uploads/2018/03/Instagram-logo-2016-01-128x128-1.png'
-						width="45" height="45" alt=""> tsystems_slovakia
-						&nbsp;&nbsp;
-					</span> <span class="contacts"><img
-						src='https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png'
-						width="35" height="35" alt=""> t.systems.slovakia</span> <span
-						class="logoBottom"> Created by Academy <img
-						th:src="@{/images/logo.svg}" width="250" height="40" alt=""></span>
-					<div class="in"></div>
-				</div>
+	</div>
+	<hr>
+	<div>
+
+		<div>
+			<div class="bar">
+				<div class="in"></div>
 			</div>
+
 		</div>
 	</div>
 	<div class="snowflakes" aria-hidden="true">
@@ -148,6 +144,7 @@
 		<div class="snowflake">T</div>
 		<div class="snowflake">T</div>
 	</div>
+
 	<script th:src="@{/js/time.js}"></script>
 	<script th:src="@{/js/box.js}"></script>
 	<script th:src="@{/js/box1.js}"></script>
