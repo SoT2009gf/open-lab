@@ -78,8 +78,9 @@ body {
 	.qrcode{
 	width: 50%;
 	margin: 0 auto;
- margin-top: -52em;
- margin-right: -10em; 
+	position: absolute;
+	left: 80em;
+    top: 30em;
 	}
 	
 	span.logoBottom{
@@ -176,6 +177,7 @@ body {
 	
 	.padding{
 	padding-left: 1em;
+	margin-top: 15em;
 	}
 	
 	
@@ -288,7 +290,7 @@ div.benefits{
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.03em;
-  	background-image: url("https://bitport.hu/images/content/201812/focus/tsystems_magyarorszag.jpg");
+background-color: #ff178b;
 }
 
 .deconstructed > div {
