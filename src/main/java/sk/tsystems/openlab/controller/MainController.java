@@ -76,7 +76,6 @@ public class MainController {
 			if (salary.equals("Not mentioned.")) {
 				salary = getSalary(allRequirements);
 			}
-			System.out.println(position);
 			String accountabilities = getAccountabilities(description);
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
