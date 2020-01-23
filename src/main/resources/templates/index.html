@@ -22,23 +22,32 @@
 		<div class="real-time" id="txt"></div>
 	</div>
 	<div class="container-fluid">
+
 		<div class="row row1">
+
 			<div class="col-6 job1">
+
+
 				<div class="hidden loaded-jobs1"
 					th:each="job, iter : ${@mainController.jobs}">
 					<div class="position" th:text="${job.position}"></div>
+
 					<div class="pozadie2">
+
 						<h3>
-							Employment type &nbsp;
+							Employment type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="text" th:text="${job.employmentType}"></div>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</h3>
 						<h3>
-							Application deadline &nbsp;
+							Application deadline &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="text" th:text="${job.applicationDeadline}"></div>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</h3>
 						<h3>
 							Minimum salary (brutto) &nbsp;
 							<div class="text" th:utext="${job.salary}"></div>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 						</h3>
 					</div>
 					<div class="qrcode hidden qr-codes1">
@@ -46,8 +55,12 @@
 							th:src='@{${"/qrcode?number=" + iter.index}}'
 							alt='Qr code image.' />
 					</div>
+					<div>
+						<iframe id="ytvideo"
+							src="https://www.youtube.com/embed/cMJytKW87TA?controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;playlist=cMJytKW87TA&amp;autoplay=1"
+							frameborder="0" allowfullscreen="0"></iframe>
+					</div>
 				</div>
-
 			</div>
 			<div class="col-6">
 				<div class="position">Job description</div>
@@ -71,16 +84,19 @@
 						<div class="position" th:text="${job.position}"></div>
 						<div class="pozadie2">
 							<h3>
-								Employment type &nbsp;
+							Employment type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<div class="text" th:text="${job.employmentType}"></div>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							</h3>
 							<h3>
-								Application deadline &nbsp;
+								Application deadline &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<div class="text" th:text="${job.applicationDeadline}"></div>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							</h3>
 							<h3>
 								Minimum salary (brutto) &nbsp;
 								<div class="text" th:utext="${job.salary}"></div>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							</h3>
 						</div>
 						<div class="qrcode hidden qr-codes2">

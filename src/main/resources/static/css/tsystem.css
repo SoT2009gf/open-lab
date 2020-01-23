@@ -25,7 +25,7 @@ hr {
 }
 
 .bar {
-	height: 4em;
+	height: 1em;
 	width: 100%;
 	background-color: white;
 }
@@ -45,6 +45,14 @@ hr {
   }
 }
 
+#ytvideo {
+	position: absolute;
+	left: 0em;
+	top: 14em;
+	width: 74em;
+	height: 34em;
+}
+
 .text {
 	display: inline-block;
 	color: white;
@@ -54,13 +62,10 @@ hr {
 img.qr-code-image {
 	position: absolute;
 	top: 11.5%;
-	left: 75%;
-	width: 20.5%;
+	left: 80%;
+	width: 10.5%;
 }
 
-.qrcode {
-	width: 80%;
-}
 
 .position {
 	font-size: 2.5em;
