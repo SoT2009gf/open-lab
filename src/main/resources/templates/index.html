@@ -51,12 +51,10 @@
 					<div class="hidden loaded-jobs1"
 						th:each="job, iter : ${@mainController.jobs}">
 						<div class="position" th:text="${job.position}"></div>
-						<h3>Employment type</h3>
-						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.applicationDeadline}"></div>
-						<h3>Minimum salary (brutto)</h3>
-						<div class="text" th:utext="${job.salary}"></div>
+						<span class="jobSubtitle">Employment type	</span><span class="text" th:text="${job.employmentType}"></span>
+						<br/><span class="jobSubtitle">Application deadline	</span><span class="text" th:text="${job.applicationDeadline}"></span>
+						<br/><span class="jobSubtitle">Minimum salary (brutto)	</span><span class="text" th:utext="${job.salary}"></span>
+						<br/><span class="text" th:utext="${job.generalDescription}"></span>
 						<div class="qrcode hidden qr-codes1">
 							<img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
@@ -85,12 +83,10 @@
 					<div class="hidden loaded-jobs2"
 						th:each="job, iter : ${@mainController.jobs}">
 						<div class="position" th:text="${job.position}"></div>
-						<h3>Employment type</h3>
-						<div class="text" th:text="${job.employmentType}"></div>
-						<h3>Application deadline</h3>
-						<div class="text" th:text="${job.applicationDeadline}"></div>
-						<h3>Minimum salary (brutto)</h3>
-						<div class="text" th:utext="${job.salary}"></div>
+						<span class="jobSubtitle">Employment type	</span><span class="text" th:text="${job.employmentType}"></span>
+						<br/><span class="jobSubtitle">Application deadline	</span><span class="text" th:text="${job.applicationDeadline}"></span>
+						<br/><span class="jobSubtitle">Minimum salary (brutto)	</span><span class="text" th:utext="${job.salary}"></span>
+						<br/><span class="text" th:utext="${job.generalDescription}"></span>
 						<div class="qrcode hidden qr-codes2">
 							<img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
