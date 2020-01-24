@@ -19,6 +19,7 @@
 			<img alt="T-Sys"
 				src="https://t-systems.jobs/cust/telekom/images/t-systems-logo@2x.png">
 		</div>
+<!-- By Fero - pocet volnych pozicii - treba nastylovat. <div>Number of available positions:<span th:text="' ' + ${@mainController.jobCount}"></span></div> -->
 		<div class="real-time" id="txt"></div>
 	</div>
 	<iframe id="video" width="100%" height="560"
@@ -30,7 +31,6 @@
 				<div class="col-12 hidden positions1"
 					th:each="job : ${@mainController.jobs}">
 					<div class="positionJob" th:text="${job.position}"></div>
-					<!-- <div class="text generalDesc" th:utext="${job.generalDescription}"></div> -->
 				</div>
 				<div class="top employ">
 					<div class="col-4">
@@ -97,6 +97,86 @@
 					<div id="ecran2">
 						<br>
 						<div class="hidden jobdesc2 padding"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-1 row3">
+			<div class="col-6">
+				<div class="col-12 hidden positions3"
+					th:each="job : ${@mainController.jobs}">
+					<div class="positionJob" th:text="${job.position}"></div>
+					<!-- <div class="text generalDesc" th:utext="${job.generalDescription}"></div> -->
+				</div>
+				<div class="top employ">
+					<div class="col-4">
+						<h3>Employment type</h3>
+						<h3>Application deadline</h3>
+						<h3>Minimum salary (brutto)</h3>
+					</div>
+					<div class="col-4  full-time hidden loaded-jobs3"
+						th:each="job, iter : ${@mainController.jobs}">
+						<div class="text" th:text="${job.employmentType}"></div>
+						<div class="text" th:text="${job.applicationDeadline}"></div>
+						<div class="text" th:utext="${job.salary}"></div>
+					</div>
+					<div class="col-4 qrCodes hidden qr-codes3"
+						th:each="job, iter : ${@mainController.jobs}">
+						<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
+							alt='Qr code image.' />
+					</div>
+				</div>
+			</div>
+			<div class="col-6 jobDesc">
+				<h2>Job Description</h2>
+				<div class="ecranCenter">
+					<div id="ecran3">
+						<br>
+						<div class="hidden jobdesc3 padding"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-2 row4">
+			<div class="col-6">
+				<div class="col-12 hidden positions4"
+					th:each="job : ${@mainController.jobs}">
+					<div class="positionJob" th:text="${job.position}"></div>
+					<!-- <div class="text generalDesc" th:utext="${job.generalDescription}"></div> -->
+				</div>
+				<div class="top employ">
+					<div class="col-4">
+						<h3>Employment type</h3>
+						<h3>Application deadline</h3>
+						<h3>Minimum salary (brutto)</h3>
+					</div>
+					<div class="col-4  full-time hidden loaded-jobs4"
+						th:each="job, iter : ${@mainController.jobs}">
+						<div class="text" th:text="${job.employmentType}"></div>
+						<div class="text" th:text="${job.applicationDeadline}"></div>
+						<div class="text" th:utext="${job.salary}"></div>
+					</div>
+					<div class="col-4 qrCodes hidden qr-codes4"
+						th:each="job, iter : ${@mainController.jobs}">
+						<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
+							alt='Qr code image.' />
+					</div>
+				</div>
+			</div>
+			<div class="col-6 jobDesc">
+				<h2>Job Description</h2>
+				<div class="ecranCenter">
+					<div id="ecran4">
+						<br>
+						<div class="hidden jobdesc4 padding"
 							th:each="job : ${@mainController.jobs}">
 							<div th:utext="${job.accountabilities}"></div>
 							<div th:utext="${job.requirements}"></div>

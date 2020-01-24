@@ -89,6 +89,28 @@ h3 {
 	padding: 0 2em;
 }
 
+#ecran3 {
+	background-color:black;
+	font-family: 'Roboto', sans-serif;
+	width: 80%;
+	height: 8em;
+	font-size: 1.8em;
+	overflow: hidden;
+	margin: 2em 0;
+	padding: 0 2em;
+}
+
+#ecran4 {
+	background-color:black;
+	font-family: 'Roboto', sans-serif;
+	width: 80%;
+	height: 8em;
+	font-size: 1.8em;
+	overflow: hidden;	
+	margin: 2em 0;
+	padding: 0 2em;
+}
+
 .row-1 {
 	border-top: 0.5em solid white;
 	background-color: black;
@@ -114,7 +136,7 @@ h3 {
 }
 
 .in {
-  	animation: fill 60s linear 1;
+  	animation: fill 30s linear 1;
     height: 100%;
     background-color:  #ff178b;
 }
@@ -211,6 +233,3 @@ h3 {
 	.real-time {
 	}
 }
-
-
-
