@@ -15,7 +15,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.hibernate.query.criteria.internal.expression.function.AggregationFunction.MIN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
@@ -286,7 +285,7 @@ public class MainController {
 			indexes.add(salaryTextIndex);
 		}
 		Collections.sort(indexes);
-		
+
 		if (startTextIndex == 0) {
 			if ((indexes.get(1)) > 0 || (indexes.get(2)) > 0) {
 				generalDescription = backup.substring(startTextIndex, indexes.get(1));
