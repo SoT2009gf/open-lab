@@ -7,6 +7,8 @@ const jobdesc1 = document.getElementsByClassName("jobdesc1");
 const jobdesc2 = document.getElementsByClassName("jobdesc2");
 const qrCodes1 = document.getElementsByClassName("qr-codes1");
 const qrCodes2 = document.getElementsByClassName("qr-codes2");
+const position1 = document.getElementsByClassName("positions1");
+const position2 = document.getElementsByClassName("positions2");
 
 var index = 0;
 var job1;
@@ -18,9 +20,11 @@ var animation2clone;
 var barAnimClone;
 var jobdesctemp1;
 var jobdesctemp2;
+var postemp1;
+var postemp2;
 
 slide();
-setInterval(slide, 60000);
+setInterval(slide, 10000);
 
 function slide() {
 	if (job1) {
@@ -30,6 +34,9 @@ function slide() {
 		jobdesctemp1.classList.add("hidden");
 		qrCode1.classList.remove("displayed");
 		qrCode1.classList.add("hidden");
+		postemp1.classList.remove("displayed");
+		postemp1.classList.add("hidden");
+
 	}
 
 	if (job2) {
@@ -39,6 +46,8 @@ function slide() {
 		jobdesctemp2.classList.add("hidden");
 		qrCode2.classList.remove("displayed");
 		qrCode2.classList.add("hidden");
+		postemp2.classList.remove("displayed");
+		postemp2.classList.add("hidden");
 	}
 
 	animation1clone = animation1[0].cloneNode(true);
@@ -61,10 +70,13 @@ function slide() {
 	jobdesc1[index].classList.add("displayed");
 	qrCodes1[index].classList.remove("hidden");
 	qrCodes1[index].classList.add("displayed");
+	position1[index].classList.remove("hidden");
+	position1[index].classList.add("displayed");
 
 	job1 = jobs1[index];
 	qrCode1 = qrCodes1[index];
 	jobdesctemp1 = jobdesc1[index];
+	postemp1 = position1[index];
 
 	index += 1;
 
@@ -78,10 +90,13 @@ function slide() {
 	jobdesc2[index].classList.add("displayed");
 	qrCodes2[index].classList.remove("hidden");
 	qrCodes2[index].classList.add("displayed");
+	position2[index].classList.remove("hidden");
+	position2[index].classList.add("displayed");
 
 	job2 = jobs2[index];
 	qrCode2 = qrCodes2[index];
 	jobdesctemp2 = jobdesc2[index];
+	postemp2 = position2[index];
 
 	index += 1;
 }
