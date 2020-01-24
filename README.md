@@ -12,4 +12,4 @@ Maťo Gál - front-end, different version
 
 Vilo Kotlár - JSON extraction, database entity, debugging, front-end
 
-Fero Kafka - back-end
+Fero Kafka - back-end, main controller, json service, revision, fixes
