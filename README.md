@@ -4,9 +4,9 @@ T-Systems Jobs presentation on big screen
 
 Authors:
 
-Katka Jesenská - JSON extraction, salary extraction from JSON string, debugging, front-end
+Katka Jesenská - data extraction from JSON string, debugging, database service, database entity, front-end
 
-Maťo Gál - front-end
+Maťo Gál - front-end, different version
 
 Šimon Kuchta - animations, front-end
 
