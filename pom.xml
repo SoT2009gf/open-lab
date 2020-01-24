@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sk.tsystems</groupId>
 	<artifactId>team1</artifactId>
@@ -25,6 +25,7 @@
 	</parent>
 
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -82,77 +83,84 @@
 			<artifactId>qrcodegen</artifactId>
 			<version>1.5.0</version>
 		</dependency>
-	</dependencies>
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.12.1</version>
+		</dependency>
 	
+	</dependencies>
+
 	<build>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>sk.tsystems.openlab.OpenLabServer</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <build.profile.id>dev</build.profile.id>
-                <profileActive>dev</profileActive>
-            </properties>
-        </profile>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>sk.tsystems.openlab.OpenLabServer</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-        <profile>
-            <id>local</id>
-            <properties>
-                <build.profile.id>local</build.profile.id>
-                <profileActive>local</profileActive>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.tomcat.maven</groupId>
-                        <artifactId>tomcat7-maven-plugin</artifactId>
-                        <version>2.2</version>
-                        <configuration>
-                            <url>http://localhost:8080/manager/text</url>
-                            <username>tomcat</username>
-                            <password>tomcat</password>
-                            <path>/${project.artifactId}</path>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>dev</build.profile.id>
+				<profileActive>dev</profileActive>
+			</properties>
+		</profile>
 
-        <profile>
-            <id>prod</id>
-            <properties>
-                <build.profile.id>prod</build.profile.id>
-                <profileActive>prod</profileActive>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.tomcat.maven</groupId>
-                        <artifactId>tomcat7-maven-plugin</artifactId>
-                        <version>2.2</version>
-                        <configuration>
-                            <url>https://kp.kpi.fei.tuke.sk/manager/text</url>
-                            <username>gamestudio</username>
-                            <password>kp2019</password>
-                            <path>/${project.artifactId}</path>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<build.profile.id>local</build.profile.id>
+				<profileActive>local</profileActive>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+							<url>http://localhost:8080/manager/text</url>
+							<username>tomcat</username>
+							<password>tomcat</password>
+							<path>/${project.artifactId}</path>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<build.profile.id>prod</build.profile.id>
+				<profileActive>prod</profileActive>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+							<url>https://kp.kpi.fei.tuke.sk/manager/text</url>
+							<username>gamestudio</username>
+							<password>kp2019</password>
+							<path>/${project.artifactId}</path>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
