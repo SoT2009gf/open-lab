@@ -1,9 +1,11 @@
 body {
-	background-color: black;
+	
 	background-position: right top;
 	background-size: 3150px 1650px;
  	overflow: hidden;
 	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
 	}
 	
 	.time{
@@ -25,11 +27,11 @@ body {
   
 }
   .in {
-  	animation: fill 10s linear 1;
+  	animation: fill 40s linear 1;
     height: 120%;
     background-color: white;
     margin-top: -5.5em;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 @keyframes fill {
@@ -72,7 +74,7 @@ body {
 	max-width: 194px;
 	max-height: 194px;
 	margin: 2em auto;
-	border-radius: 10%;
+	border-radius: 8%;
 	}
 	
 	.qrcode{
