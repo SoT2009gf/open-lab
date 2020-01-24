@@ -81,7 +81,12 @@ body {
 	margin: 0 auto;
 	position: absolute;
 	left: 110em;
-    top: 30em;
+    top: 35em;
+	}
+	
+	.qrtext{
+	font-size: 4em;
+	color: #ff178b;
 	}
 	
 	span.logoBottom{

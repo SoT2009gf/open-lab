@@ -58,7 +58,7 @@
 						<h3>Minimum salary (brutto)</h3>
 						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes1">
-							<img class='qr-code-image'
+						<div class="qrtext">FOR MORE INFO</div><img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
 								alt='Qr code image.' />
 						</div>
@@ -66,7 +66,7 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<h2>Job description</h2>
+				<h2>Job Description</h2>
 				<div class="row description">
 					<div id="scroll">
 						<br>
@@ -92,15 +92,15 @@
 						<h3>Minimum salary (brutto)</h3>
 						<div class="text" th:utext="${job.salary}"></div>
 						<div class="qrcode hidden qr-codes2">
-							<img class='qr-code-image'
+						<div class="qrtext">FOR MORE INFO</div><img class='qr-code-image'
 								th:src='@{${"/qrcode?number=" + iter.index}}'
-								alt='Qr code image.' />
+								alt='Qr code image.' /> 
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<h2>Job description</h2>
+				<h2>Job Description</h2>
 				<div class="row description">
 					<div id="scroll1">
 						<div class="hidden jobdesc2 padding"
