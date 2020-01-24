@@ -293,7 +293,7 @@ public class MainController {
 		}
 		return generalDescription;
 	}
-
+	
 	public int getJobCount() {
 		return jobService.getAllJobs().size();
 	}
