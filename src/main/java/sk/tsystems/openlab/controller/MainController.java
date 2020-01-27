@@ -44,6 +44,7 @@ public class MainController {
 	@Autowired
 	ServletContext servletContext;
 
+
 	@RequestMapping
 	public String index() {
 		try {
@@ -54,6 +55,26 @@ public class MainController {
 		return "index";
 	}
 
+	@RequestMapping("/screen1x1")
+	public String screen1x1() {
+		try {
+			refreshData();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "screen1x1";
+	}
+
+	@RequestMapping("/screen2x2")
+	public String screen2x2() {
+		try {
+			refreshData();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "screen2x2";
+	}
+	
 	private void refreshData() {
 		JsonProcessor jsonProcessor = new JsonProcessor();
 
