@@ -19,15 +19,21 @@ public class Job {
 	private String salary;
 	@Column(length = 8000)
 	private String requirements;
+	@Column(length = 8000)
+	private String generalDescription;
 	
-	public Job(String position, String employmentType, String applicationDeadline, String accountabilities, String salary, String requirements) {
+	public Job(String position, String employmentType, String applicationDeadline, String accountabilities, String salary, String requirements, String generalDescription) {
 		this.position = position;
 		this.employmentType = employmentType;
 		this.applicationDeadline = applicationDeadline;
 		this.accountabilities = accountabilities;
 		this.salary = salary;
 		this.requirements = requirements;
+		this.generalDescription = generalDescription;
+		
 	}
+
+	
 
 	public Job() {
 
@@ -82,5 +88,13 @@ public class Job {
 
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
+	}
+	
+	public String getGeneralDescription() {
+		return generalDescription;
+	}
+
+	public void setGeneralDescription(String generalDescription) {
+		this.generalDescription = generalDescription;
 	}
 }

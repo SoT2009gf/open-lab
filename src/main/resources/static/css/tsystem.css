@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-color: #505050;
 	color: white;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .employ {
-	margin-top: 10em;
+	margin-top: 2em;
 }
 
 .logo {
@@ -45,6 +45,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	text-align: center;	
 	margin-top: 0.8em;
+	height: 2em;
 }
 
 .text {
@@ -68,7 +69,7 @@ h3 {
 }
 
 #ecran1 {
-	background-color:black;
+	background-color:#202020;
 	font-family: 'Roboto', sans-serif;
 	width: 80%;
 	height: 8em;
@@ -79,7 +80,7 @@ h3 {
 }
 
 #ecran2 {
-	background-color:black;
+	background-color: #383838;
 	font-family: 'Roboto', sans-serif;
 	width: 80%;
 	height: 8em;
@@ -90,7 +91,7 @@ h3 {
 }
 
 #ecran3 {
-	background-color:black;
+	background-color: #202020;
 	font-family: 'Roboto', sans-serif;
 	width: 80%;
 	height: 8em;
@@ -101,7 +102,7 @@ h3 {
 }
 
 #ecran4 {
-	background-color:black;
+	background-color: #383838;
 	font-family: 'Roboto', sans-serif;
 	width: 80%;
 	height: 8em;
@@ -111,13 +112,42 @@ h3 {
 	padding: 0 2em;
 }
 
-.row-1 {
-	border-top: 0.5em solid white;
-	background-color: black;
+#ecran5 {
+	background-color: #202020;
+	font-family: 'Roboto', sans-serif;
+	width: 80%;
+	height: 8em;
+	font-size: 1.8em;
+	overflow: hidden;
+	margin: 2em 0;
+	padding: 0 2em;
 }
 
-.row-2 {
-	border-top: 0.5em solid white;
+b {
+  font-weight: normal;
+}
+
+.positions {
+	display: flex;
+}
+
+.row {
+	height: 15em;
+}
+
+.color1 {
+	background-color: #202020;
+}
+
+.color2 {
+	background-color: #383838;
+}
+
+.color3 {
+	background-color: #282828;
+}
+
+.color4 {
 	background-color: black;
 }
 
@@ -126,7 +156,6 @@ h3 {
 }
 
 .full-time {
-	margin-left: 8em;
 }
 
 .bar {
@@ -136,15 +165,9 @@ h3 {
 }
 
 .in {
-  	animation: fill 30s linear 1;
+  	animation: fill 60s linear 1;
     height: 100%;
     background-color:  #ff178b;
-}
-
-.generalDesc {
-	margin-top: 8em;
-	margin-left: 0.1em;
-	overflow:hidden;
 }
 
 @keyframes fill {
@@ -154,11 +177,6 @@ h3 {
   100% {
     width: 0%;
   }
-}
-
-.col-12 {
-	height: 0.5em;
-	background-color: black;
 }
 
 .qrCodes {
@@ -184,10 +202,8 @@ h3 {
 	margin: 0.5em 0 0 0.5em;
 	}
     
-    .top {;
-    }
-    
 	.header {
+	justify-content: space-between;
 	width: 100%;
 	height: 100%;
 	font-size: 1em;
@@ -195,8 +211,21 @@ h3 {
 	padding: 0 0;
 	}
 	
+	.positions {
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 0.1em;
+	margin-left:-7.4em;
+	font-size: 2em;
+	}
+	
 	#txt {
 	margin-right: 0.3em;
+	}
+	
+	.job {
+	margin-top: 0.05em;
+	font-size: 1em;
 	}
 	
 	.positionJob {
@@ -208,9 +237,11 @@ h3 {
 	}
 	
 	.jobDesc {
-	
-	margin-top: 2.2em;
 	font-size: 0.5em
+	}
+	
+	.real-time {
+	margin-top: 0em;
 	}
 	
 	.qrIMG {
@@ -223,13 +254,38 @@ h3 {
 	padding-bottom: 0.8em;
 	}
 	
-	.ecran1 {
-	height: 2em;
-	}
-	
-	.ecran2 {
-	}
-	
-	.real-time {
+	.full-time {
+	margin-top: 0em;
 	}
 }
+
+@media all and (min-width: 1800px) {
+	.positions {
+	font-size: 2.5em;
+	}
+	
+	#video {
+	width:50%;
+	height: 720px;
+	}
+	
+	.row {
+	height: 28em;
+  }
+  
+  .job {
+  color:#383838;}
+  
+  .positions {
+  font-size: 3em;
+  font-weight: bold;
+  margin-left: -4em;  
+  }
+  
+  .real-time{
+  margin-top: 0em;
+  font-size: 3em;
+  }
+}
+
+

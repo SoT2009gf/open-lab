@@ -81,9 +81,10 @@ public class MainController {
 			if (requirements == null) {
 				requirements = getRequirements(description);
 			}
-			
+			String generalDescription = getGeneralDescription(description);
 			String url = "https://t-systems.jobs/careers-sk-en/" + jsonObject.get("PositionURI").getAsString();
-			jobs.add(new Job(position, employmentType, applicationDeadline, accountabilities, salary, requirements));
+			jobs.add(new Job(position, employmentType, applicationDeadline, accountabilities, salary, requirements,
+					generalDescription));
 
 			QrCode qrcode = QrCode.encodeText(url, QrCode.Ecc.MEDIUM);
 			BufferedImage img = qrcode.toImage(2, 8);
@@ -237,6 +238,61 @@ public class MainController {
 		}
 
 		return null;
+	}
+	
+	private String getGeneralDescription(String description) {
+		String backup = description;
+		description = description.toLowerCase();
+		String generalDescription = backup;
+		int startTextIndex = 0;
+		int accountabilitiesTextIndex = description.indexOf("key accountabilities");
+		if (accountabilitiesTextIndex == -1) {
+			accountabilitiesTextIndex = description.indexOf("accountabilities");
+		} else if (accountabilitiesTextIndex == -1) {
+			accountabilitiesTextIndex = description.indexOf("accountabilites");
+		}
+		int dailyResponsibilitiesTextIndex = description.indexOf("daily responsibilities");
+		if (dailyResponsibilitiesTextIndex == -1) {
+			dailyResponsibilitiesTextIndex = description.indexOf("your responsibilities");
+		} else if (dailyResponsibilitiesTextIndex == -1) {
+			dailyResponsibilitiesTextIndex = description.indexOf("responsibilities");
+		} else if (dailyResponsibilitiesTextIndex == -1) {
+			dailyResponsibilitiesTextIndex = description.indexOf("your skills");
+		} else if (dailyResponsibilitiesTextIndex == -1) {
+			dailyResponsibilitiesTextIndex = description.indexOf("skills");
+		}
+		int benefitsTextIndex = description.indexOf("other benefits");
+		if (benefitsTextIndex == -1) {
+			benefitsTextIndex = description.indexOf("benefits");
+		}
+		int salaryTextIndex = description.indexOf("Minimum monthly salary");
+		int tempSalaryTextIndex = description.indexOf("salary");
+		if (tempSalaryTextIndex < salaryTextIndex) {
+			salaryTextIndex = tempSalaryTextIndex;
+		}
+
+		List<Integer> indexes = new ArrayList<>();
+		indexes.add(startTextIndex);
+		if (accountabilitiesTextIndex > 0) {
+			indexes.add(accountabilitiesTextIndex);
+		}
+		if (dailyResponsibilitiesTextIndex > 0) {
+			indexes.add(dailyResponsibilitiesTextIndex);
+		}
+		if (benefitsTextIndex > 0) {
+			indexes.add(benefitsTextIndex);
+		}
+		if (salaryTextIndex > 0) {
+			indexes.add(salaryTextIndex);
+		}
+		Collections.sort(indexes);
+
+		if (startTextIndex == 0) {
+			if ((indexes.get(1)) > 0 || (indexes.get(2)) > 0) {
+				generalDescription = backup.substring(startTextIndex, indexes.get(1));
+			}
+		}
+		return generalDescription.trim();
 	}
 
 	public int getJobCount() {

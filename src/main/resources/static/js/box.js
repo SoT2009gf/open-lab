@@ -5,4 +5,4 @@ function ScrollDiv(){
          }
    else {document.getElementById('ecran1').scrollTop=0;}
 }
-setInterval(ScrollDiv,25)
+setInterval(ScrollDiv,60)
