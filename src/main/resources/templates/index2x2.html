@@ -104,88 +104,7 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- 
-		<div class="row row-1 row3">
-			<div class="col-6 color4">
-				<div class="col-12 hidden positions3"
-					th:each="job : ${@mainController.jobs}">
-					<div class="positionJob" th:text="${job.position}"></div>
-					<div class="text generalDesc" th:utext="${job.generalDescription}"></div>
-				</div>
-				<div class="top employ">
-					<div class="col-4">
-						<h3>Employment type</h3>
-						<h3>Application deadline</h3>
-						<h3>Minimum salary (brutto)</h3>
-					</div>
-					<div class="col-4  full-time hidden loaded-jobs3"
-						th:each="job, iter : ${@mainController.jobs}">
-						<div class="text" th:text="${job.employmentType}"></div>
-						<div class="text" th:text="${job.applicationDeadline}"></div>
-						<div class="text" th:utext="${job.salary}"></div>
-					</div>
-					<div class="col-4 qrCodes hidden qr-codes3"
-						th:each="job, iter : ${@mainController.jobs}">
-						<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
-							alt='Qr code image.' />
-					</div>
-				</div>
-			</div>
-			<div class="col-6 color1 jobDesc">
-				<h2>Job Description</h2>
-				<div class="ecranCenter">
-					<div id="ecran3">
-						<br>
-						<div class="hidden jobdesc3 padding"
-							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.accountabilities}"></div>
-							<div th:utext="${job.requirements}"></div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class="row row-2 row4">
-			<div class="col-6 color3">
-				<div class="col-12 hidden positions4"
-					th:each="job : ${@mainController.jobs}">
-					<div class="positionJob" th:text="${job.position}"></div>
-					<div class="text generalDesc" th:utext="${job.generalDescription}"></div>
-				</div>
-				<div class="top employ">
-					<div class="col-4">
-						<h3>Employment type</h3>
-						<h3>Application deadline</h3>
-						<h3>Minimum salary (brutto)</h3>
-					</div>
-					<div class="col-4  full-time hidden loaded-jobs4"
-						th:each="job, iter : ${@mainController.jobs}">
-						<div class="text" th:text="${job.employmentType}"></div>
-						<div class="text" th:text="${job.applicationDeadline}"></div>
-						<div class="text" th:utext="${job.salary}"></div>
-					</div>
-					<div class="col-4 qrCodes hidden qr-codes4"
-						th:each="job, iter : ${@mainController.jobs}">
-						<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
-							alt='Qr code image.' />
-					</div>
-				</div>
-			</div>
-			<div class="col-6 jobDesc color2">
-				<h2>Job Description</h2>
-				<div class="ecranCenter">
-					<div id="ecran4">
-						<br>
-						<div class="hidden jobdesc4 padding"
-							th:each="job : ${@mainController.jobs}">
-							<div th:utext="${job.accountabilities}"></div>
-							<div th:utext="${job.requirements}"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-	</div>
 	<div class="col-12"></div>
 	<div class="bar">
 		<div class="in"></div>
@@ -197,12 +116,5 @@
 	<script th:src="@{/js/box3.js}"></script>
 	<script th:src="@{/js/animreset.js}"></script>
 
-
-	<!-- 	<video width="320" height="240" autoplay>
-		<source th:src="/video/TSys1.mp4" type="video/mp4">
-	</video>
-	<video width="320" height="240" autoplay loop>
-		<source th:src="/video/TSys2.mp4" type="video/mp4">
-	</video> -->
 </body>
 </html>
