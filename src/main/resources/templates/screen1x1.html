@@ -19,7 +19,7 @@
 			<img alt="T-Sys"
 				src="https://t-systems.jobs/cust/telekom/images/t-systems-logo@2x.png">
 		</div>
-        <div class="positions">Today available positions &nbsp; : &nbsp; <span class="job"th:text="' ' + ${@mainController.jobCount}"></span></div>
+        <div class="positions">Today available positions: &nbsp; <span class="job"th:text="${@mainController.jobCount}"></span></div>
 		<div class="real-time" id="txt"></div>
 	</div>
 	<iframe id="video" width="100%" height="615"
@@ -28,7 +28,7 @@
 	<div class="container-fluid">
 		<div class="row row-1 row1">
 			<div class="col-6 color4">
-				<div class="col-12 hidden positions1"
+				<div class="col-12 jobName hidden positions1"
 					th:each="job : ${@mainController.jobs}">
 					<div class="positionJob" th:text="${job.position}"></div>
 				</div>
@@ -67,7 +67,7 @@
 		</div>
 		<div class="row row-2 row2">
 			<div class="col-6 color3">
-				<div class="col-12 hidden positions2"
+				<div class="col-12 jobName hidden positions2"
 					th:each="job : ${@mainController.jobs}">
 					<div class="positionJob" th:text="${job.position}"></div>
 					<!-- <div class="text generalDesc" th:utext="${job.generalDescription}"></div> -->
@@ -107,7 +107,7 @@
 		</div>
 		<div class="row row-1 row3">
 			<div class="col-6 color4">
-				<div class="col-12 hidden positions3"
+				<div class="col-12 jobName  hidden positions3"
 					th:each="job : ${@mainController.jobs}">
 					<div class="positionJob" th:text="${job.position}"></div>
 				</div>

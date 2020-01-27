@@ -1,0 +1,166 @@
+body {
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.header {
+	background-color: #ff178b;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding: 1em 2em 0em 2em;
+}
+
+.container-fluid {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.top {
+	display: flex;
+}
+
+.employ {
+	margin-top: 2em;
+}
+
+.logo {
+	color: white;
+}
+
+.jobName {
+	
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+.h-3 {
+	color: #ff178b;
+}
+
+.real-time {
+	margin-top: 0.25em;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.positions {
+	margin-top: 0.25em;
+	margin-left: -8em;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.bar {
+	height: 1em;
+	width: 100%;
+	background-color: white;
+}
+
+.in {
+	animation: fill 60s linear 1;
+	height: 100%;
+	background-color: #ff178b;
+}
+
+@keyframes fill {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+.hidden {
+	display: none;
+}
+
+.col-12 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.col-6 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.row-1 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	display: flex;
+}
+
+.row-2 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	display: flex;
+}
+
+.column-1 {
+	background-color: #383838;
+}
+
+.column-2 {
+	background-color: #282828;
+}
+
+.column-3 {
+	background-color: #383838;
+}
+
+#ecran1 {
+	background-color: #202020;
+	font-family: 'Roboto', sans-serif;
+	width: 90%;
+	height: 8em;
+	font-size: 1.8em;
+	overflow: hidden;
+	margin: 2em 0;
+	padding: 0 2em;
+}
+
+#ecran2 {
+	background-color: #383838;
+	font-family: 'Roboto', sans-serif;
+	width: 90%;
+	height: 10em;
+	font-size: 1.8em;
+	overflow: hidden;
+	margin: 2em 0;
+	padding: 0 2em;
+}
+
+#ecran3 {
+	background-color: #202020;
+	font-family: 'Roboto', sans-serif;
+	width: 90%;
+	height: 10em;
+	font-size: 1.8em;
+	overflow: hidden;
+	margin: 2em 0;
+	padding: 0 2em;
+}
+
+/* .ecranLoc-1 {
+	float: right;
+	align-content: flex-end;
+}
+
+.ecranLoc-2 {
+	float: left;
+	align-content: flex-end;
+}
+
+.ecranLoc-3 {
+	float: right;
+	align-content: flex-end;
+}
+ */
+.job {
+    margin: 4em;
+}
