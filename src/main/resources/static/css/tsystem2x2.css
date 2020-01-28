@@ -113,6 +113,11 @@ h3 {
 	background-color: #383838;
 }
 
+b {
+	font-weight: normal;
+	flex: 0 0 100%;	
+}
+
 #ecran1 {
 	background-color: #202020;
 	font-family: 'Roboto', sans-serif;
