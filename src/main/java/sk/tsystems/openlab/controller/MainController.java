@@ -1,6 +1,7 @@
 package sk.tsystems.openlab.controller;
 
 import java.awt.image.BufferedImage;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -76,6 +77,8 @@ public class MainController {
 			if (salary.equals("Not mentioned.")) {
 				salary = getSalary(allRequirements);
 			}
+			description = getClearString(description);
+			allRequirements = getClearString(allRequirements);
 			String accountabilities = getAccountabilities(description);
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
@@ -142,6 +145,8 @@ public class MainController {
 		String accountabilitiesText = backup;
 		int accountabilitiesTextIndex = description.indexOf("accountabilities");
 		if (accountabilitiesTextIndex == -1) {
+			accountabilitiesTextIndex = description.indexOf("accountabilites");
+		}else if (accountabilitiesTextIndex == -1) {
 			accountabilitiesTextIndex = description.indexOf("responsibilities");
 		}
 		int salaryTextIndex = description.indexOf("salary");
@@ -198,11 +203,21 @@ public class MainController {
 			}
 
 		}
+		
 		StringBuilder temp = new StringBuilder();
 		temp.append(Character.toUpperCase(accountabilitiesText.charAt(0)));
-		temp.append(accountabilitiesText.substring(1));
+		if (accountabilitiesTextIndex >-1) {
+			if (Character.isAlphabetic(accountabilitiesText.charAt(16))) {
+				temp.append(accountabilitiesText.substring(1, 16));
+				temp.append("<br />");
+				temp.append(accountabilitiesText.substring(16));
+			}else {
+				temp.append(accountabilitiesText.substring(1));
+			}
+		} else temp.append(accountabilitiesText.substring(1));
 		return temp.toString();
 	}
+	
 
 	private String getRequirements(String description) {
 		StringBuilder temp = new StringBuilder();
@@ -235,6 +250,11 @@ public class MainController {
 		}
 
 		return null;
+	}
+	
+	private String getClearString(String description) {
+	    description = description.replaceAll("\\<(([p|b])|(/[p|b])|(strong)|(/strong)|(br\\s/))\\>", "");
+		return description;
 	}
 	
 	public int getJobCount() {
