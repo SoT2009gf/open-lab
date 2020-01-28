@@ -78,7 +78,9 @@ public class MainController {
 				salary = getSalary(allRequirements);
 			}
 			description = getClearString(description);
+			System.out.println(allRequirements);
 			allRequirements = getClearString(allRequirements);
+			System.out.println(allRequirements);
 			String accountabilities = getAccountabilities(description);
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
@@ -207,7 +209,7 @@ public class MainController {
 		StringBuilder temp = new StringBuilder();
 		temp.append(Character.toUpperCase(accountabilitiesText.charAt(0)));
 		if (accountabilitiesTextIndex >-1) {
-			if (Character.isAlphabetic(accountabilitiesText.charAt(16))) {
+			if (Character.isAlphabetic(accountabilitiesText.charAt(16)) || (accountabilitiesText.charAt(16) == '•')) {
 				temp.append(accountabilitiesText.substring(1, 16));
 				temp.append("<br />");
 				temp.append(accountabilitiesText.substring(16));
@@ -227,22 +229,26 @@ public class MainController {
 		if (requirementsTextIndex == -1) {
 			requirementsTextIndex = description.indexOf("your skills");
 		}
+		int salaryTextIndex = description.indexOf("salary");
 		if (requirementsTextIndex == -1) {
-			int salaryTextIndex = description.indexOf("salary");
-			if (salaryTextIndex > 0 && requirementsTextIndex > 0) {
+			if (salaryTextIndex > 0) {
+				String requirementsText = backup.substring(0, salaryTextIndex);
+				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
+				temp.append(requirementsText.substring(1));
+				return temp.toString();
+			} else {
+				return backup;
+			}
+		}
+		
+		if (requirementsTextIndex > 0) {
+			if (salaryTextIndex > 0 && salaryTextIndex > requirementsTextIndex) {
 				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
 				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
 				temp.append(requirementsText.substring(1));
 				return temp.toString();
 			} else {
-
-				return backup;
-			}
-		}
-		int salaryTextIndex = description.indexOf("salary");
-		if (requirementsTextIndex > 0) {
-			if (salaryTextIndex > 0) {
-				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
+				String requirementsText = backup.substring(requirementsTextIndex);
 				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
 				temp.append(requirementsText.substring(1));
 				return temp.toString();
@@ -253,7 +259,7 @@ public class MainController {
 	}
 	
 	private String getClearString(String description) {
-	    description = description.replaceAll("\\<(([p|b])|(/[p|b])|(strong)|(/strong)|(br\\s/))\\>", "");
+	    description = description.replaceAll("\\<(([p|b])|(/[p|b])|(strong)|(/strong)|(br\\s/)|(br))\\>", "");
 		return description;
 	}
 	
