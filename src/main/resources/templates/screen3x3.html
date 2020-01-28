@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<title>Open Lab T-Systems presentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="refresh" content="3600" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/tsystem3x3.css}" type="text/css">
+</head>
+<body class="time" onload="startTime()">
+	<div class="header">
+		<div class="logo">
+			<img id="logo" alt="T-Sys"
+				src="https://t-systems.jobs/cust/telekom/images/t-systems-logo@2x.png">
+		</div>
+		<div class="positions">
+			Available positions: &nbsp;<span class="jobs"
+				th:text="${@mainController.jobCount}"></span>
+		</div>
+		<div class="real-time" id="txt"></div>
+	</div>
+	<div class="container-fluid">
+		<div class="row-1">
+			<div class="col-6 col-video">
+
+				<iframe id="video" width="100%" height="1080"
+					src="https://www.youtube.com/embed/cMJytKW87TA?controls=0&showinfo=0&rel=0&loop=1&playlist=cMJytKW87TA&autoplay=1&autoplay=1&mute=1"
+					frameborder="0"></iframe>
+			</div>
+			<div class="col-6 column-1" >
+				<div class="col-12 actual-Job hidden positions1"
+					th:each="job : ${@mainController.jobs}">
+					<div class="farba" th:text="${job.position}"></div>
+				</div>
+				<div class="job">
+					<div class="col-4 h-3">
+						<h3>Employment type</h3>
+						<h3>Application deadline</h3>
+						<h3>Minimum salary (brutto)</h3>
+					</div>
+					<div class="col-4 hidden loaded-jobs1"
+						th:each="job, iter : ${@mainController.jobs}">
+						<div class="text" th:text="${job.employmentType}"></div>
+						<div class="text" th:text="${job.applicationDeadline}"></div>
+						<div class="text" th:utext="${job.salary}"></div>
+					</div>
+					<div class="col-4 qrCodes hidden qrcodes1"
+						th:each="job, iter : ${@mainController.jobs}">
+						<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
+							alt='Qr code image.' />
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="ecranLoc-1">
+						<div id="ecran1">
+							<br>
+							<div class="hidden jobdesc1 padding"
+								th:each="job : ${@mainController.jobs}">
+								<div th:utext="${job.accountabilities}"></div>
+								<div th:utext="${job.requirements}"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row-2">
+		<div class="col-6 column-2" >
+			<div class="col-12 actual-Job hidden positions2"
+				th:each="job : ${@mainController.jobs}">
+				<div class="farba" th:text="${job.position}"></div>
+			</div>
+			<div class="job">
+				<div class="col-4 h-3">
+					<h3>Employment type</h3>
+					<h3>Application deadline</h3>
+					<h3>Minimum salary (brutto)</h3>
+				</div>
+				<div class="col-4 hidden loaded-jobs2"
+					th:each="job, iter : ${@mainController.jobs}">
+					<div class="text" th:text="${job.employmentType}"></div>
+					<div class="text" th:text="${job.applicationDeadline}"></div>
+					<div class="text" th:utext="${job.salary}"></div>
+				</div>
+				<div class="col-4 qrCodes hidden qrcodes2"
+					th:each="job, iter : ${@mainController.jobs}">
+					<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
+						alt='Qr code image.' />
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="ecranLoc-2">
+					<div id="ecran2">
+						<br>
+						<div class="hidden jobdesc2 padding"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-6 column-3 " >
+			<div class="col-12 actual-Job hidden positions3"
+				th:each="job : ${@mainController.jobs}">
+				<div class="farba" th:text="${job.position}"></div>
+			</div>
+			<div class="job">
+				<div class="col-4 h-3">
+					<h3>Employment type</h3>
+					<h3>Application deadline</h3>
+					<h3>Minimum salary (brutto)</h3>
+				</div>
+				<div class="col-4 hidden loaded-jobs3"
+					th:each="job, iter : ${@mainController.jobs}">
+					<div class="text" th:text="${job.employmentType}"></div>
+					<div class="text" th:text="${job.applicationDeadline}"></div>
+					<div class="text" th:utext="${job.salary}"></div>
+				</div>
+				<div class="col-4 qrCodes hidden qrcodes3"
+					th:each="job, iter : ${@mainController.jobs}">
+					<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
+						alt='Qr code image.' />
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="ecranLoc-3">
+					<div id="ecran3">
+						<br>
+						<div class="hidden jobdesc3 padding"
+							th:each="job : ${@mainController.jobs}">
+							<div th:utext="${job.accountabilities}"></div>
+							<div th:utext="${job.requirements}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bar">
+		<div class="in"></div>
+	</div>
+	<script th:src="@{/js/time.js}"></script>
+	<script th:src="@{/js/1box2x2.js}"></script>
+	<script th:src="@{/js/2box2x2.js}"></script>
+	<script th:src="@{/js/3box2x2.js}"></script>
+	<script th:src="@{/js/animreset2x2.js}"></script>
+</body>
+</html>

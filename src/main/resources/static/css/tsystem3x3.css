@@ -128,12 +128,12 @@ h3 {
 	background-size: cover;
 	background-image: url('/team1/images/1.jpg');
 	border-top: 5px solid black;
-	height: 42em;
+	height: 84em;
 	
 }
 
 .column-2 {
-	height: 42em;
+	height: 84em;
 	background-repeat: no-repeat;
 	background-image: url('/team1/images/3.jpg');
 	background-size: cover;
@@ -143,7 +143,7 @@ h3 {
 }
 
 .column-3 {
-	height: 42em;
+	height: 84em;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: url('/team1/images/2.png');
@@ -152,9 +152,18 @@ h3 {
 }
 
 .col-video {
-	height: 40em;
+	height: 84em;
 	border-top: 5px solid black;
 }
+
+b { 
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	font-weight: normal;
+	flex: 0 0 100%;
+}
+
+
 
 #ecran1 {
 	background-color: #202020;
