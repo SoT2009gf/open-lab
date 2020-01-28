@@ -80,8 +80,8 @@ public class MainController {
 			description = getClearString(description);
 			System.out.println(allRequirements);
 			allRequirements = getClearString(allRequirements);
-			System.out.println(allRequirements);
 			String accountabilities = getAccountabilities(description);
+			System.out.println(allRequirements);
 			String requirements = getRequirements(allRequirements);
 			if (requirements == null) {
 				requirements = getRequirements(description);
@@ -148,7 +148,7 @@ public class MainController {
 		int accountabilitiesTextIndex = description.indexOf("accountabilities");
 		if (accountabilitiesTextIndex == -1) {
 			accountabilitiesTextIndex = description.indexOf("accountabilites");
-		}else if (accountabilitiesTextIndex == -1) {
+		} else if (accountabilitiesTextIndex == -1) {
 			accountabilitiesTextIndex = description.indexOf("responsibilities");
 		}
 		int salaryTextIndex = description.indexOf("salary");
@@ -205,21 +205,21 @@ public class MainController {
 			}
 
 		}
-		
+
 		StringBuilder temp = new StringBuilder();
 		temp.append(Character.toUpperCase(accountabilitiesText.charAt(0)));
-		if (accountabilitiesTextIndex >-1) {
+		if (accountabilitiesTextIndex > -1) {
 			if (Character.isAlphabetic(accountabilitiesText.charAt(16)) || (accountabilitiesText.charAt(16) == '•')) {
 				temp.append(accountabilitiesText.substring(1, 16));
 				temp.append("<br />");
 				temp.append(accountabilitiesText.substring(16));
-			}else {
+			} else {
 				temp.append(accountabilitiesText.substring(1));
 			}
-		} else temp.append(accountabilitiesText.substring(1));
+		} else
+			temp.append(accountabilitiesText.substring(1));
 		return temp.toString();
 	}
-	
 
 	private String getRequirements(String description) {
 		StringBuilder temp = new StringBuilder();
@@ -231,7 +231,7 @@ public class MainController {
 		}
 		int salaryTextIndex = description.indexOf("salary");
 		if (requirementsTextIndex == -1) {
-			if (salaryTextIndex > 0) {
+				if (salaryTextIndex > 0) {
 				String requirementsText = backup.substring(0, salaryTextIndex);
 				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
 				temp.append(requirementsText.substring(1));
@@ -239,30 +239,44 @@ public class MainController {
 			} else {
 				return backup;
 			}
+			
 		}
-		
 		if (requirementsTextIndex > 0) {
-			if (salaryTextIndex > 0 && salaryTextIndex > requirementsTextIndex) {
+			if (salaryTextIndex > 0 ) {
 				String requirementsText = backup.substring(requirementsTextIndex, salaryTextIndex);
 				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
-				temp.append(requirementsText.substring(1));
-				return temp.toString();
-			} else {
+				if (Character.isAlphabetic(requirementsText.charAt((12)))) {
+					temp.append(requirementsText.substring(1,12));
+					temp.append("<br />");
+					temp.append(requirementsText.substring(12));
+					return temp.toString();
+				} else {
+					temp.append(requirementsText.substring(1));
+					return temp.toString();
+				}
+			} 
+			else {
 				String requirementsText = backup.substring(requirementsTextIndex);
 				temp.append(Character.toUpperCase(requirementsText.charAt(0)));
-				temp.append(requirementsText.substring(1));
-				return temp.toString();
+				if (Character.isAlphabetic(requirementsText.charAt(12))) {
+					temp.append(requirementsText.substring(1,12));
+					temp.append("<br />");
+					temp.append(requirementsText.substring(12));
+					return temp.toString();
+				} else {
+					temp.append(requirementsText.substring(1));
+					return temp.toString();
+				}
 			}
 		}
-
 		return null;
 	}
-	
+
 	private String getClearString(String description) {
-	    description = description.replaceAll("\\<(([p|b])|(/[p|b])|(strong)|(/strong)|(br\\s/)|(br))\\>", "");
+		description = description.replaceAll("\\<(([p|b])|(/[p|b])|(strong)|(/strong)|(br\\s/)|(br))\\>", "");
 		return description;
 	}
-	
+
 	public int getJobCount() {
 		return jobService.getAllJobs().size();
 	}
