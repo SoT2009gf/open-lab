@@ -16,26 +16,27 @@
 <body class="time" onload="startTime()">
 	<div class="header">
 		<div class="logo">
-			<img alt="T-Sys"
+			<img id="logo" alt="T-Sys"
 				src="https://t-systems.jobs/cust/telekom/images/t-systems-logo@2x.png">
 		</div>
 		<div class="positions">
-			Today available positions: &nbsp;<span class="job"
+			Available positions: &nbsp;<span class="jobs"
 				th:text="${@mainController.jobCount}"></span>
 		</div>
 		<div class="real-time" id="txt"></div>
 	</div>
 	<div class="container-fluid">
 		<div class="row-1">
-			<div class="col-6">
-				<iframe id="video" width="100%" height="535"
+			<div class="col-6 col-video">
+
+				<iframe id="video" width="100%" height="720"
 					src="https://www.youtube.com/embed/cMJytKW87TA?controls=0&showinfo=0&rel=0&loop=1&playlist=cMJytKW87TA&autoplay=1&autoplay=1&mute=1"
 					frameborder="0"></iframe>
 			</div>
-			<div class="col-6 column-1">
-				<div class="col-12 hidden positions1"
+			<div class="col-6 column-1" >
+				<div class="col-12 actual-Job hidden positions1"
 					th:each="job : ${@mainController.jobs}">
-					<div class="" th:text="${job.position}"></div>
+					<div class="farba" th:text="${job.position}"></div>
 				</div>
 				<div class="job">
 					<div class="col-4 h-3">
@@ -71,10 +72,10 @@
 		</div>
 	</div>
 	<div class="row-2">
-		<div class="col-6 column-2">
-			<div class="col-12 hidden positions2"
+		<div class="col-6 column-2" >
+			<div class="col-12 actual-Job hidden positions2"
 				th:each="job : ${@mainController.jobs}">
-				<div class="" th:text="${job.position}"></div>
+				<div class="farba" th:text="${job.position}"></div>
 			</div>
 			<div class="job">
 				<div class="col-4 h-3">
@@ -107,10 +108,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-6 column-3">
-			<div class="col-12 hidden positions3"
+		<div class="col-6 column-3 " >
+			<div class="col-12 actual-Job hidden positions3"
 				th:each="job : ${@mainController.jobs}">
-				<div class="" th:text="${job.position}"></div>
+				<div class="farba" th:text="${job.position}"></div>
 			</div>
 			<div class="job">
 				<div class="col-4 h-3">

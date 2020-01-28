@@ -34,7 +34,7 @@ var postemp2;
 var postemp3;
 
 slide();
-setInterval(slide, 5000);
+setInterval(slide, 60000);
 
 function slide() {
 	if (job1) {

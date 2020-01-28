@@ -2,14 +2,22 @@ body {
 	color: white;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+	overflow:hidden;
 }
 
 .header {
 	background-color: #ff178b;
+	height: 4em;
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
-	padding: 1em 2em 0em 2em;
+	width:100.75%
+}
+
+img {
+	width: 40%;
 }
 
 .container-fluid {
@@ -25,16 +33,31 @@ body {
 	margin-top: 2em;
 }
 
+#logo {
+	padding-top: 0.1em;
+	width: 80%;
+}
+
 .logo {
+	margin-top: 0.2em;
 	color: white;
 }
 
-.jobName {
-	
+.text {
+	line-height: 1.4em;
+	font-size: 2em;
+}
+
+.farba {
+	border: 5px solid black;
+	background-color:  #383838;
+	border-right: hidden;
+	border-left: hidden;
 }
 
 h3 {
-	font-size: 1.8em;
+	font-weight: bold;
+	font-size: 2em;
 }
 
 .h-3 {
@@ -42,21 +65,20 @@ h3 {
 }
 
 .real-time {
-	margin-top: 0.25em;
+	margin-right: 1em;
 	color: white;
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: bold;
 }
 
 .positions {
-	margin-top: 0.25em;
-	margin-left: -8em;
+	margin-left: -16em;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 3em;
 }
 
 .bar {
-	height: 1em;
+	height: 3em;
 	width: 100%;
 	background-color: white;
 }
@@ -90,82 +112,133 @@ h3 {
 }
 
 .row-1 {
-	margin: 0 0 0 0;
+	margin: 0 0 0em 0;
 	padding: 0 0 0 0;
 	display: flex;
 }
 
 .row-2 {
-	margin: 0 0 0 0;
+	margin: -1em 0 0 0;
 	padding: 0 0 0 0;
 	display: flex;
 }
 
 .column-1 {
-	background-color: #383838;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('/team1/images/1.jpg');
+	border-top: 5px solid black;
+	height: 42em;
+	
 }
 
 .column-2 {
-	background-color: #282828;
+	height: 42em;
+	background-repeat: no-repeat;
+	background-image: url('/team1/images/3.jpg');
+	background-size: cover;
+	border-top: 5px solid black;
+	border-bottom :5px solid black;
+	width: 65em;
 }
 
 .column-3 {
-	background-color: #383838;
+	height: 42em;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('/team1/images/2.png');
+	border-top: 5px solid black;
+	border-bottom :5px solid black;
 }
 
-b {
-	font-weight: normal;
-	flex: 0 0 100%;	
+.col-video {
+	height: 40em;
+	border-top: 5px solid black;
 }
+
+b { 
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	font-weight: normal;
+	flex: 0 0 100%;
+}
+
+
 
 #ecran1 {
 	background-color: #202020;
+	opacity: 0.8;
 	font-family: 'Roboto', sans-serif;
-	width: 90%;
-	height: 8em;
+	width: 92%;
+	height: 13em;
 	font-size: 1.8em;
 	overflow: hidden;
-	margin: 2em 0;
-	padding: 0 2em;
+	padding-left: 1em;
+	margin-left: 1.2em;
+	
 }
 
 #ecran2 {
 	background-color: #383838;
+	opacity: 0.8;
 	font-family: 'Roboto', sans-serif;
-	width: 90%;
-	height: 10em;
+	width: 92%;
+	height: 13em;
 	font-size: 1.8em;
 	overflow: hidden;
-	margin: 2em 0;
-	padding: 0 2em;
+	padding-left: 1em;
+	margin-left: 1.2em;
+	
 }
 
 #ecran3 {
+	margin-left: 1.2em;
 	background-color: #202020;
+	opacity: 0.8;
 	font-family: 'Roboto', sans-serif;
-	width: 90%;
-	height: 10em;
+	width: 92%;
+	height: 13em;
 	font-size: 1.8em;
 	overflow: hidden;
-	margin: 2em 0;
-	padding: 0 2em;
+	padding-left: 1em;
 }
 
 /* .ecranLoc-1 {
-	float: right;
-	align-content: flex-end;
 }
 
 .ecranLoc-2 {
-	float: left;
-	align-content: flex-end;
 }
 
 .ecranLoc-3 {
-	float: right;
-	align-content: flex-end;
-}
- */
+} */
+
 .job {
-    margin: 4em;
+	display:flex;
+	margin: 2em 2em;
+}
+
+
+.qrIMG {
+	margin-left: 1em;
+	border: 5px solid black;
+}
+
+.loaded-jobs1 {
+	margin: 0 6em;
+}
+
+.loaded-jobs2 {
+	margin: 0 6em;
+}
+
+.loaded-jobs3 {
+	margin: 0 6em;
+}
+
+.actual-Job {
+	font-weight: bold;
+	font-size: 2em;
+	color: #ff178b;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }

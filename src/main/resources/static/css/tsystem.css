@@ -71,56 +71,56 @@ h3 {
 #ecran1 {
 	background-color:#202020;
 	font-family: 'Roboto', sans-serif;
-	width: 80%;
+	width: 90%;
 	height: 8em;
 	font-size: 1.8em;
 	overflow: hidden;
 	margin: 2em 0;
-	padding: 0 2em;
+	padding: 0 0.2em;
 }
 
 #ecran2 {
 	background-color: #383838;
 	font-family: 'Roboto', sans-serif;
-	width: 80%;
+	width: 90%;
 	height: 8em;
 	font-size: 1.8em;
 	overflow: hidden;	
 	margin: 2em 0;
-	padding: 0 2em;
+	padding: 0 0.2em;
 }
 
 #ecran3 {
 	background-color: #202020;
 	font-family: 'Roboto', sans-serif;
-	width: 80%;
+	width: 90%;
 	height: 8em;
 	font-size: 1.8em;
 	overflow: hidden;
 	margin: 2em 0;
-	padding: 0 2em;
+	padding: 0 0.2em;
 }
 
 #ecran4 {
 	background-color: #383838;
 	font-family: 'Roboto', sans-serif;
-	width: 80%;
+	width: 90%;
 	height: 8em;
 	font-size: 1.8em;
 	overflow: hidden;	
 	margin: 2em 0;
-	padding: 0 2em;
+	padding: 0 0.2em;
 }
 
 #ecran5 {
 	background-color: #202020;
 	font-family: 'Roboto', sans-serif;
-	width: 80%;
+	width: 90%;
 	height: 8em;
 	font-size: 1.8em;
 	overflow: hidden;
 	margin: 2em 0;
-	padding: 0 2em;
+	padding: 0 0.2em;
 }
 
 b {
