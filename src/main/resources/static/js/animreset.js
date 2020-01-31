@@ -1,4 +1,3 @@
-  
 var animation1 = document.getElementsByClassName("row1");
 var animation2 = document.getElementsByClassName("row2");
 var animation3 = document.getElementsByClassName("row3");

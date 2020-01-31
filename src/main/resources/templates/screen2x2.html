@@ -33,10 +33,12 @@
 					src="https://www.youtube.com/embed/cMJytKW87TA?controls=0&showinfo=0&rel=0&loop=1&playlist=cMJytKW87TA&autoplay=1&autoplay=1&mute=1"
 					frameborder="0"></iframe>
 			</div>
-			<div class="col-6 column-1" >
-				<div class="col-12 actual-Job hidden positions1"
-					th:each="job : ${@mainController.jobs}">
-					<div class="farba" th:text="${job.position}"></div>
+			<div class="col-6 column-1">
+				<div class="jobtitle-container">
+					<div class="col-12 actual-Job"
+						th:each="job : ${@mainController.jobs}">
+						<div class="farba hidden positions1" th:text="${job.position}"></div>
+					</div>
 				</div>
 				<div class="job">
 					<div class="col-4 h-3">
@@ -44,7 +46,7 @@
 						<h3>Application deadline</h3>
 						<h3>Minimum salary (brutto)</h3>
 					</div>
-					<div class="col-4 hidden loaded-jobs1"
+					<div class="col-4 loaded-jobs1 hidden jobdetails1"
 						th:each="job, iter : ${@mainController.jobs}">
 						<div class="text" th:text="${job.employmentType}"></div>
 						<div class="text" th:text="${job.applicationDeadline}"></div>
@@ -72,10 +74,10 @@
 		</div>
 	</div>
 	<div class="row-2">
-		<div class="col-6 column-2" >
-			<div class="col-12 actual-Job hidden positions2"
+		<div class="col-6 column-2">
+			<div class="col-12 actual-Job"
 				th:each="job : ${@mainController.jobs}">
-				<div class="farba" th:text="${job.position}"></div>
+				<div class="farba hidden positions2" th:text="${job.position}"></div>
 			</div>
 			<div class="job">
 				<div class="col-4 h-3">
@@ -83,13 +85,13 @@
 					<h3>Application deadline</h3>
 					<h3>Minimum salary (brutto)</h3>
 				</div>
-				<div class="col-4 hidden loaded-jobs2"
+				<div class="col-4 loaded-jobs2 hidden jobdetails2"
 					th:each="job, iter : ${@mainController.jobs}">
 					<div class="text" th:text="${job.employmentType}"></div>
 					<div class="text" th:text="${job.applicationDeadline}"></div>
 					<div class="text" th:utext="${job.salary}"></div>
 				</div>
-				<div class="col-4 qrCodes hidden qrcodes2"
+				<div class="hidden col-4 qrCodes qrcodes2"
 					th:each="job, iter : ${@mainController.jobs}">
 					<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
 						alt='Qr code image.' />
@@ -108,10 +110,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-6 column-3 " >
-			<div class="col-12 actual-Job hidden positions3"
+		<div class="col-6 column-3 ">
+			<div class="col-12 actual-Job"
 				th:each="job : ${@mainController.jobs}">
-				<div class="farba" th:text="${job.position}"></div>
+				<div class="farba hidden positions3" th:text="${job.position}"></div>
 			</div>
 			<div class="job">
 				<div class="col-4 h-3">
@@ -125,7 +127,7 @@
 					<div class="text" th:text="${job.applicationDeadline}"></div>
 					<div class="text" th:utext="${job.salary}"></div>
 				</div>
-				<div class="col-4 qrCodes hidden qrcodes3"
+				<div class="col-4 hidden qrCodes qrcodes3"
 					th:each="job, iter : ${@mainController.jobs}">
 					<img class="qrIMG" th:src='@{${"/qrcode?number=" + iter.index}}'
 						alt='Qr code image.' />

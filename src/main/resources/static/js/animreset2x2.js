@@ -1,146 +1,155 @@
-  
+const jobtitles1 = document.getElementsByClassName("positions1");
+const jobtitles2 = document.getElementsByClassName("positions2");
+const jobtitles3 = document.getElementsByClassName("positions3");
+const jobitems1 = document.getElementsByClassName("loaded-jobs1");
+const jobitems2 = document.getElementsByClassName("loaded-jobs2");
+const jobitems3 = document.getElementsByClassName("loaded-jobs3");
+const qrcodes1 = document.getElementsByClassName("qrcodes1");
+const qrcodes2 = document.getElementsByClassName("qrcodes2");
+const qrcodes3 = document.getElementsByClassName("qrcodes3");
+const jobdescs1 = document.getElementsByClassName("jobdesc1");
+const jobdescs2 = document.getElementsByClassName("jobdesc2");
+const jobdescs3 = document.getElementsByClassName("jobdesc3");
 var animation1 = document.getElementsByClassName("column-1");
 var animation2 = document.getElementsByClassName("column-2");
 var animation3 = document.getElementsByClassName("column-3");
 var barAnimation = document.getElementsByClassName("in");
-const jobs1 = document.getElementsByClassName("loaded-jobs1");
-const jobs2 = document.getElementsByClassName("loaded-jobs2");
-const jobs3 = document.getElementsByClassName("loaded-jobs3");
-const jobdesc1 = document.getElementsByClassName("jobdesc1");
-const jobdesc2 = document.getElementsByClassName("jobdesc2");
-const jobdesc3 = document.getElementsByClassName("jobdesc3");
-const qrCodes1 = document.getElementsByClassName("qrcodes1");
-const qrCodes2 = document.getElementsByClassName("qrcodes2");
-const qrCodes3 = document.getElementsByClassName("qrcodes3");
-const positions1 = document.getElementsByClassName("positions1");
-const positions2 = document.getElementsByClassName("positions2");
-const positions3 = document.getElementsByClassName("positions3");
- 
+
 var index = 0;
+
 var job1;
 var job2;
 var job3;
+var jobitem1;
+var jobitem2;
+var jobitem3;
 var qrCode1;
 var qrCode2;
 var qrCode3;
+var jobdesc1;
+var jobdesc2;
+var jobdesc3;
 var animation1clone;
 var animation2clone;
 var animation3clone;
-var jobdesctemp1;
-var jobdesctemp2;
-var jobdesctemp3;
-var postemp1;
-var postemp2;
-var postemp3;
+var barAnimClone;
 
-slide();
-setInterval(slide, 60000);
+function hide(job, qrCode, jobitem, jobdesc) {
+	job.classList.remove("displayed");
+	job.classList.add("hidden");
+	qrCode.classList.remove("displayed");
+	qrCode.classList.add("hidden");
+	jobitem.classList.remove("displayed");
+	jobitem.classList.add("hidden");
+	jobdesc.classList.remove("displayed");
+	jobdesc.classList.add("hidden");
+}
 
-function slide() {
+function fadein(job, qrCode, jobitem, jobdesc) {
+	if (job.classList.contains("fadeout")) {
+		job.classList.remove("fadeout");
+	}
+	job.classList.remove("hidden");
+	job.classList.add("displayed");
+	job.classList.add("fadein");
+	if (jobitem.classList.contains("fadeout")) {
+		jobitem.classList.remove("fadeout");
+	}
+	jobitem.classList.remove("hidden");
+	jobitem.classList.add("displayed");
+	jobitem.classList.add("fadein");
+	if (qrCode.classList.contains("fadeout")) {
+		qrCode.classList.remove("fadeout");
+	}
+	qrCode.classList.remove("hidden");
+	qrCode.classList.add("displayed");
+	qrCode.classList.add("fadein");
+	if (jobdesc.classList.contains("fadeout")) {
+		jobdesc.classList.remove("fadeout");
+	}
+	jobdesc.classList.remove("hidden");
+	jobdesc.classList.add("displayed");
+	jobdesc.classList.add("fadein");
+}
+
+function fadeout(job, qrCode, jobitem, jobdesc) {
+	job.classList.remove("fadein");
+	job.classList.add("fadeout");
+	qrCode.classList.remove("fadein");
+	qrCode.classList.add("fadeout");
+	jobitem.classList.remove("fadein");
+	jobitem.classList.add("fadeout");
+	jobdesc.classList.remove("fadein");
+	jobdesc.classList.add("fadeout");
+}
+
+function fade() {
+
 	if (job1) {
-		job1.classList.remove("displayed");
-		job1.classList.add("hidden");
-		jobdesctemp1.classList.remove("displayed");
-		jobdesctemp1.classList.add("hidden");
-		qrCode1.classList.remove("displayed");
-		qrCode1.classList.add("hidden");
-		postemp1.classList.remove("displayed");
-		postemp1.classList.add("hidden");
-
+		fadeout(job1, qrCode1, jobitem1, jobdesc1);
+		setTimeout(function() {
+			hide(job1, qrCode1, jobitem1, jobdesc1);
+		}, 1000);
 	}
 
 	if (job2) {
-		job2.classList.remove("displayed");
-		job2.classList.add("hidden");
-		jobdesctemp2.classList.remove("displayed");
-		jobdesctemp2.classList.add("hidden");
-		qrCode2.classList.remove("displayed");
-		qrCode2.classList.add("hidden");
-		postemp2.classList.remove("displayed");
-		postemp2.classList.add("hidden");
+		fadeout(job2, qrCode2, jobitem2, jobdesc2);
+		setTimeout(function() {
+			hide(job2, qrCode2, jobitem2, jobdesc2);
+		}, 1000);
 	}
 
 	if (job3) {
-		job3.classList.remove("displayed");
-		job3.classList.add("hidden");
-		jobdesctemp3.classList.remove("displayed");
-		jobdesctemp3.classList.add("hidden");
-		qrCode3.classList.remove("displayed");
-		qrCode3.classList.add("hidden");
-		postemp3.classList.remove("displayed");
-		postemp3.classList.add("hidden");
+		fadeout(job3, qrCode3, jobitem3, jobdesc3);
+		setTimeout(function() {
+			hide(job3, qrCode3, jobitem3, jobdesc3);
+		}, 1000);
 	}
 
-	animation1clone = animation1[0].cloneNode(true);
-	animation1[0].parentNode.replaceChild(animation1clone, animation1[0]);
-	animation2clone = animation2[0].cloneNode(true);
-	animation2[0].parentNode.replaceChild(animation2clone, animation2[0]);
-	animation3clone = animation3[0].cloneNode(true);
-	animation3[0].parentNode.replaceChild(animation3clone, animation3[0]);
-	barAnimClone = barAnimation[0].cloneNode(true);
-	barAnimation[0].parentNode.replaceChild(barAnimClone, barAnimation[0]);
-	animation1[0] = animation1clone;
-	animation2[0] = animation2clone;
-	animation3[0] = animation3clone;
-	barAnimation[0] = barAnimClone;	
+	setTimeout(function() {
+		if (index > (jobtitles1.length - 1)) {
+			index = 0;
+		}
 
-	if (index > (jobs1.length - 1)) {
-		index = 0;
-	}
+		fadein(jobtitles1[index], qrcodes1[index], jobitems1[index],
+				jobdescs1[index]);
 
-	jobs1[index].classList.remove("hidden");
-	jobs1[index].classList.add("displayed");
-	jobdesc1[index].classList.remove("hidden");
-	jobdesc1[index].classList.add("displayed");
-	qrCodes1[index].classList.remove("hidden");
-	qrCodes1[index].classList.add("displayed");
-	positions1[index].classList.remove("hidden");
-	positions1[index].classList.add("displayed");
+		job1 = jobtitles1[index];
+		jobitem1 = jobitems1[index];
+		qrCode1 = qrcodes1[index];
+		jobdesc1 = jobdescs1[index];
 
-	job1 = jobs1[index];
-	qrCode1 = qrCodes1[index];
-	jobdesctemp1 = jobdesc1[index];
-	postemp1 = positions1[index];
+		index += 1;
 
-	index += 1;
+		if (index > (jobtitles2.length - 1)) {
+			index = 0;
+		}
 
-	if (index > (jobs1.length - 1)) {
-		index = 0;
-	}
+		fadein(jobtitles2[index], qrcodes2[index], jobitems2[index],
+				jobdescs2[index]);
 
-	jobs2[index].classList.remove("hidden");
-	jobs2[index].classList.add("displayed");
-	jobdesc2[index].classList.remove("hidden");
-	jobdesc2[index].classList.add("displayed");
-	qrCodes2[index].classList.remove("hidden");
-	qrCodes2[index].classList.add("displayed");
-	positions2[index].classList.remove("hidden");
-	positions2[index].classList.add("displayed");
+		job2 = jobtitles2[index];
+		jobitem2 = jobitems2[index];
+		qrCode2 = qrcodes2[index];
+		jobdesc2 = jobdescs2[index];
 
-	job2 = jobs2[index];
-	qrCode2 = qrCodes2[index];
-	jobdesctemp2 = jobdesc2[index];
-	postemp2 = positions2[index];
+		index += 1;
 
-	index += 1;
+		if (index > (jobtitles3.length - 1)) {
+			index = 0;
+		}
 
-	if (index > (jobs1.length - 1)) {
-		index = 0;
-	}
+		fadein(jobtitles3[index], qrcodes3[index], jobitems3[index],
+				jobdescs3[index]);
 
-	jobs3[index].classList.remove("hidden");
-	jobs3[index].classList.add("displayed");
-	jobdesc3[index].classList.remove("hidden");
-	jobdesc3[index].classList.add("displayed");
-	qrCodes3[index].classList.remove("hidden");
-	qrCodes3[index].classList.add("displayed");
-	positions3[index].classList.remove("hidden");
-	positions3[index].classList.add("displayed");
+		job3 = jobtitles3[index];
+		jobitem3 = jobitems3[index];
+		qrCode3 = qrcodes3[index];
+		jobdesc3 = jobdescs3[index];
 
-	job3 = jobs3[index];
-	qrCode3 = qrCodes3[index];
-	jobdesctemp3 = jobdesc3[index];
-	postemp3 = positions3[index];
-
-	index += 1;
+		index += 1;
+	}, 1000);
 }
+
+fade();
+setInterval(fade, 60000);

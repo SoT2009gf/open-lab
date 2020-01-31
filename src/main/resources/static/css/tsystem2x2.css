@@ -84,7 +84,7 @@ h3 {
 }
 
 .in {
-	animation: fill 60s linear 1;
+	animation: fill 60s linear infinite;
 	height: 100%;
 	background-color: #ff178b;
 }
@@ -96,9 +96,6 @@ h3 {
   100% {
     width: 0%;
   }
-}
-.hidden {
-	display: none;
 }
 
 .col-12 {
@@ -232,4 +229,68 @@ h3 {
 	color: #ff178b;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.displayed {
+	display: block;
+}
+
+.fadein {
+	animation: fade-in 1s 1
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  
+  25% {
+  	opacity: .25
+  }
+  
+  50% {
+  	opacity: .5;
+  }
+  
+  75% {
+  	opacity: .75
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeout {
+	animation: fade-out 1s 1
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  
+  25% {
+  	opacity: .75
+  }
+  
+  50% {
+  	opacity: .5;
+  }
+  
+  75% {
+  	opacity: .25
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.jobtitle-container {
+	height: 2em;
 }
