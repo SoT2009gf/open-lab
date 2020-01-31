@@ -70,16 +70,6 @@ public class MainController {
 		return "screen2x2";
 	}
 
-	@RequestMapping("/screen3x3")
-	public String screen3x3() {
-		try {
-			refreshData();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "screen3x3";
-	}
-
 	private void refreshData() {
 		JsonProcessor jsonProcessor = new JsonProcessor();
 
